@@ -1,0 +1,15 @@
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+/Users/ruky/.rvm/rubies/ruby-2.6.2/bin/ruby -I /Users/ruky/.rvm/rubies/ruby-2.6.2/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200219-28464-1x69jcz.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20200219-28464-eem5nn

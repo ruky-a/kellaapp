@@ -1,0 +1,25 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: password
+  host: localhost
+ 
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: kellaapp_development
+
+
+test:
+  <<: *default
+  database: kellaapp_test
+
+
+production:
+  <<: *default
+  database: kellaapp_production
+  username: kellaapp
+  password: <%= ENV['KELLAAPP_DATABASE_PASSWORD'] %>

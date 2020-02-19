@@ -1,0 +1,19 @@
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+/Users/ruky/.rvm/rubies/ruby-2.6.2/bin/ruby -I /Users/ruky/.rvm/rubies/ruby-2.6.2/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200219-28464-1404cmo.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 byebug.bundle ./.gem.20200219-28464-5hf457/byebug

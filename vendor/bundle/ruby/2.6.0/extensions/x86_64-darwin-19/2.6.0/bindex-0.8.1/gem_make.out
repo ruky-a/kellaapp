@@ -1,0 +1,15 @@
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/ruky/.rvm/rubies/ruby-2.6.2/bin/ruby -I /Users/ruky/.rvm/rubies/ruby-2.6.2/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200219-28464-e9u9c4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20200219-28464-roumw8/skiptrace/internal

@@ -1,0 +1,38 @@
+
+
+h1 { color: green; }
+
+ html,
+        body,
+        header,
+        .jarallax {
+          height: 700px;
+        }
+
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .jarallax {
+            height: 100vh;
+          }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .jarallax {
+            height: 100vh;
+          }
+        }
+
+     
+
+        footer.page-footer {
+            background-color: #9da4b1;
+        }
+
+        .footer {
+        position: fixed;
+        }
