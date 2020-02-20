@@ -10,9 +10,7 @@ require("channels")
 require("jquery")
 
 import 'bootstrap'
-import 'mdb'
 
-import "@fontawesome/fontawesome-free/js/all";
 
 
 
