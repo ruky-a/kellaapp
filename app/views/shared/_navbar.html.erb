@@ -18,7 +18,13 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <% if (!user_signed_in?)  %>
+    </ul>
+      
+     
+
+   <ul class="navbar-nav ml-auto nav-flex-icons">
+
+  <% if (!user_signed_in?)  %>
       <li class="nav-item">
         <%= link_to "Sign Up", new_user_registration_path, class: "nav-link login-button"  %>
       </li>
@@ -27,47 +33,30 @@
       </li>
 
        <% else %>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
-        </a>
-        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-           <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-           <%= link_to  "Profile", edit_user_registration_path, class: "dropdown-item"  %>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-  <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
-<% end %>
-        </div>
-      </li>
-         <% end %>
-    </ul>
 
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-      <li class="nav-item">
-        <a class="nav-link waves-effect waves-light">
-          <i class="fa fa-twitter"></i>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link waves-effect waves-light">
-          <i class="fa fa-google"></i>
-        </a>
-      </li>
+    
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user"></i>
+       aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
+          
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default"
           aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+           <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= link_to  "Profile", edit_user_registration_path, class: "dropdown-item"  %>
+             <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+       <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
+ 
+       <% else %>
+          <%= link_to  "Dashboard", dashboard_path, class: "dropdown-item" %>
+        <% end %>
       </li>
+      <% end %>
     </ul>
   </div>
 </div>
 </nav>
-<!--/.Navbar -->
+
+
+
+   
