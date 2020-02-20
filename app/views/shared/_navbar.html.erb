@@ -29,7 +29,7 @@
        <% else %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false"><%= current_user.email %>
+          aria-haspopup="true" aria-expanded="false">Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
         </a>
         <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
            <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

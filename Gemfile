@@ -30,6 +30,8 @@ gem 'font_awesome5_rails'
 gem 'font-awesome-rails' 
 gem 'devise'
 gem "figaro"
+gem 'omniauth', '~> 1.9'
+gem 'omniauth-facebook', '~> 5.0'
 
 # app/javascript/packs/stylesheets/application.scss
 

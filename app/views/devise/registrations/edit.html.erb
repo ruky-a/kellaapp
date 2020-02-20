@@ -8,16 +8,13 @@
         <div class="sidebar">
           <!-- User Widget -->
           <div class="widget user">
-            <h5 class="text-center"><%= current_user.email %></h5>
+            <h5 class="text-center"><%= current_user.first_name %> <%=current_user.last_name %></h5>
             <div class="image d-flex justify-content-center">
-           
-            </div>
-
-           
-            <div class="file">
+         
 
             </div>
-           
+
+          
 
 
           </div>
@@ -39,12 +36,12 @@
               <!-- First Name -->
               <div class="form-group">
                 <label for="first-name">First Name</label>
-
+                <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
               </div>
               <!-- Last Name -->
               <div class="form-group">
                 <label for="last-name">Last Name</label>
-
+                <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
               </div>
 
               <div class="form-group">
@@ -60,10 +57,7 @@
               <h3 class="widget-header user">Edit Password</h3>
 
               <!-- Current Password -->
-              <div class="form-group">
-                <label for="current_password">Current Password</label>
-                <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-              </div>
+            
               <!-- New Password -->
               <div class="form-group">
                 <label for="New_password">New Password</label>
@@ -83,14 +77,17 @@
 
 
 
-<%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 
-<%= link_to "Back", :back %>
+
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
 </section>
 
 
+<%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 
-
+<%= link_to "Back", :back %>
