@@ -10,6 +10,9 @@ require("channels")
 require("jquery")
 
 import 'bootstrap'
+import 'mdb'
+
+import "@fontawesome/fontawesome-free/js/all";
 
 
 
@@ -19,3 +22,5 @@ import 'bootstrap'
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
