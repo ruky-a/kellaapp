@@ -24,8 +24,12 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'
 gem 'font_awesome5_rails'
 gem 'font-awesome-rails' 
+gem 'devise'
+gem "figaro"
 
 # app/javascript/packs/stylesheets/application.scss
 

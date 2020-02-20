@@ -11,6 +11,10 @@ require("jquery")
 
 import 'bootstrap'
 
+import "../stylesheets/application"
+
+global.toastr = require("toastr")
+
 
 
 
