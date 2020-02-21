@@ -11,16 +11,16 @@
           <div class="widget user-dashboard-profile">
             <!-- User Image -->
             <div class="profile-thumb">
-              <%= image_tag photo_url(current_user), class: "rounded-circle" %>
+              <%= image_tag photo_url(@user), class: "rounded-circle" %>
             </div>
                 
-            <h5 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %></h5>
-            <p>Joined <strong><%= current_user.created_at.strftime('%d %b %Y') %></strong></p>
-            <p><%= current_user.about %></p>
-            <p><strong><% if current_user.status %> Online <% else %> Offline <% end %>
+            <h5 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h5>
+            <p>Joined <strong><%= @user.created_at.strftime('%d %b %Y') %></strong></p>
+            <p><%= @user.about %></p>
+            <p><strong><% if @user.status %> Online <% else %> Offline <% end %>
                                             </strong></p>
            
-             <a><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn peach-gradient" %></a>
+             
 
           </div>   
     

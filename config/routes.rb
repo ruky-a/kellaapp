@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'dashboard', to: 'users#dashboard'
   post 'users/edit', to: 'users#update'
+  get 'users/:id', to: 'users#show'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
