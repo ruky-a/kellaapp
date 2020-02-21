@@ -1,4 +1,29 @@
 
+@import 'dropzone/dist/basic.css';
+@import 'dropzone/dist/dropzone.css';
+
+
+.dropzone {
+
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+    display: block;
+    border: 3px dashed #eaedef;
+}
+
+.dropzone .dz-message {
+  font-weight: 400;
+}
+
+.dropzone .dz-message .note {
+  font-size: 0.8em;
+  font-weight: 200;
+  display: block;
+  margin-top: 1.4rem;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
 margin:0;
 padding:0;
