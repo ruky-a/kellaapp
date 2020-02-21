@@ -11,7 +11,67 @@ padding:0;
 
 }
 
+   html,
+        body,
+        header,
+        .jarallax {
+          height: 700px;
+        }
 
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .jarallax {
+            height: 100vh;
+          }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .jarallax {
+            height: 100vh;
+          }
+        }
+
+        @media (min-width: 560px) and (max-width: 650px) {
+          header .jarallax h1 {
+            margin-bottom: .5rem !important;
+          }
+          header .jarallax h5 {
+            margin-bottom: .5rem !important;
+          }
+        }
+
+
+        @media (min-width: 660px) and (max-width: 700px) {
+          header .jarallax h1 {
+            margin-bottom: 1.5rem !important;
+          }
+          header .jarallax h5 {
+            margin-bottom: 1.5rem !important;
+          }
+        }
+
+        .top-nav-collapse {
+            background-color: #9da4b1 !important;
+        }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #9da4b1 !important;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #9da4b1!important;
+            }
+        }
 
 
 .card {
@@ -436,8 +496,8 @@ padding: 180px 0px;
 }
 
 .slider h1 {
-font-size: 65px;
-line-height: 65px;
+font-size: 75px;
+line-height: 120%;
 font-weight: 800;
 
 }
@@ -450,20 +510,6 @@ padding: 3px 15px 5px 15px;
 opacity: .8;
 }
 
-.bg-2 {
-background: url("../images/bg/bg-image-2-1.jpg") no-repeat;
-background-size: cover;
-}
-
-.bg-3 {
-background: url("../images/bg/bg-cta.jpg") no-repeat;
-background-size: cover;
-}
-
-.bg-4 {
-background: url("../images/about/img-7.jpg") no-repeat;
-background-size: cover;
-}
 
 .mt-80px {
 margin-top: -80px;
