@@ -4,8 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
-  validates :first_name, presence: true, length: {maximum: 50}
-  validates :last_name, presence: true, length: {maximum: 50}
   has_one_attached :photo
 
  after_create :send_admin_mail
@@ -22,7 +20,7 @@ end
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
     user.password = Devise.friendly_token[0, 20]
-    user.first_name = auth.info.name   
+    user.fullname = auth.info.name   
     user.image = auth.info.image 
     user.uid = auth.uid
     user.provider = auth.provider
