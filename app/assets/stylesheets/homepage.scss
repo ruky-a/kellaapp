@@ -24,6 +24,7 @@ p {
 
 h1 {
   font-size: 35px;
+
 }
 
 h2 {
@@ -40,6 +41,10 @@ h4 {
 
 p {
   color: #888;
+}
+
+.view h1 {
+  color: white;
 }
 
 label {
@@ -548,198 +553,7 @@ ul.pagination .active a {
 
 
 
-@media (max-width: 400px) {
-  .login-button {
-    display: inline-block;
-    padding: 6px 45px !important;
-    margin: 5px 0;
-  }
-}
 
-@media (max-width: 480px) {
-  .login-button {
-    display: inline-block;
-    padding: 6px 45px !important;
-    margin: 5px 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .login-button {
-    display: inline-block;
-    padding: 6px 45px !important;
-    margin: 5px 0;
-  }
-}
-
-@media (max-width: 992px) {
-  .login-button {
-    display: inline-block;
-    padding: 6px 45px !important;
-    margin: 5px 0;
-  }
-}
-
-.add-button {
-  background: #28a745;
-  color: #fff;
-  padding: 8px 20px !important;
-  display: inline-block;
-}
-
-.add-button:hover {
-  color: #fff;
-}
-
-
-
-
-
-@media (max-width: 480px) {
-  .navbar-toggleable-md > .container {
-    margin-right: 0;
-    margin-left: 0;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-}
-
-.hero-area .content-block h1, .hero-area-2 .content-block h1 {
-  color: #fff;
-  font-size: 65px;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  margin-bottom: 15px;
-}
-
-@media (max-width: 768px) {
-  .hero-area .content-block h1, .hero-area-2 .content-block h1 {
-    font-size: 40px;
-  }
-}
-
-.hero-area .content-block p, .hero-area-2 .content-block p {
-  color: #fff;
-  font-size: 20px;
-}
-
-@media (max-width: 768px) {
-  .hero-area .content-block p, .hero-area-2 .content-block p {
-    font-size: 17px;
-  }
-}
-
-.hero-area {
-  padding: 100px 0 0;
-}
-
-.hero-area .content-block {
-  padding-bottom: 80px;
-}
-
-.hero-area .advance-search {
-  background: #fff;
-  padding: 40px 15px 25px 15px;
-  border-radius: 3px;
-  margin-bottom: -50px;
-  box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
-}
-
-@media (max-width: 480px) {
-  .hero-area .advance-search {
-    margin-bottom: -80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-area .advance-search .block {
-    display: block !important;
-  }
-}
-
-.hero-area .advance-search .form-control {
-  border-color: #dedede;
-}
-
-.hero-area .advance-search button {
-  display: block;
-}
-
-@media (max-width: 480px) {
-  .hero-area .advance-search button {
-    width: 100%;
-  }
-}
-
-.short-popular-category-list {
-  margin-top: 40px;
-}
-
-.short-popular-category-list h2 {
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #fff;
-}
-
-.short-popular-category-list ul {
-  margin-top: 20px;
-}
-
-.short-popular-category-list ul li {
-  margin: 0 2px;
-}
-
-.short-popular-category-list ul li a {
-  border: 1px solid #404040;
-  color: #c1c1c1;
-  font-weight: 200;
-  padding: 4px 10px;
-  font-size: 12px;
-}
-
-.short-popular-category-list ul li a i {
-  margin-right: 2px;
-}
-
-.page-breadcrumb {
-  background: none;
-  margin-top: 10px;
-  margin-bottom: 0;
-}
-
-.page-breadcrumb li a {
-  color: #fff;
-}
-
-.page-breadcrumb li.active {
-  color: #fff !important;
-}
-
-.category-slider {
-  box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.07);
-  background: #fff;
-  padding: 20px 0;
-}
-
-.category-slider .item {
-  text-align: center;
-}
-
-.category-slider .item a {
-  display: inline-block;
-  padding: 20px 40px;
-  background: #fff;
-}
-
-.category-slider .item a h4 {
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.category-slider .item a i {
-  font-size: 40px;
-}
 
 .user-dashboard-menu li {
   margin-bottom: 5px;
