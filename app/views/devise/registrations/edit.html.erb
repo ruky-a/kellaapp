@@ -9,16 +9,48 @@
           <!-- User Widget -->
           <div class="widget user">
             <h5 class="text-center"><%= current_user.first_name %> <%=current_user.last_name %></h5>
+            <p class="text-center">Member since, <strong><%= current_user.created_at.strftime('%d %b %Y') %></strong></p>
             <div class="image d-flex justify-content-center">
-         
+          <% if resource.photo.attached? %>
+
+              <%= image_tag resource.photo %>
+              <% else %>
+              <%= image_tag photo_url(current_user) %>
+              <% end %>
 
             </div>
 
-          
+            <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
+            <div class="file">
 
+              <%= f.file_field :photo, placeholder: "Upload", class: "form-control-file mt-2 pt-1", onchange: "this.form.submit();" %>
+
+            </div>
+            <% end %>
 
           </div>
-      
+
+
+            <br />
+
+          <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-status'} do |f| %>
+          <div class="field">
+            <%= f.select(:status, options_for_select([["Online"], ["Offline"]]), {}, {class: "form-control"}) %>
+          </div>
+           <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
+
+          <% end %>
+          <br />
+
+
+          <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-from', class: 'is-hidden'} do |f| %>
+          <div class="form-group">
+            <%= f.text_area :about, placeholder: "Tell us about you",  class: "border p-3 w-100 bg-white" %>
+          </div>
+          <a class="toggle button is-light" aria-controls="user-from">Cancel</a>
+            <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
+          <% end %>
+
         </div>
       </div>
 
@@ -57,7 +89,7 @@
               <h3 class="widget-header user">Edit Password</h3>
 
               <!-- Current Password -->
-            
+
               <!-- New Password -->
               <div class="form-group">
                 <label for="New_password">New Password</label>

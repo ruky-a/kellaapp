@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true, length: {maximum: 50}
   validates :last_name, presence: true, length: {maximum: 50}
+  has_one_attached :photo
 
  after_create :send_admin_mail
 def send_admin_mail
