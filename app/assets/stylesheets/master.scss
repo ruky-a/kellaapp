@@ -3,40 +3,12 @@
 @import 'dropzone/dist/dropzone.css';
 
 
-.dropzone {
-
-  border-radius: 5px;
-  background: white;
-  cursor: pointer;
-    display: block;
-    border: 3px dashed #eaedef;
-}
-
-.dropzone .dz-message {
-  font-weight: 400;
-}
-
-.dropzone .dz-message .note {
-  font-size: 0.8em;
-  font-weight: 200;
-  display: block;
-  margin-top: 1.4rem;
-}
 
 
 h1, h2, h3, h4, h5, h6 {
 margin:0;
 padding:0;
 
-}
-
-h1 {
-font-family: Cambria, Georgia, serif;
-font-size: 24px;
-font-style: italic;
-font-variant: normal;
-font-weight: 700;
-line-height: 26.4px;
 }
 
 
@@ -464,8 +436,10 @@ padding: 180px 0px;
 }
 
 .slider h1 {
-font-size: 75px;
-line-height: 75px;
+font-size: 65px;
+line-height: 65px;
+font-weight: 800;
+
 }
 
 .slider span.subhead {
