@@ -1,5 +1,6 @@
 
 <div class="container">
+
   <div class="row">
     <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
 
@@ -8,7 +9,7 @@
         <div class="card-body">
 
           <!--Header-->
-          <div class="form-header bg-white">
+          <div class="form-header bg-primary">
             <h3><i class="fa fa-user"></i> Log in</h3>
           </div>
 
@@ -24,20 +25,39 @@
 
 
           <div class="text-center">
-            <%= f.submit "Log in", class: "btn btn-danger btn-block" %>
+            <%= f.submit "Log in", class: "btn btn-danger btn-rounded btn-block z-depth-0 my-4 waves-effect" %>
           </div>
-          <br />
+
 
           <div class="text-center">
-            <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-block" %>
+            <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-block btn-rounded z-depth-0 my-4 waves-effect" %>
           </div>
           <% end %>
+          <div class="d-flex justify-content-around">
+            <div>
+              <!-- Remember me -->
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+                <% end %>
+              </div>
+            </div>
+            <div>
 
-          <%= render "devise/shared/links" %>
+              <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+              <% end %>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
   </div>
 </div>
-<br>
-]
+<br />
+
+
+<%= render 'shared/footer' %>

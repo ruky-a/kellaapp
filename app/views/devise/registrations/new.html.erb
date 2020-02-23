@@ -7,7 +7,7 @@
         <div class="card-body">
 
           <!--Header-->
-          <div class="form-header bg-white">
+          <div class="form-header bg-primary">
             <h3><i class="fa fa-user"></i> Sign up</h3>
           </div>
 
@@ -40,16 +40,16 @@
           </div>
 
           <div class="text-center">
-            <%= f.submit "Sign up", class: "btn btn-danger btn-block" %>
+            <%= f.submit "Sign up", class: "btn btn-danger btn-rounded btn-block z-depth-0 my-4 waves-effect" %>
           </div>
-          <br />
+
 
           <div class="text-center">
-            <%= link_to "Sign up with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-block" %>
+            <%= link_to "Sign up with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-block btn-rounded z-depth-0 my-4 waves-effect" %>
           </div>
           <% end %>
 
-        
+
         </div>
       </div>
     </div>
@@ -57,3 +57,5 @@
 </div>
 
 <br>
+
+<%= render 'shared/footer' %>

@@ -1,13 +1,15 @@
 
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
 
 
- 
-  <div class="navbar-brand"> <%= link_to root_path do %> <h2 class="text-white text-capitalize"></i>Kella<span class="text-color">Hospitality</span></h2>
-  <% end %>
-</div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+  <div class="container">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+
+    <div class="navbar-brand"> <%= link_to root_path do %> <h2 class="text-white text-capitalize"></i>Kella<span class="text-warning">Hospitality</span></h2>
+      <% end %>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
     aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -19,53 +21,53 @@
         </a>
       </li>
 
-       <li class="nav-item">
-         <a class="nav-link" href="#">Courses</a>
-    
-        </a>
-      </li>
-    </ul>
-      
-     
-
-   <ul class="navbar-nav ml-auto nav-flex-icons">
-
-  <% if (!user_signed_in?)  %>
       <li class="nav-item">
-        <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"  %>
-      </li>
-      <li class="nav-item">
-         <%= link_to  "Login", new_user_session_path, class: "nav-link" %>
-      </li>
+        <a class="nav-link" href="#">Courses</a>
 
-       <% else %>
+      </a>
+    </li>
+  </ul>
 
-    
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-    
-       aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %></i> Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
-   
-       
-          
-        </a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-default"
-          aria-labelledby="navbarDropdownMenuLink-333">
-           <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
-             <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-       <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
- 
-       <% else %>
-          <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
-        <% end %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
 
+
+  <ul class="navbar-nav ml-auto nav-flex-icons">
+
+    <% if (!user_signed_in?)  %>
+    <li class="nav-item">
+      <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"  %>
+    </li>
+    <li class="nav-item">
+      <%= link_to  "Login", new_user_session_path, class: "nav-link" %>
+    </li>
+
+    <% else %>
+
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+
+      aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %></i> Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
+
+
+
+    </a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-default"
+    aria-labelledby="navbarDropdownMenuLink-333">
+    <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
+    <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+    <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
+
+    <% else %>
+    <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+</div>
+</li>
+</ul>
 </nav>
 
 
 
-   

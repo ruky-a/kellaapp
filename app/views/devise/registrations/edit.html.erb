@@ -1,125 +1,211 @@
 
 
-
-<section class="user-profile section">
+<div class="slide">
   <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
-        <div class="sidebar">
-          <!-- User Widget -->
-          <div class="widget user">
-            <h5 class="text-center"><%= current_user.first_name %> <%=current_user.last_name %></h5>
-            <p class="text-center">Member since, <strong><%= current_user.created_at.strftime('%d %b %Y') %></strong></p>
-            <div class="image d-flex justify-content-center">
-          <% if resource.photo.attached? %>
+    <!--Grid row-->
+    <div class="row mt-5">
+      <!--Grid column-->
+      <div class="col-md-4 mb-5 text-md-left">
+        <!-- Card -->
+        <div class="card testimonial-card">
 
-              <%= image_tag resource.photo %>
-              <% else %>
-              <%= image_tag photo_url(current_user) %>
-              <% end %>
+          <!-- Background color -->
+          <div class="card-up cyan lighten-1"></div>
 
-            </div>
 
-            <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
-            <div class="file">
+          <!-- Avatar -->
+          <div class="avatar mx-auto white">
+            <% if resource.photo.attached? %>
 
-              <%= f.file_field :photo, placeholder: "Upload", class: "form-control-file mt-2 pt-1", onchange: "this.form.submit();" %>
-
-            </div>
+            <%= image_tag resource.photo %>
+            <% else %>
+            <%= image_tag photo_url(current_user) %>
             <% end %>
 
           </div>
 
 
-            <br />
 
-          <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-status'} do |f| %>
-          <div class="field">
-            <%= f.select(:status, options_for_select([["Online"], ["Offline"]]), {}, {class: "form-control"}) %>
+          <!-- Content -->
+          <div class="card-body">
+            <!-- Name -->
+            <h4 class="card-title"><%= current_user.first_name %> <%=current_user.last_name %></h4>
+            <hr>
+            <!-- Quotation -->
+            <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            </p>
           </div>
-           <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
 
-          <% end %>
+        </div>
+        <!-- Card -->
+
+        <br />
+        <div class="card">
+
+          <!-- Background color -->
+          <div class="card-up cyan lighten-1"></div>
+
+          <!-- Content -->
+          <div class="card-body">
+            <!-- Name -->
+            <h5 class="text-center">Upload profile picture
+              <hr>
+
+              <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
+              <div class="file">
+
+                <%= f.file_field :photo, placeholder: "Upload", class: "form-control-file mt-2 pt-1", onchange: "this.form.submit();" %>
+
+              </div>
+              <% end %>
+            </h5>
+          </div>
           <br />
 
 
+        </div>
+        <div class="card-body">
+          <!-- Name -->
+
+          <hr>
+
           <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-from', class: 'is-hidden'} do |f| %>
           <div class="form-group">
-            <%= f.text_area :about, placeholder: "Tell us about you",  class: "border p-3 w-100 bg-white" %>
+            <%= f.text_area :about, placeholder: "Write a bit about yourself..",  class: "border p-3 w-100 bg-white" %>
           </div>
           <a class="toggle button is-light" aria-controls="user-from">Cancel</a>
-            <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
+          <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
           <% end %>
 
         </div>
+
+        <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-status'} do |f| %>
+        <div class="field">
+          <%= f.select(:status, options_for_select([["Online"], ["Offline"]]), {}, {class: "form-control"}) %>
+        </div>
+        <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
+
+        <% end %>
+
       </div>
 
-      <div class="col-md-10 offset-md-1 col-lg-9 offset-lg-0">
-        <!-- Edit Profile Welcome Text -->
-        <div class="widget welcome-message">
-          <h2>Edit profile</h2>
-        </div>
-        <!-- Edit Personal Info -->
-        <div class="row">
-          <div class="col-lg-6 col-md-6">
-            <div class="widget personal-info">
-              <h3 class="widget-header user">Edit Personal Information</h3>
-              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-              <!-- First Name -->
-              <div class="form-group">
-                <label for="first-name">First Name</label>
-                <%= f.text_field :first_name, autofocus: true, class: "form-control" %>
-              </div>
-              <!-- Last Name -->
-              <div class="form-group">
-                <label for="last-name">Last Name</label>
-                <%= f.text_field :last_name, autofocus: true, class: "form-control" %>
-              </div>
 
-              <div class="form-group">
-                <label for="email">Email</label>
-                <%= f.text_field :email, autofocus: true, class: "form-control" %>
-              </div>
 
+
+
+
+
+      <div class="col-md-8 ">
+        <!--Form-->
+        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
+          <!-- Material form register -->
+          <div class="card">
+
+            <h5 class="card-header  cyan-text text-center py-4">
+              <strong>Edit Profile</strong>
+            </h5>
+
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+              <!-- Form -->
+              <form class="text-center" style="color: #757575;" action="#!">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="form-row">
+                  <div class="col">
+                    <div class="form-row">
+                      <div class="col">
+                        <!-- First name -->
+                        <div class="md-form">
+                          <%= f.text_field :first_name, autofocus: true, placeholder: "Firstname", class: "form-control" %>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <!-- Last name -->
+                        <div class="md-form">
+                          <%= f.text_field :last_name, autofocus: true, placeholder: "Last name", class: "form-control" %>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="md-form">
+                      <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
+                    </div>
+
+
+
+                    <div class="md-form">
+                      <label for="New_password">New Password</label>
+                      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+                    </div>
+
+                    <div class="md-form">
+                      <label for="Confirm_password">Confirm New Password</label>
+                      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password", class: "form-control" %>
+                    </div>
+
+                    <div class="d-flex justify-content-around">
+                      <div>
+                        <!-- Remember me -->
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                          <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+                        </div>
+                      </div>
+                      <div>
+                        <!-- Forgot password -->
+                        <a href="">Forgot password?</a>
+                      </div>
+                    </div>
+
+
+                    <div class="text-center">
+                      <%= f.submit "update", class: "btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" %>
+                    </div>
+
+
+                    <div class="text-center">
+                      <%= link_to "Sign up with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary btn-rounded btn-block z-depth-0 my-4 waves-effect" %>
+                    </div>
+                    <% end %>
+
+                    <!-- Social register -->
+                    <p>or sign up with:</p>
+
+                    <a type="button" class="btn-floating btn-fb btn-sm">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-tw btn-sm">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-li btn-sm">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-git btn-sm">
+                      <i class="fab fa-github"></i>
+                    </a>
+
+                    <hr>
+
+                    <!-- Terms of service -->
+                    <p>By clicking
+                      <em>Sign up</em> you agree to our
+                      <a href="" target="_blank">terms of service</a>
+
+                    </form>
+                    <!-- Form -->
+
+                  </div>
+
+                </div>
+                <!-- Material form register -->
+              </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-6">
-            <!-- Change Password -->
-            <div class="widget change-password">
-              <h3 class="widget-header user">Edit Password</h3>
-
-              <!-- Current Password -->
-
-              <!-- New Password -->
-              <div class="form-group">
-                <label for="New_password">New Password</label>
-                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-
-              </div>
-
-              <div class="form-group">
-                <label for="Confirm_password">Confirm New Password</label>
-                <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password", class: "form-control" %>
-              </div>
-            </div>
-            <%= f.submit "Update", class: "btn btn-danger" %>
-            <% end %>
-          </div>
         </div>
-
-
-
-
-
       </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</section>
 
 
-<%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
-
-<%= link_to "Back", :back %>
+<%= render 'shared/footer' %>

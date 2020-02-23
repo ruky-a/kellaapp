@@ -1,163 +1,358 @@
+<header> <div class="view grey lighten-3">
 
-       <div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('assets/kella1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-      <div class="mask rgba-purple-slight">
-        <div class="container h-100 d-flex justify-content-center align-items-center">
-          <div class="row pt-5 mt-3">
-            <div class="col-md-12 wow fadeIn mb-3">
-              <div class="text-center">
-                <h1 class="display-4 font-weight-bold mb-5 wow fadeInUp">Start Your <span class="text-color">Hospitality</span><br>Career</h1>
-                </li>
-                <h5 class="mb-5 wow fadeInUp" data-wow-delay="0.2s">It comes with a lot of new features, easy to follow
-                  videos and images. Check it out now!</h5>
-                <div class="wow fadeInUp" data-wow-delay="0.4s">
-                  <a class="btn btn-purple btn-rounded"><i class="fas fa-user left"></i> Sign up!</a>
-                           
-        <a href="pricing.html" target="_blank" class="btn btn-main " >Find Courses<i class="ti-angle-right ml-3"></i></a>
-                </div>
-                </ul>
+  <div class="mask">
+    <!-- Content -->
+    <div class="container h-100">
+      <!--Grid row-->
+      <div class="row align-items-center h-100">
+        <!--Grid column-->
+        <div class="col-md-6">
+          <h1 class="mb-4">Start your<span class="text-warning"> hospitality</span><br><span class="cyan-text">career</span> with amazing tutorials</h1>
+          <p class="mb-4 pb-2 dark-grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, culpa qui officia deserunt laborum fuga similique mollit id quos aperiam proident non ut rerum debitis.</p>
+          <a class="btn btn-cyan btn-rounded ml-md-0">Find courses</a>
+          <%= link_to new_user_registration_path, :class => "btn btn-outline-orange btn-rounded" do %>
+          <i class="fas fa-user left"> Register</i>
+          <% end %>
+        </div>
+
+
+        <!--Grid column-->
+        <div class="col-md-6">
+          <%= image_tag "illustration.jpg", class: "img-fluid" %>
+
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Content -->
+  </div>
+  <!-- Mask & flexbox options-->
+</div>
+</header>
+
+
+<div class="container">
+
+  <!-- Section: Pricing v.3 -->
+  <section class="sec text-center my-5 wow fadeIn" data-wow-delay="0.3s">
+
+
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+
+        <!-- Card -->
+        <div class="card">
+
+          <!-- Content -->
+          <div class="card-body">
+
+            <!-- Offer -->
+            <h5 class="mb-4">Video Tutorials</h5>
+            <div class="d-flex justify-content-center">
+              <div class="card-circle d-flex justify-content-center align-items-center">
+                <i class="fas fa-home light-blue-text"></i>
               </div>
             </div>
+
+            <!-- Price -->
+
+            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa pariatur id nobis
+            accusamus deleniti cumque hic laborum.</p>
+
+
           </div>
+          <!-- Content -->
+
         </div>
+        <!-- Card -->
+
       </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+
+        <!-- Card -->
+        <div class="card">
+
+          <!-- Content -->
+          <div class="card-body">
+
+            <h5 class="mb-4">Video Tutorials</h5>
+            <div class="d-flex justify-content-center">
+              <div class="card-circle d-flex justify-content-center align-items-center">
+                <i class="fas fa-user red-text"></i>
+              </div>
+            </div>
+            <!--Price -->
+
+            <p>Esse corporis saepe laudantium velit adipisci cumque iste ratione facere non distinctio cupiditate
+            sequi atque.</p>
+
+
+          </div>
+          <!-- Content -->
+
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6">
+
+        <!-- Card -->
+        <div class="card">
+
+          <!-- Content -->
+          <div class="card-body">
+
+            <!-- Offer -->
+            <h5 class="mb-4">Study At Your Own Pace</h5>
+            <div class="d-flex justify-content-center">
+              <div class="card-circle d-flex justify-content-center align-items-center">
+                <i class="fas fa-chart-bar light-blue-text"></i>
+              </div>
+            </div>
+
+
+            <p class="grey-text">At ab ea a molestiae corrupti numquam quo beatae minima ratione magni accusantium
+            repellat eveniet quia vitae.</p>
+
+
+
+          </div>
+          <!-- Content -->
+
+        </div>
+        <!-- Card -->
+
+      </div>
+      <!-- Grid column -->
+
     </div>
+    <!-- Grid row -->
+
+  </section>
+  <!-- Section: Pricing v.3 -->
 
 
 
 
-<section class="mt-80px">
+  <div class="container mt-5 px-5 pt-5 pb-3 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="text-center dark-grey-text">
+
+      <h6 class="font-weight-normal text-uppercase font-small grey-text mb-4">   <%= image_tag "course.png", class: "z-depth-0" %></h6>
+      <!-- Section heading -->
+      <h2 class="font-weight-bold">Our Courses</h2>
+      <hr class="w-header my-4">
+      <!-- Section description -->
+      <p class="text-muted mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit id laborum.</p>
+
+      <div class="row text-center d-flex justify-content-center">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+            <img src="https://mdbootstrap.com/img/illustrations/drawkit-drawing-man-colour.svg" class="img-fluid" alt="smaple image">
+          </div>
+          <h5 class="font-weight-normal mb-4">Front Office</h5>
+          <p class="text-muted px-2 mb-lg-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>  
+          <br />      
+          <a class="btn btn-purple btn-sm">Enroll</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+            <img src="https://mdbootstrap.com/img/illustrations/drawkit-phone-conversation-colour.svg" class="img-fluid" alt="smaple image">
+          </div>
+          <h5 class="font-weight-normal mb-4">Sales & Marketing</h5>
+          <p class="text-muted px-2 mb-lg-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <br />
+          <a class="btn btn-pink btn-sm">Enroll</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+            <img src="https://mdbootstrap.com/img/illustrations/app-user-colour.svg" class="img-fluid" alt="smaple image">
+          </div>
+          <h5 class="font-weight-normal mb-4">Food & Beverage</h5>
+          <p class="text-muted px-2 mb-md-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p><br />
+          <a class="btn btn-primary btn-sm">Enroll</a>
+        </div>
+
+      </div><br />
+      <div class="row text-center d-flex justify-content-center">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+            <img src="https://mdbootstrap.com/img/illustrations/drawkit-drawing-man-colour.svg" class="img-fluid" alt="smaple image">
+          </div>
+          <h5 class="font-weight-normal mb-4">Revenue Management</h5>
+          <p class="text-muted px-2 mb-lg-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>  
+          <br />      
+          <a class="btn btn-purple btn-sm">Enroll</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+            <img src="https://mdbootstrap.com/img/illustrations/drawkit-phone-conversation-colour.svg" class="img-fluid" alt="smaple image">
+          </div>
+          <h5 class="font-weight-normal mb-4">Reservations</h5>
+          <p class="text-muted px-2 mb-lg-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <br />
+          <a class="btn btn-pink btn-sm">Enroll</a>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card-img-100 mx-auto mb-4">
+            <img src="https://mdbootstrap.com/img/illustrations/app-user-colour.svg" class="img-fluid" alt="smaple image">
+          </div>
+          <h5 class="font-weight-normal mb-4">Food & Beverage</h5>
+          <p class="text-muted px-2 mb-md-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p><br />
+          <a class="btn btn-primary btn-sm">Enroll</a>
+        </div>
+        <br />
+      </div>
+
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>      
+
+
+  <!--Grid row-->
+
+  <hr class="mb-5">
+
+
+  <!--Section: Content-->
+
+
+</div>
+
+
+
+<!--Footer-->
+<footer class="page-footer pt-4 mt-4   text-center text-md-left mt-5">
+
+  <!--Footer Links-->
   <div class="container">
-    <div class="row ">
-      <div class="col-md-4">
-        <div class="card p-5 border-0 rounded-top border-bottom position-relative hover-style-1">
-          <span class="number">01</span>
-          <h3 class="mt-3">Amazing Courses</h3>
-          <p class="mt-3 mb-4">Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
-          <a href="about.html" class="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i class="ti-minus mr-2 "></i>more Details</a>
-        </div>
+    <div class="row">
+
+      <!--First column-->
+      <div class="col-md-3">
+        <h5 class="text-uppercase">About Us </h5>
+        <p>Here you can use rows and columns here to organize your footer content.</p>
       </div>
-      <div class="col-md-4">
-        <div class="card p-5 border-0 rounded-top hover-style-1">
-          <span class="number">02</span>
-          <h3 class="mt-3">Learn At Your Own Pace</h3>
-          <p class="mt-3 mb-4">Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
-          <a href="about.html" class="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i class="ti-minus mr-2 "></i>more Details</a>
-        </div>
+      <!--/.First column-->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!--Second column-->
+      <div class="col-md-2 ml-auto">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#!">Link 1</a></li>
+          <li><a href="#!">Link 2</a></li>
+          <li><a href="#!">Link 3</a></li>
+          <li><a href="#!">Link 4</a></li>
+        </ul>
       </div>
-      <div class="col-md-4">
-        <div class="card p-5 border-0 rounded-top hover-style-1">
-          <span class="number">03</span>
-          <h3 class="mt-3">JOIN OUR Community</h3>
-          <p class="mt-3 mb-4">Vestibulum sit amet blan augue, sit amet vehicula mi. Aliquam vitae varius.</p>
-          <a href="about.html" class="text-color text-uppercase font-size-13 letter-spacing font-weight-bold"><i class="ti-minus mr-2 "></i>more Details</a>
-        </div>
+      <!--/.Second column-->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!--Third column-->
+      <div class="col-md-2 ml-auto">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#!">Link 1</a></li>
+          <li><a href="#!">Link 2</a></li>
+          <li><a href="#!">Link 3</a></li>
+          <li><a href="#!">Link 4</a></li>
+        </ul>
       </div>
+      <!--/.Third column-->
+
+      <hr class="w-100 clearfix d-md-none">
+
+      <!--Fourth column-->
+      <div class="col-md-2 ml-auto">
+        <h5 class="text-uppercase">Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#!">Link 1</a></li>
+          <li><a href="#!">Link 2</a></li>
+          <li><a href="#!">Link 3</a></li>
+          <li><a href="#!">Link 4</a></li>
+        </ul>
+      </div>
+      <!--/.Fourth column-->
+
     </div>
   </div>
-</section>
 
+  <hr>
 
-<section class="section about">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
+    <!--Grid row-->
+    <div class="row mb-3">
 
-        <%= image_tag "slide.jpg", class: "img-fluid rounded shadow w-100" %>
+      <!--First column-->
+      <div class="col-md-12">
+
+        <ul class="list-unstyled d-flex justify-content-center mb-0 py-4 list-inline">
+          <li class="list-inline-item"><a class="p-2 m-2 fa-lg fb-ic"><i class="fab fa-facebook-f white-text fa-lg">
+          </i></a></li>
+          <li class="list-inline-item"><a class="p-2 m-2 fa-lg tw-ic"><i class="fab fa-twitter white-text fa-lg"> </i></a></li>
+          <li class="list-inline-item"><a class="p-2 m-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g white-text fa-lg">
+          </i></a></li>
+          <li class="list-inline-item"><a class="p-2 m-2 fa-lg li-ic"><i class="fab fa-linkedin-in white-text fa-lg">
+          </i></a></li>
+          <li class="list-inline-item"><a class="p-2 m-2 fa-lg ins-ic"><i class="fab fa-instagram white-text fa-lg">
+          </i></a></li>
+          <li class="list-inline-item"><a class="p-2 m-2 fa-lg pin-ic"><i class="fab fa-pinterest white-text fa-lg">
+          </i></a></li>
+        </ul>
+
       </div>
-      
-      <div class="col-lg-6">
-        <div class="pl-3 mt-5 mt-lg-0">
-          <h2 class="mt-1 mb-3">We’ve skill in <br>wide <span class="text-color">range of fitness</span> and Other body health facility. </h2>
+      <!--/First column-->
+    </div>
+    <!--/Grid row-->
+  </div>
+  <!--/.Footer Links-->
 
-          <p class="mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis Theme natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lorem ante, dapibus in.</p>
+  <!--Copyright-->
+  <div class="footer-copyright py-3 text-center">
+    <div class="container-fluid">
+      © 2020 Copyright: <a href="https://mdbootstrap.com/docs/jquery/"> KellaHospitality Solutions</a>
 
-          <a href="#" class="btn btn-main">Learn More<i class="fa fa-angle-right ml-2"></i></a>
-        </div>
-      </div>
     </div>
   </div>
-</section>
-<!-- Section About End -->
+  <!--/.Copyright-->
 
-<!-- section Call To action start -->
-<section class="section cta">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-12 col-sm-12">
-        <div class="text-center">
-          <span class="h6 letter-spacing text-white">Discover your potential</span>
-          <h2 class="text-lg mt-4 mb-5 text-white">
-          Amazing Courses to help you grow <span class="text-color"></span>
-          </h2>
-
-          <a href="pricing.html" class="btn btn-main text-white">Enroll now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- section Call To action start -->
-
-<!-- Section Services Start -->
-<section class="section services ">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <div class="section-title">
-          <div class="divider mb-3"></div>
-          <h2>Our Courses</h2>
-          <p>Amazing courser for development and for newbies interested in hospitality career.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row no-gutters">
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="text-center  px-4 py-5 hover-style-1">
-          <i class="icofont-gym-alt-2 text-lg text-color"></i>
-          <h4 class="mt-3 mb-4 text-uppercase">Front Office</h4>
-          <p>This course will discuss how travel developed in ancient and medieval times.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="text-center  px-4 py-5 hover-style-1">
-          <i class="icofont-cycling-alt text-lg text-color"></i>
-          <h4 class="mt-3 mb-4 text-uppercase">Housekeeping</h4>
-          <p>Take this free online course today to improve your communication abilities and ace</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="text-center  px-4 py-5 hover-style-1">
-          <i class="icofont-gym-alt-3 text-lg text-color"></i>
-          <h4 class="mt-3 mb-4 text-uppercase">Revenue Manangement</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, molestias.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="text-center  px-4 py-5 hover-style-1">
-          <i class="icofont-muscle text-lg text-color"></i>
-          <h4 class="mt-3 mb-4 text-uppercase">Sales & Marketing</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, molestias.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="text-center  px-4 py-5 hover-style-1">
-          <i class="icofont-dumbbell text-lg text-color"></i>
-          <h4 class="mt-3 mb-4 text-uppercase">Reservations</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, molestias.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="text-center  px-4 py-5 hover-style-1">
-          <i class="icofont-gym text-lg text-color"></i>
-          <h4 class="mt-3 mb-4 text-uppercase">Food & Beverage</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, molestias.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+</footer>
+<!--/.Footer-->
 
 
 

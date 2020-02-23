@@ -1,124 +1,98 @@
 
 
-<section class="dashboard section">
-  <!-- Container Start -->
+<div class="slide">
   <div class="container">
-    <!-- Row Start -->
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
-        <div class="sidebar">
-          <!-- User Widget -->
-          <div class="widget user-dashboard-profile">
-            <!-- User Image -->
-            <div class="profile-thumb">
-              <%= image_tag photo_url(current_user), class: "rounded-circle" %>
-            </div>
-                
-            <h5 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %></h5>
-            <p>Joined <strong><%= current_user.created_at.strftime('%d %b %Y') %></strong></p>
-            <p><%= current_user.about %></p>
-            <p><strong><% if current_user.status %> Online <% else %> Offline <% end %>
-                                            </strong></p>
-           
-             <a><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn peach-gradient" %></a>
+    <!--Grid row-->
+    <div class="row mt-5">
+      <!--Grid column-->
+      <div class="col-md-4 mb-5 text-md-left">
+        <!-- Card -->
+        <div class="card testimonial-card">
 
-          </div>   
-    
-          <!-- Dashboard Links -->
-          <div class="widget user-dashboard-menu">
-            <ul>
-              <li class="active"><a href="dashboard-my-ads.html"><i class="fa fa-user"></i> My Courses</a></li>
-              <li><a href="dashboard-favourite-ads.html"><i class="fa fa-bookmark-o"></i> Favourite Ads <span>5</span></a></li>
-              <li><a href="dashboard-archived-ads.html"><i class="fa fa-file-archive-o"></i>Archived Ads <span>12</span></a></li>
-              <li><a href="dashboard-pending-ads.html"><i class="fa fa-bolt"></i> Pending Approval<span>23</span></a></li>
-              <li><a href="#"><i class="fa fa-cog"></i> Logout</a></li>
-              <li><a href="" data-toggle="modal" data-target="#deleteaccount"><i class="fa fa-power-off"></i>Delete
-                  Account</a></li>
-            </ul>
+          <!-- Background color -->
+          <div class="card-up cyan lighten-1"></div>
+
+
+          <!-- Avatar -->
+          <div class="avatar mx-auto white">
+           
+      <%= image_tag photo_url(current_user), class: "rounded-circle" %>
+       
           </div>
 
 
-        </div>
-      </div>
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-        <!-- Recently Favorited -->
-        <div class="widget dashboard-container my-adslist">
-          <h3 class="widget-header">My Ads</h3>
-          <table class="table table-responsive product-dashboard-table">
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Product Title</th>
-                <th class="text-center">Category</th>
-                <th class="text-center">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
 
-                <td class="product-thumb">
-                  <img width="80px" height="auto" src="images/products/products-1.jpg" alt="image description"></td>
-                <td class="product-details">
-                  <h3 class="title">Macbook Pro 15inch</h3>
-                  <span class="add-id"><strong>Ad ID:</strong> ng3D5hAMHPajQrM</span>
-                  <span><strong>Posted on: </strong><time>Jun 27, 2017</time> </span>
-                  <span class="status active"><strong>Status</strong>Active</span>
-                  <span class="location"><strong>Location</strong>Dhaka,Bangladesh</span>
-                </td>
-                <td class="product-category"><span class="categories">Laptops</span></td>
-                <td class="action" data-title="Action">
-                  <div class="">
-                    <ul class="list-inline justify-content-center">
-                      <li class="list-inline-item">
-                        <a data-toggle="tooltip" data-placement="top" title="view" class="view" href="category.html">
-                          <i class="fa fa-eye"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a class="edit" data-toggle="tooltip" data-placement="top" title="Edit" href="">
-                          <i class="fa fa-pencil"></i>
-                        </a>
-                      </li>
-                      <li class="list-inline-item">
-                        <a class="delete" data-toggle="tooltip" data-placement="top" title="Delete" href="">
-                          <i class="fa fa-trash"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-
-              </tr>
-              <tr>
-            
-              </tr>
-              <tr>
-
-               
-              <tr>
-
-              </tr>
-            </tbody>
-          </table>
+          <!-- Content -->
+          <div class="card-body">
+            <!-- Name -->
+            <h4 class="card-title"><%= current_user.first_name %> <%=current_user.last_name %></h4>
+            <hr>
+            <p>Joined <strong><%= current_user.created_at.strftime('%d %b %Y') %></strong></p>
+            <p><i class="fas fa-quote-left"></i> <%= current_user.about %>
+            </p>
+            <p><strong><% if current_user.status %> Online <% else %> Offline <% end %>
+                                            </strong></p>
+          </div>
 
         </div>
+        <!-- Card -->
 
-          <div class="choose-file text-center my-4 py-4 rounded">
-                                <label for="file-upload">
-                                    <span class="d-block font-weight-bold text-dark">Drop files anywhere to upload</span>
-                                    <span class="d-block">or</span>
-                                    <span class="d-block btn bg-primary text-white my-3 select-files">Select files</span>
-                                    <span class="d-block">Maximum upload file size: 500 KB</span>
-                                    <input type="file" class="form-control-file d-none" id="file-upload" name="file">
-                                </label>
-                            </div>
+        <br />
+        <div class="card">
+
+          <!-- Background color -->
+          <div class="card-up cyan lighten-1"></div>
+
+          <!-- Content -->
+          <div class="card-body">
+           
+         
+ 
+          </div>
+          <br />
+
+
+        </div>
+        <div class="card-body">
+          <!-- Name -->
+
+          <hr>
+
         
 
+        </div>
 
-<form action="/file-upload"
-      class="dropzone"
-      id="my-awesome-dropzone"></form>
+      </div>
 
-</section>
+
+
+
+
+
+
+      <div class="col-md-8 ">
+        <!--Form-->
+        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
+          <!-- Material form register -->
+          <div class="card">
+
+            <h5 class="card-header  cyan-text text-center py-4">
+              <strong>My Courses</strong>
+            </h5>
+
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
+
+
+                  </div>
+
+                </div>
+                <!-- Material form register -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
