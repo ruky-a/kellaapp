@@ -1,0 +1,12 @@
+<br />
+<div class="booyah-box col-10 offset-1">
+  <h1>Add a new Section</h1>
+  <%= form_for @section, url: instructor_course_sections_path do |f| %>
+  <%= f.text_field :title, placeholder: 'Title', class: "form-control" %>
+
+  <br />
+  <%= f.submit "Create", class: 'btn btn-primary' %>
+  <br />
+  <% end %>
+  <br />
+</div>
