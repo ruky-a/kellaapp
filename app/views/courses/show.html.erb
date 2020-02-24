@@ -1,0 +1,32 @@
+<br />
+
+<div class="box col-md-10 offset-md-1">
+
+<h1><%= @course.title %></h1>
+<br />
+<div class="row">
+<div class="col-sm-4 col-12 text-center">
+
+  <span class="badge badge-default">
+
+  <h1><%= number_to_currency @course.cost %></h1>
+</span>
+
+
+
+
+<div class="col-sm-8 col-12">
+
+  <%= @course.description %>
+  </div>
+
+
+  <% if current_user && current_user == @course.user %>
+
+  <br /><br />
+
+  <%= link_to 'Administer', instructor_course_path(@course), class: "btn btn-deep-orange" %>
+  <% end %>
+</div>
+</div>
+</div>

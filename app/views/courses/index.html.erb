@@ -1,0 +1,26 @@
+<br />
+
+
+<div class="box col-md-10 offset-md-1">
+<h1> Become a hospitality professional </h1>
+
+<hr />
+
+<% @courses.each do |course| %>
+<h2 class="text-center"><%= link_to course.title, course_path(course) %></h2>
+<br />
+<div class="row">
+<div class="col-sm-8 col-12">
+<p class="text-center"><%= course.description %></p>
+</div>
+
+<div class="col-sm-4 col-12 text-center">
+  <%= link_to 'More Details', course_path(course), class: 'btn btn-deep-orange' %>
+</div>
+</div>
+<br class="clr" />
+<% end %>
+
+
+
+</div>
