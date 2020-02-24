@@ -10,11 +10,12 @@
 
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+       <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
   </head>
 
   <body>
 
-   
+
    <%= render 'shared/navbar' %>
 
    <% unless flash.empty? %>
@@ -29,9 +30,12 @@
 
 
 
-   <main>
+
+<main>
     <%= yield %>
   </main>
+
+
 
    
 
@@ -40,5 +44,7 @@
 
   
   
+  <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
   </body>
 </html>

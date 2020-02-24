@@ -1,3 +1,13 @@
+.box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding: 10px;
+}
+
 
 
 html,
@@ -5,15 +15,15 @@ body,
 header,
 .view {
 height: 100vh;
+
 }
 
 
 @media (max-width: 740px) {
 .view .mask h1{
-padding-top: 20%;
-}
-}
 
+}
+}
 
 
 .view .mask {
@@ -26,8 +36,10 @@ width: 100%;
 height: 100%;
 overflow: hidden;
 background-attachment: fixed;
-background-color: #fff;
-padding-top: 60px;
+background-color: #efefef;
+padding-top: 7%;
+padding-bottom: 30px;
+
 }
 
 .slide {
@@ -80,6 +92,7 @@ margin-bottom: 1.5rem !important;
 
 .top-nav-collapse {
 background-color: #9da4b1 !important;
+margin-bottom: 30%;
 }
 .navbar:not(.top-nav-collapse) {
 background: transparent !important;
@@ -87,27 +100,26 @@ background: #9da4b1 !important;
 }
 @media (max-width: 768px) {
 .navbar:not(.top-nav-collapse) {
-background: #9da4b1 !important;
+background:  #9da4b1 !important;
 }
 }
 
 @media (min-width: 800px) and (max-width: 850px) {
 .navbar:not(.top-nav-collapse) {
-background: #9da4b1!important;
+background: #efefef!important;
 }
 }
 
 footer.page-footer {
 background-color: #9da4b1;
+  font-family: "Helvetica Neue", Helvetica;
 }
 
 .card {
-margin-top: 40%;
+margin-top: 20%;
 }
 
-.sec .card {
-margin-top: 0px;
-}
+
 
 .navbar-brand h2{
 font-weight: bold;
@@ -119,7 +131,10 @@ font-family: "Roboto-bold";
 margin-top: 0px;
 }
 
+.navbar {
+  padding-top: 20px;
 
+}
 .text-warning {
 color: #ff6e40 !important;
 }
@@ -128,4 +143,16 @@ color: #ff6e40 !important;
 {
 text-transform: uppercase;
 font-weight: bold;
+
+
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item.active > .nav-link, .navbar.navbar-dark .navbar-nav .nav-item.active > .nav-link {
+color: #212529;
+}
+
+.navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #212529;
+    -webkit-transition: .35s;
+    transition: .35s;
 }

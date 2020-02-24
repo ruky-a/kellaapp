@@ -1,20 +1,20 @@
-<header> <div class="view grey lighten-3">
+ <div class="view grey lighten-3">
 
   <div class="mask">
     <!-- Content -->
-    <div class="container h-100">
+    <div class="container ">
       <!--Grid row-->
       <div class="row align-items-center h-100">
         <!--Grid column-->
         <div class="col-md-6">
           <h1 class="mb-4">Start your<span class="text-warning"> hospitality</span><br><span class="cyan-text">career</span> with amazing tutorials</h1>
           <p class="mb-4 pb-2 dark-grey-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, culpa qui officia deserunt laborum fuga similique mollit id quos aperiam proident non ut rerum debitis.</p>
-          <a class="btn btn-cyan btn-rounded ml-md-0">Find courses</a>
-          <%= link_to new_user_registration_path, :class => "btn btn-outline-orange btn-rounded" do %>
-          <i class="fas fa-user left"> Register</i>
-          <% end %>
-        </div>
+           <a class="btn btn-cyan btn-rounded ml-md-0">courses</a>
+             <a href="" class="btn btn-default btn-rounded my-4" data-toggle="modal" data-target="#modalLRForm"><i class="fas fa-user left">
+             Register to start learning</i></a>
 
+
+        </div>
 
         <!--Grid column-->
         <div class="col-md-6">
@@ -29,13 +29,16 @@
   </div>
   <!-- Mask & flexbox options-->
 </div>
-</header>
+
 
 
 <div class="container">
+      <hr class="w-header my-4">
+
+      <p class="text-center mx-auto mb-5">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit id laborum.</p>
 
   <!-- Section: Pricing v.3 -->
-  <section class="sec text-center my-5 wow fadeIn" data-wow-delay="0.3s">
+  <section class="section text-center my-5 wow fadeIn" data-wow-delay="0.3s">
 
 
     <div class="row">
@@ -56,23 +59,15 @@
                 <i class="fas fa-home light-blue-text"></i>
               </div>
             </div>
-
-            <!-- Price -->
-
-            <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa pariatur id nobis
+            <p class="grey-text">Lorem ipsum dolor sit amet, consecteturadipisicing elit. Culpa pariatur id nobis
             accusamus deleniti cumque hic laborum.</p>
 
 
           </div>
-          <!-- Content -->
-
+        
         </div>
-        <!-- Card -->
-
       </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
+    
       <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
 
         <!-- Card -->
@@ -124,22 +119,11 @@
             repellat eveniet quia vitae.</p>
 
 
-
-          </div>
-          <!-- Content -->
-
-        </div>
-        <!-- Card -->
-
-      </div>
-      <!-- Grid column -->
-
-    </div>
-    <!-- Grid row -->
-
-  </section>
-  <!-- Section: Pricing v.3 -->
-
+            </div>
+            </div>
+            </div>
+            </div>
+            </section>
 
 
 
@@ -147,10 +131,10 @@
 
 
     <!--Section: Content-->
-    <section class="text-center dark-grey-text">
+    <section class="section text-center">
 
-      <h6 class="font-weight-normal text-uppercase font-small grey-text mb-4">   <%= image_tag "course.png", class: "z-depth-0" %></h6>
-      <!-- Section heading -->
+  <h6 class="font-weight-normal text-uppercase font-small grey-text mb-4"> <%= image_tag "course.png", class: "z-depth-0" %></h6>
+  
       <h2 class="font-weight-bold">Our Courses</h2>
       <hr class="w-header my-4">
       <!-- Section description -->
@@ -161,19 +145,23 @@
           <div class="card-img-100 mx-auto mb-4">
             <img src="https://mdbootstrap.com/img/illustrations/drawkit-drawing-man-colour.svg" class="img-fluid" alt="smaple image">
           </div>
-          <h5 class="font-weight-normal mb-4">Front Office</h5>
+          <a href="http://127.0.0.1:3000/project/3">
+
+          <h5 class="font-weight-bold mb-4">Front Office</h5>
+        </a>
           <p class="text-muted px-2 mb-lg-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>  
-          <br />      
+          <br /> 
+   
           <a class="btn btn-purple btn-sm">Enroll</a>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card-img-100 mx-auto mb-4">
             <img src="https://mdbootstrap.com/img/illustrations/drawkit-phone-conversation-colour.svg" class="img-fluid" alt="smaple image">
           </div>
-          <h5 class="font-weight-normal mb-4">Sales & Marketing</h5>
+          <h5 class="font-weight-bold mb-4">Sales & Marketing</h5>
           <p class="text-muted px-2 mb-lg-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -185,7 +173,7 @@
           <div class="card-img-100 mx-auto mb-4">
             <img src="https://mdbootstrap.com/img/illustrations/app-user-colour.svg" class="img-fluid" alt="smaple image">
           </div>
-          <h5 class="font-weight-normal mb-4">Food & Beverage</h5>
+          <h5 class="font-weight-bold mb-4">Food & Beverage</h5>
           <p class="text-muted px-2 mb-md-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -199,62 +187,53 @@
           <div class="card-img-100 mx-auto mb-4">
             <img src="https://mdbootstrap.com/img/illustrations/drawkit-drawing-man-colour.svg" class="img-fluid" alt="smaple image">
           </div>
-          <h5 class="font-weight-normal mb-4">Revenue Management</h5>
+          <h5 class="font-weight-bold mb-4">Revenue Management</h5>
           <p class="text-muted px-2 mb-lg-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>  
           <br />      
-          <a class="btn btn-purple btn-sm">Enroll</a>
+          <a class="btn btn-danger btn-sm">Enroll</a>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card-img-100 mx-auto mb-4">
             <img src="https://mdbootstrap.com/img/illustrations/drawkit-phone-conversation-colour.svg" class="img-fluid" alt="smaple image">
           </div>
-          <h5 class="font-weight-normal mb-4">Reservations</h5>
+          <h5 class="font-weight-bold mb-4">Reservations</h5>
           <p class="text-muted px-2 mb-lg-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p>
           <br />
-          <a class="btn btn-pink btn-sm">Enroll</a>
+          <a class="btn btn-warning btn-sm">Enroll</a>
         </div>
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card-img-100 mx-auto mb-4">
             <img src="https://mdbootstrap.com/img/illustrations/app-user-colour.svg" class="img-fluid" alt="smaple image">
           </div>
-          <h5 class="font-weight-normal mb-4">Food & Beverage</h5>
+          <h5 class="font-weight-bold mb-4">Food & Beverage</h5>
           <p class="text-muted px-2 mb-md-0">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </p><br />
-          <a class="btn btn-primary btn-sm">Enroll</a>
+          <a class="btn btn-success btn-sm">Enroll</a>
         </div>
         <br />
       </div>
 
 
     </section>
-    <!--Section: Content-->
+
 
 
   </div>      
-
-
-  <!--Grid row-->
-
   <hr class="mb-5">
-
-
-  <!--Section: Content-->
-
-
 </div>
 
+<%= render 'devise/sessions/modal' %>
 
 
-<!--Footer-->
-<footer class="page-footer pt-4 mt-4   text-center text-md-left mt-5">
+<footer class="page-footer pt-4 mt-4 text-center text-md-left mt-5">
 
   <!--Footer Links-->
   <div class="container">

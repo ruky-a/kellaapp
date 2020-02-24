@@ -137,12 +137,12 @@
 
 
                     <div class="md-form">
-                      <label for="New_password">New Password</label>
-                      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+
+                      <%= f.password_field :password, autocomplete: "off", placeholder: "Change Password", class: "form-control" %>
                     </div>
 
                     <div class="md-form">
-                      <label for="Confirm_password">Confirm New Password</label>
+                      
                       <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password", class: "form-control" %>
                     </div>
 
@@ -192,20 +192,18 @@
                     <!-- Terms of service -->
                     <p>By clicking
                       <em>Sign up</em> you agree to our
-                      <a href="" target="_blank">terms of service</a>
+                      <a href="" target="_blank">terms of service</a></p>
 
                     </form>
-                    <!-- Form -->
-
                   </div>
-
+                  </div>
+                  </form>
                 </div>
-                <!-- Material form register -->
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-
-<%= render 'shared/footer' %>
+                    <!-- Form -->

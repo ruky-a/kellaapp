@@ -1,0 +1,120 @@
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!--Modal: Login & Register tabs-->
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Modal cascading tabs-->
+      <div class="modal-c-tabs">
+
+        <!-- Nav tabs -->
+        <ul class="nav md-pills nav-justified pills-deep-orange mt-4 mx-4" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>
+              Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>
+              Register</a>
+          </li>
+        </ul>
+
+        <!-- Tab panels -->
+        <div class="tab-content pt-3">
+          <!--Panel 1-->
+          <div class="tab-pane fade in show active" id="panel1" role="tabpanel">
+           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <!--Body-->
+            <div class="modal-body mb-1">
+              <div class="md-form form-sm">
+                <i class="fas fa-envelope prefix"></i>
+                     <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control form-control-sm" %>
+              
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fas fa-lock prefix"></i>
+                 <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control form-control-sm" %>
+              
+              </div>
+        
+              <div class="text-center mt-2">
+                <button class="btn btn-deep-orange">Log in <i class="fas fa-sign-in-alt ml-1"></i></button>
+              </div>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer display-footer">
+              <div class="options text-center text-md-right mt-1">
+                <p> <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+              <% end %></p>
+
+                <p> <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to "Forgot password?", new_password_path(resource_name) %></p>
+                <% end %>
+         
+              </div>
+              <button type="button" class="btn btn-outline-deep-orange waves-effects ml-auto" data-dismiss="modal">Close</button>
+            </div>
+              <% end %>
+          </div>
+
+        
+          <div class="tab-pane fade" id="panel2" role="tabpanel">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <div class="modal-body">
+              <div class="md-form form-sm">
+                <i class="fas fa-envelope prefix"></i>
+                  <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control form-control-sm" %>
+            
+              </div>
+
+                <div class="md-form form-sm">
+                <i class="fas fa-user prefix"></i>
+                 <%= f.text_field :first_name, autofocus: true, placeholder: "First name", class: "form-control form-control-sm" %>
+               
+              </div>
+
+                <div class="md-form form-sm">
+                <i class="fas fa-user prefix"></i>
+                <%= f.text_field :last_name, autofocus: true, placeholder: "Last name", class: "form-control form-control-sm" %>
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fas fa-lock prefix"></i>
+                <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control form-control-sm" %>
+                
+              </div>
+
+              <div class="md-form form-sm">
+                <i class="fas fa-lock prefix"></i>
+                <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat password", class: "form-control form-control-sm" %>
+              </div>
+
+              <div class="text-center form-sm mt-2">
+                <button class="btn btn-deep-orange">Sign up <i class="fas fa-user-plus ml-1"></i></button>
+              </div>
+           
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+              <div class="options text-right">
+                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+              </div>
+              <button type="button" class="btn btn-outline-deep-orange waves-effect ml-auto" data-dismiss="modal">Close</button>
+            </div>
+                   <% end %>
+          </div>
+          <!--/.Panel 2-->
+        </div>
+
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+  <!--/Modal: Login & Register tabs-->
+</div>
+<!--Modal: Login / Register Form-->
+
+<!-- Grid row

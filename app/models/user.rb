@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one_attached :photo
 
+
  after_create :send_admin_mail
 def send_admin_mail
   UserMailer.send_welcome_email(self).deliver_later
