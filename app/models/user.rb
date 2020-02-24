@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
   has_one_attached :photo
+  has_many :courses
 
 
  after_create :send_admin_mail

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
  root 'homepage#index'
+ namespace :instructor do 
+  resources :courses, only: [:new, :create, :show]
+end
 
 
 end

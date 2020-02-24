@@ -1,0 +1,32 @@
+
+<div class="container">
+   <div class="card col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+  <!-- Card body -->
+  <div class="card-body">
+
+    <!-- Default form subscription -->
+     <%= form_for @course, url: instructor_courses_path do |f| %>
+      <p class="h4 text-center py-4">Add a new Course</p>
+
+     <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
+   
+
+      <br>
+ <%= f.text_area :description, placeholder: 'Details about course', class: 'form-control' %>
+   <br>
+
+    <%= f.number_field :cost, placeholder: 'Price', class: 'form-control' %>
+
+
+
+      <div class="text-center py-4 mt-3">
+        <button class="btn btn-outline-purple" type="submit">Create</button>
+      </div>
+  <% end %>
+    <!-- Default form subscription -->
+
+  </div>
+  <!-- Card body -->
+
+</div>
+</div>
