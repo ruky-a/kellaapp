@@ -6,12 +6,21 @@ class User < ApplicationRecord
 
   has_one_attached :photo
   has_many :courses
+   has_many :enrollments
+
+    has_many :subscriptions
+   has_many :courses, through: :subscriptions
+  has_many :enrolled_courses, through: :enrollments, source: :course
 
 
  after_create :send_admin_mail
 def send_admin_mail
   UserMailer.send_welcome_email(self).deliver_later
 end
+
+  def enrolled_in?(course)
+   return enrolled_courses.include?(course)
+    end
 
 
   def self.from_omniauth(auth)

@@ -9,11 +9,14 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'users#dashboard'
   post 'users/edit', to: 'users#update'
   get 'users/:id', to: 'users#show'
+  post '/free' => 'charge#free'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
  root 'homepage#index'
- resources :courses, only: [:index, :show]
+ resources :courses, only: [:index, :show] do
+  resources :enrollments, only: :create
+ end
  resources :lessons, only: [:show]
  namespace :instructor do 
   resources :sections, only: [] do

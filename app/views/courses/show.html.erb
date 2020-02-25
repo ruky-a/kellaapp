@@ -17,19 +17,43 @@
           <h3 class="font-weight-bold"><%= @course.title %></h3>
 
           <p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
-           <span class="badge badge-default">
 
-  <h4><%= number_to_currency @course.cost %></h4>
-</span>
+         
+
+   
+
+               <% if current_user && current_user.enrolled_in?(@course) %>
+        <h3 class="badge badge-info">You Are Enrolled!</h3>
+      <% else %>
+             <span class="badge badge-default">
+          <h4><%= @course.cost == 0? "Free" : "$#{ @course.cost }" %></h4>
+        </span>
+        <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-deep-orange ', method: :post %>
+      <% end %>
+   
+         
+        
+
+     
 
 
 
-          <a class="btn btn-deep-orange btn-md ml-0 btn-rounded" href="#" role="button">Enroll now<i class="fa fa-magic ml-2"></i></a>
 
-        </div>
-        <!--Grid column-->
 
-        <!--Grid column-->
+
+     
+
+
+      </div>
+
+
+
+
+
+          
+
+         
+    
         <div class="col-lg-6 mb-4">
 
           <!--Image-->

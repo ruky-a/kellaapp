@@ -2,6 +2,9 @@ class Course < ApplicationRecord
   belongs_to :user
   has_many :sections
   has_one_attached :image
+  has_many :enrollments
+  has_many :subscriptions
+  has_many :users, through: :subscriptions
 
   validates :title, presence: true
    validates :description, presence: true
