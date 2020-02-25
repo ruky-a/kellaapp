@@ -12,7 +12,7 @@ require("jquery")
 import 'bootstrap'
 
 import "../stylesheets/application"
-window.Dropzone = require("dropzone")
+
 
 global.toastr = require("toastr")
 
