@@ -1,0 +1,15 @@
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+/Users/ruky/.rvm/rubies/ruby-2.6.2/bin/ruby -I /Users/ruky/.rvm/rubies/ruby-2.6.2/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200224-33980-1xg0q90.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/ruky/Desktop/kellaapp/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.4.6/ext/bootsnap
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20200224-33980-vcpnfm/bootsnap

@@ -15,6 +15,11 @@
  <%= f.text_area :content, placeholder: 'Details about course', class: 'form-control' %>
    <br>
 
+   <%= f.file_field :video %>
+   <br /><br />
+
+    <%= f.file_field :thumbnail %>
+
   
       <div class="text-center py-4 mt-3">
         <button class="btn btn-deep-orange" type="submit">Add the lesson</button>

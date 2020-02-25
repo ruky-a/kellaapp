@@ -1,11 +1,15 @@
 <br />
 
-<div class="box col-md-10 offset-md-1">
+<div class="box col-md-8 offset-md-2">
 
 <h1><%= @course.title %></h1>
-<br />
+
+  <%= image_tag @course.image, class: 'img-fluid' %>
+
+<br /><br />
 <div class="row">
 <div class="col-sm-4 col-12 text-center">
+
 
   <span class="badge badge-default">
 
@@ -31,25 +35,35 @@
 </div>
 <br />
 
-<%= link_to 'Preview As Student....', course_path(@course), class: 'btn btn-warning float-right' %>
+
 
 <br class="clr" />
-<div class="text-center">
-  <%= link_to 'Add a new section....', new_instructor_course_section_path(@course), class: 'btn btn-cyan' %>
-</div>
 
 
-<ul>
 
+
+<div class="col-12">
   <% @course.sections.each do |section| %>
-  <li>
+
 
     <%= section.title %>
-    <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
-    <br class="clr" />
 
-  </li>
-  <% end %>
+     <% section.lessons.each do |lesson| %>
+     <div class="lesson">
+     <%= link_to lesson_path(lesson) do %>
+          
+              <b><%= lesson.title %></b>
+              -
+              <%= lesson.content %>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
 
-</ul>
+    
+ <% end %>
+
+
+
+
 </div>
