@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+
 gem 'rails_admin', '~> 2.0'
 gem 'cancancan'
 gem 'font_awesome5_rails'
@@ -37,7 +37,7 @@ gem 'omniauth-facebook', '~> 5.0'
 
 gem "aws-sdk-s3", require: false
 
-gem 'mini_magick', '~> 4.8'
+
 
 # app/javascript/packs/stylesheets/application.scss
 

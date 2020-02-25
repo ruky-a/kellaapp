@@ -8,7 +8,7 @@ class Instructor::CoursesController < ApplicationController
 
   def create
     @course = current_user.courses.create(course_params)
-    if @course.valid?
+     if @course.valid?
       redirect_to instructor_course_path(@course)
     else
       render :new, status: :unprocessable_entity
@@ -17,6 +17,20 @@ class Instructor::CoursesController < ApplicationController
 
   def show
   end
+
+  def upload_image
+     @course.image.attach(params[:file])
+    render json: { success: true }
+end
+
+def delete_image
+
+ @image = ActiveStorage::Attachment.find(params[:image_id])
+    @image.purge
+    redirect_to root_path
+end
+
+
 
   
   private

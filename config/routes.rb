@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   end
   resources :courses, only: [:new, :create, :show] do
     resources :sections, only: [:new, :create] 
+    member do 
+      delete :delete_image
+      post :upload_image
+    end
     
 
   end
