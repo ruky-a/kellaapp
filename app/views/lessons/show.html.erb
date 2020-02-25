@@ -1,20 +1,17 @@
 <br />
 
 <div class="container">
-<div class="box col-10 offset-1">
+<div class="box">
 <h1><%= current_lesson.title %></h1>
-<p>
-  <%= current_lesson.content %>
-</p>
 
 
 
-
-
-
+<div class="container">
   <video id='my-video' class='video-js vjs-big-play-centered vjs-fluid' controls preload='auto' width='auto' height='auto'
-
+ <% if current_lesson.thumbnail.attached? %> 
   poster="<%= url_for(current_lesson.thumbnail) %>" data-setup='{}'>
+
+  <% end %>
 
   <source src="<%= url_for(current_lesson.video) %>" type='video/mp4'>
     <noscript>
@@ -25,8 +22,13 @@
     </noscript>
   </video>
 </div>
+
 </div>
+</div>
+<br />
+<div class="container">
+<p>
+  <%= current_lesson.content %>
+</p>
 
-
-
-
+</div>

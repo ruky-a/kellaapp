@@ -1,69 +1,143 @@
-<br />
 
-<div class="box col-md-8 offset-md-2">
-
-<h1><%= @course.title %></h1>
-
-  <%= image_tag @course.image, class: 'img-fluid' %>
-
-<br /><br />
-<div class="row">
-<div class="col-sm-4 col-12 text-center">
+  <div class="container my-5 py-5 z-depth-1 text-center text-lg-left">
 
 
-  <span class="badge badge-default">
+    <!--Section: Content-->
+    <section class="px-md-5 mx-md-5 dark-grey-text">
 
-  <h1><%= number_to_currency @course.cost %></h1>
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-6 mb-4">
+ 
+
+
+
+          <h3 class="font-weight-bold"><%= @course.title %></h3>
+
+          <p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
+           <span class="badge badge-default">
+
+  <h4><%= number_to_currency @course.cost %></h4>
 </span>
 
 
 
+          <a class="btn btn-deep-orange btn-md ml-0 btn-rounded" href="#" role="button">Enroll now<i class="fa fa-magic ml-2"></i></a>
 
-<div class="col-sm-8 col-12">
+        </div>
+        <!--Grid column-->
 
-  <%= @course.description %>
+        <!--Grid column-->
+        <div class="col-lg-6 mb-4">
+
+          <!--Image-->
+          <div class="overlay z-depth-1-half">
+              <%= image_tag @course.image, class: 'img-fluid' %>
+            
+            <a href="#">
+              <div class="rgba-white-light"></div>
+            </a>
+          </div>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+
+    </section>
+    <!--Section: Content-->
+
+<div class="container my-5">
+
+
+  <!--Section: Content-->
+  <section class="dark-grey-text text-center">
+
+
+ <% @course.sections.each do |section| %>
+   <div class="section">
+        <h3>
+          <%= section.title %>
+        </h3>
+    <div class="row">
+
+      <% section.lessons.each do |lesson| %>
+      <div class="col-md-4 mb-4">
+
+        <!-- Card -->
+          <%= link_to lesson_path(lesson), class: "card hoverable" do %>
+
+          
+          <!-- Card content -->
+           
+          <div class="card-body my-4">
+
+            <p><i class="fas fa-play fa-2x"></i></p>
+            <h5 class="black-text mb-0"><%= lesson.title %></h5>
+            
+          </div>
+
+      <% end %>
+
+      </div>
+      <% end %>
+      </div>
+    </div>
+      <% end %>
+    </div>
+       
+    </section>
   </div>
 
 
-  <% if current_user && current_user == @course.user %>
+
+
+
+
+
+
+
+
+
+
+
+<div class="text-center">
+    <% if current_user && current_user == @course.user %>
 
   <br /><br />
 
   <%= link_to 'Administer', instructor_course_path(@course), class: "btn btn-deep-orange" %>
   <% end %>
 </div>
-</div>
-<br />
 
+<div class="container">
 
-
-<br class="clr" />
-
-
-
-
-<div class="col-12">
-  <% @course.sections.each do |section| %>
-
-
-    <%= section.title %>
-
-     <% section.lessons.each do |lesson| %>
-     <div class="lesson">
-     <%= link_to lesson_path(lesson) do %>
-          
-              <b><%= lesson.title %></b>
-              -
-              <%= lesson.content %>
-            <% end %>
-          </div>
+  <div class="col-12">
+    <% @course.sections.each do |section| %>
+      <div class="section">
+        <h3>
+          <%= section.title %>
+        </h3>
+        <div class="row">
+          <% section.lessons.each do |lesson| %>
+            <div class="col-12 col-sm-6">
+              <div class="lesson text-center">
+                  <p><i class="fas fa-play fa-2x"></i></p>
+                <%= link_to lesson_path(lesson) do %>
+                  <b><%= lesson.title %></b>
+                  <br />
+                  <%= lesson.content %>
+                <% end %>
+              </div>
+            </div>
           <% end %>
         </div>
-
-    
- <% end %>
-
-
-
-
+        <br class="clr" />
+      </div>
+    <% end %>
+  </div>
 </div>
