@@ -12,7 +12,8 @@
  *
  *= require font-awesome
 *= require bootstrap
-  *= require mdb
+*= require mdb
+*= require_toastr
  *= require_tree .
  *= require_self
  */

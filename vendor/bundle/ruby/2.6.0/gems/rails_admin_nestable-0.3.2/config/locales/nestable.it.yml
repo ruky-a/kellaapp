@@ -1,0 +1,14 @@
+it:
+  admin:
+    actions:
+      nestable:
+        title: "Ordinamento %{model_label}"
+        menu: "Ordinamento"
+        breadcrumb: "Ordinamento"
+        link: "Ordinamento"
+        bulk_link: "Ordinamento %{model_label_plural}"
+        done: "Salvato"
+        success: "Salvato"
+        error: "Errore"
+        update: "Aggiorna"
+        live_update: "Aggiornamento automatico"

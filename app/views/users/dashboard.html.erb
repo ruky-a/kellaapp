@@ -1,98 +1,192 @@
+<!-- Jumbotron -->
+<div class="jumbotron text-center">
+
+  <!-- Title -->
+  <h2 class="card-title h2">Welcome    <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h2>
+  <!-- Subtitle -->
+  <p class=" my-4 font-weight-bold">Member since: <%= current_user.created_at.strftime('%d %b %Y') %></p>
+
+  <!-- Grid row -->
+  <div class="row d-flex justify-content-center">
+
+    <!-- Grid column -->
+    <div class="col-xl-7 pb-2">
+
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui, quas eum architecto, amet quasi accusantium, fugit consequatur ducimus obcaecati numquam molestias hic itaque accusantium doloremque laudantium, totam rem aperiam.</p>
+
+    
 
 
-<div class="slide">
-  <div class="container">
-    <!--Grid row-->
-    <div class="row mt-5">
-      <!--Grid column-->
-      <div class="col-md-4 mb-5 text-md-left">
-        <!-- Card -->
-        <div class="card testimonial-card">
-
-          <!-- Background color -->
-          <div class="card-up cyan lighten-1"></div>
+  
+            <span class="float-right">
+    <%= link_to  "Edit Profile", edit_user_registration_path, class: "btn btn-deep-orange"  %>
+        </span>
+      </div>
 
 
-          <!-- Avatar -->
-          <div class="avatar mx-auto white">
-           
-      <%= image_tag photo_url(current_user), class: "rounded-circle" %>
-       
-          </div>
-
-
-
-          <!-- Content -->
-          <div class="card-body">
-            <!-- Name -->
-            <h4 class="card-title"><%= current_user.first_name %> <%=current_user.last_name %></h4>
-            <hr>
-            <p>Joined <strong><%= current_user.created_at.strftime('%d %b %Y') %></strong></p>
-            <p><i class="fas fa-quote-left"></i> <%= current_user.about %>
-            </p>
-            <p><strong><% if current_user.status %> Online <% else %> Offline <% end %>
-                                            </strong></p>
-          </div>
-
-        </div>
-        <!-- Card -->
-
-        <br />
-        <div class="card">
-
-          <!-- Background color -->
-          <div class="card-up cyan lighten-1"></div>
-
-          <!-- Content -->
-          <div class="card-body">
-           
          
- 
-          </div>
-          <br />
-
-
-        </div>
-        <div class="card-body">
-          <!-- Name -->
-
-          <hr>
-
-        
-
-        </div>
-
       </div>
 
 
 
 
+  </div>
 
 
+</div>
+<!-- Jumbotron -->
 
-      <div class="col-md-8 ">
-        <!--Form-->
-        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
-          <!-- Material form register -->
-          <div class="card">
+  <!--Main Layout-->
+  <main>
 
-            <h5 class="card-header  cyan-text text-center py-4">
-              <strong>My Courses</strong>
-            </h5>
+    <div class="container">
 
-            <!--Card content-->
-            <div class="card-body px-lg-5 pt-0">
+      <!--Section: Team v.1-->
+      <section class="text-center team-section">
 
+        <!--Grid row-->
+        <div class="row text-center">
+
+          <!--Grid column-->
+          <div class="col-md-12 mb-4" style="margin-top: -100px;">
+
+            <div class="avatar mx-auto">
+                    <%= image_tag photo_url(current_user), class: "img-fluid rounded-circle z-depth-1" %>
+              
+            </div>
+     
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Team v.1-->
+
+      <h3><strong>My Courses</strong></h3>
+      <section>
+
+
+                <!--Projects section v.4-->
+                <section class="text-center mb-5">
+
+                  <!--Grid row-->
+                  <div class="row mb-4">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(41).jpg');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-blue-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong>Project title</strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+                            <a class="btn btn-outline-white btn-sm">
+                              <i class="fas fa-clone left"></i> View project</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(14).jpg');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-teal-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong>Project title</strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+                            <a class="btn btn-outline-white btn-sm">
+                              <i class="fas fa-clone left"></i> View project</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Grid column-->
 
                   </div>
+                  <!--Grid row-->
 
-                </div>
-                <!-- Material form register -->
+                  <!--Grid row-->
+                  <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(11).jpg');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-green-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong>Project title</strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+                            <a class="btn btn-outline-white btn-sm">
+                              <i class="fas fa-clone left"></i> View project</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Work/6-col/img%20(42).jpg');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-stylish-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong>Project title</strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+                            <a class="btn btn-outline-white btn-sm">
+                              <i class="fas fa-clone left"></i> View project</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--Grid column-->
+
+                  </div>
+                  <!--Grid row-->
+
+                </section>
+                <!--Projects section v.4-->
+
               </div>
+              <!--Grid column-->
+
             </div>
+            <!--Grid row-->
+
           </div>
-        </div>
-      </div>
+          <!--/.Panel 1-->
 
-
-
+             <!--Grid row-->
+    

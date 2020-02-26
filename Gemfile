@@ -32,6 +32,12 @@ gem 'devise'
 gem "figaro"
 gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook', '~> 5.0'
+gem 'stripe'
+gem 'rails_admin_nestable', '~> 0.3.2'
+gem 'load_and_authorize_resource'
+
+gem 'rails_admin_rollincode', '~> 1.0'
+
 
 
 

@@ -1,0 +1,527 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+
+body {
+  color: $black;
+  background: $background;
+  font-family: 'Raleway', sans-serif;
+}
+
+body.rails_admin .form-horizontal textarea {
+  width: 100%;
+}
+
+body.rails_admin .sidebar-nav .dropdown-header {
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-weight: normal;
+  text-transform: inherit;
+  cursor: pointer;
+
+  &::after {
+    content: "\f138";
+    position: absolute;
+    right: 15px;
+    color: #fff;
+    font-family: 'FontAwesome', sans-serif;
+  }
+}
+
+body.rails_admin .table .headerSortDown,
+body.rails_admin .table .headerSortUp {
+  background-color: inherit;
+  text-shadow: none;
+}
+
+body.rails_admin .table .header:after {
+  visibility: visible !important;
+}
+
+body.rails_admin .sidebar-nav {
+  background: $primary;
+}
+
+.nav .nav-pills .nav-stacked {
+  margin-top: 4px;
+}
+
+body.rails_admin .sidebar-nav > .nav-stacked > li > a {
+  padding: 10px 15px;
+}
+
+.links {
+  ul li {
+    a {
+      color: #fff;
+      background: $primary;
+    }
+
+    &:nth-child(1) {
+      a {
+        background: #29B6F6;
+        color: #fff;
+      }
+    }
+
+    &:nth-child(2) {
+      a {
+        background: #66BB6A;
+        color: #fff;
+      }
+    }
+
+    &:nth-child(3) {
+      a {
+        background: #ef5350;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.alert-info {
+  background-color: #3498db;
+  border: 0;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #2ecc71;
+  border: 0;
+  color: #fff;
+}
+
+.alert-danger {
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+}
+
+.btn {
+  border-radius: 2px;
+  color: #fff !important;
+}
+
+.btn-default {
+  color: $black !important;
+}
+
+.btn-info {
+  background: $primary;
+  border-color: darken($primary, 10%);
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:target {
+    background: $secondary;
+    border-color: darken($secondary, 10%);
+    color: $primary;
+  }
+}
+
+.btn-info.disabled {
+  background: lighten($primary, 10%);
+  border-color: lighten($primary, 10%);
+}
+
+.btn-primary {
+  background: $secondary;
+  border-color: $secondary;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:target {
+    background: darken($secondary, 20%);
+    border-color: darken($secondary, 20%);
+  }
+}
+
+.btn-primary.disabled {
+  background: lighten($secondary, 20%);
+  border-color: lighten($secondary, 20%);
+}
+
+.alert {
+  border-radius: 2px;
+}
+
+.sidebar-nav {
+  i {
+    margin-right: 10px;
+  }
+}
+
+.nav-tabs > li > a {
+  border-radius: 2px 2px 0 0;
+}
+
+.nav-tabs {
+  li {
+    border-radius: 2px;
+  }
+
+  a,
+  a.dropdown-toggle {
+    color: $black;
+  }
+}
+
+.navbar-default {
+  background: $secondary;
+  border: 0;
+}
+
+.dropdown-header.open {
+  &::after {
+    content: "\f13a" !important;
+    position: absolute;
+    right: 15px;
+    color: #fff;
+    font-family: 'FontAwesome', sans-serif;
+  }
+}
+
+.dropdown-header:hover {
+  background: $secondary;
+}
+
+.dropdown-header.active {
+  background: $secondary;
+}
+
+.navbar-default .navbar-nav > li > a,
+a {
+  &:hover {
+    color: $secondary;
+  }
+  color: #fff;
+}
+
+.navbar-header {
+  margin-left: -15px;
+}
+
+a.navbar-brand {
+  line-height: 25px;
+  padding-top: 12px;
+  white-space: nowrap;
+  color: #fff !important;
+  cursor: pointer !important;
+  background: darken($secondary, 10%) !important;
+
+  &:hover {
+    background: darken($secondary, 10%) !important;
+    color: #fff !important;
+  }
+}
+
+.page-header {
+  margin-top: 0;
+
+  h1 {
+    background: $secondary;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+}
+
+.content {
+  margin: 19px 0 15px;
+  background: #fff;
+  padding: 20px;
+
+  a {
+    color: $secondary;
+  }
+}
+
+.form-control {
+  border-radius: 2px;
+}
+
+.nav-pills > li > a:focus,
+.nav-pills > li > a:hover {
+  color: $secondary !important;
+}
+
+.root_links {
+  .dashboard_root_link,
+  .edit_user_root_link,
+
+  li {
+    .label-danger {
+      padding: 5px 10px;
+    }
+    color: #fff;
+
+    &:hover {
+      background: darken($secondary, 10%) !important;
+    }
+
+    a {
+      &:hover {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+.sub-menu a {
+  color: #fff;
+  padding: 10px 15px 10px 30px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-weight: normal;
+  text-transform: inherit;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.sub-menu-container {
+  background: darken($primary, 5%);
+
+  li a {
+    color: #EEE;
+
+    &:hover {
+      color: $secondary !important;
+    }
+  }
+
+  li.active a {
+    background: darken($primary, 10%);
+    color: $secondary !important;
+
+    &:hover {
+      color: $secondary !important;
+    }
+  }
+}
+
+.label-warning {
+  padding: 5px;
+}
+
+.well {
+  border-radius: 2px;
+}
+
+.h1,
+h1 {
+  font-size: 20px;
+}
+
+.fieldset a {
+  color: $secondary !important;
+}
+
+.table-striped td:not(.image_field) a {
+  text-decoration: none !important;
+  padding: 8px 10px;
+  border-radius: 2px;
+  color: $secondary;
+
+  &:hover {
+    background: $secondary;
+    color: $primary;
+  }
+}
+
+.ui-state-default a:link,
+.ui-state-default a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+#fields_to_export .control-label {
+  text-align: left;
+  margin-bottom: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.table-striped td,
+.table-striped th,
+body.rails_admin .table td {
+  vertical-align: middle;
+  line-height: 40px;
+  border-right: 1px solid #ddd;
+  padding: 6px 11px;
+}
+
+.row-highlight td {
+  background: rgba($secondary, .1) !important;
+}
+
+.table-condensed > tbody > tr > td,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > td,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > thead > tr > th {
+  padding: 15px 5px;
+}
+
+.table-striped {
+  border: 1px solid #ddd;
+  border-top: 4px solid $secondary;
+}
+
+th.shrink {
+  padding: 14px 11px !important;
+}
+
+td.carrierwave_type .img-thumbnail {
+  max-width: 40px;
+}
+
+.img-thumbnail {
+  max-width: 125px;
+  background: #EEE;
+}
+
+.breadcrumb .false a {
+  color: #C4C4C4 !important;
+}
+
+.breadcrumb {
+  border-radius: 2px;
+}
+
+.nav-stacked > li + li {
+  margin-top: 0;
+}
+
+.progress {
+  border-radius: 2px;
+}
+
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#sortable li {
+  color: #fff;
+  cursor: pointer;
+}
+
+#sortable li,
+.ui-state-highlight {
+  display: inline-block;
+}
+
+#rails_admin_nestable {
+  label {
+    padding: 0;
+  }
+}
+
+.dd-handle .dd3-handle,
+.dd3-content {
+  height: inherit;
+}
+
+.dd3-content .pull-right a {
+  background: none!important;
+  color: #000!important;
+}
+
+.dd3-content {
+  margin: 10px 0 !important;
+}
+
+.sortable-container {
+  width: 100%;
+  background: lighten($secondary, 5%);
+  margin-bottom: 15px;
+}
+
+.li_sortable_label,
+.ref_number {
+  float: left;
+  padding: 10px 5px;
+}
+
+.li_sortable_label {
+  background: lighten($secondary, 5%);
+  color: $primary;
+  padding: 10px 15px;
+}
+
+.ref_number {
+  color: $secondary;
+  background: $primary;
+  padding: 10px 15px;
+  border-left: 2px solid darken($secondary, 20%);
+}
+
+.ui-state-highlight {
+  padding: 10px 15px;
+  margin: 0 15px 15px;
+  width: 100%;
+  min-height: 40px;
+}
+
+.well {
+  box-shadow: none;
+}
+
+.fieldset {
+  dl {
+    dt span.label-info {
+      text-align: left;
+      display: block;
+      padding: 10px;
+      font-size: 13px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    dd.well {
+      padding: 10px;
+      border-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+.bootstrap-datetimepicker-widget table td.day {
+  color: #333;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  padding: 10px 0;
+}
+
+.bootstrap-datetimepicker-widget table td span {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: #333;
+}
+
+#edit_page {
+  .has_one_association_type {
+    background: #F3F1F1;
+    margin: 25px 15px !important;
+  }
+}
+
+.fr-basic .fr-element {
+  min-height: 150px;
+}
+
+.modal-header-title {
+  margin-top: 0;
+}

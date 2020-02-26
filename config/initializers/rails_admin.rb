@@ -28,6 +28,7 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
     export
+    history_index
     bulk_delete
     show
     edit
@@ -37,5 +38,7 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  nestable
   end
+
 end

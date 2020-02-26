@@ -1,121 +1,162 @@
 
-  <div class="container my-5 py-5 z-depth-1 text-center text-lg-left">
+<div class="container my-5 py-5 z-depth-1 text-center text-lg-left">
 
 
-    <!--Section: Content-->
-    <section class="px-md-5 mx-md-5 dark-grey-text">
+<!--Section: Content-->
+<section class="px-md-5 mx-md-5 dark-grey-text">
 
-      <!--Grid row-->
-      <div class="row">
+<!--Grid row-->
+<div class="row">
 
-        <!--Grid column-->
-        <div class="col-lg-6 mb-4">
- 
-
+<!--Grid column-->
+<div class="col-lg-6 mb-4">
 
 
-          <h3 class="font-weight-bold"><%= @course.title %></h3>
 
-          <p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
 
-         
+<h3 class="font-weight-bold"><%= @course.title %></h3>
 
-   
-
-               <% if current_user && current_user.enrolled_in?(@course) %>
-        <h3 class="badge badge-info">You Are Enrolled!</h3>
-      <% else %>
-             <span class="badge badge-default">
-          <h4><%= @course.cost == 0? "Free" : "$#{ @course.cost }" %></h4>
-        </span>
-        <%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-deep-orange ', method: :post %>
-      <% end %>
-   
-         
-        
-
-     
+<p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
 
 
 
 
 
 
-     
 
 
-      </div>
+<% if current_user %>
+<% if current_user.enrolled_in?(@course) %>
+<h3 class="badge badge-info">You Are Enrolled!</h3>
+
+<% else %>
+
+<% if @course.free? %>
+<%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+<% else %>
+
+
+
+
+<%= form_tag course_enrollments_path(@course) do %>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+data-email="<%= current_user.email %>"
+data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+data-amount="<%= (@course.cost * 100).to_i %>"
+data-locale="auto"></script>
+
+<script>
+
+document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+</script>
+
+<span class="badge badge-default">
+<h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
+</span>
+
+<button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button>
 
 
 
 
 
-          
-
-         
-    
-        <div class="col-lg-6 mb-4">
-
-          <!--Image-->
-          <div class="overlay z-depth-1-half">
-              <%= image_tag @course.image, class: 'img-fluid' %>
-            
-            <a href="#">
-              <div class="rgba-white-light"></div>
-            </a>
-          </div>
-
-        </div>
-        <!--Grid column-->
-
-      </div>
-      <!--Grid row-->
+<% end %>
 
 
-    </section>
-    <!--Section: Content-->
+
+<% end %>
+
+<% end %>
+<% else %>
+<%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="col-lg-6 mb-4">
+
+<!--Image-->
+<div class="overlay z-depth-1-half">
+<%= image_tag @course.image, class: 'img-fluid' %>
+
+<a href="#">
+<div class="rgba-white-light"></div>
+</a>
+</div>
+
+</div>
+<!--Grid column-->
+
+</div>
+<!--Grid row-->
+
+
+</section>
+<!--Section: Content-->
 
 <div class="container my-5">
 
 
-  <!--Section: Content-->
-  <section class="dark-grey-text text-center">
+<!--Section: Content-->
+<section class="dark-grey-text text-center">
 
 
- <% @course.sections.each do |section| %>
-   <div class="section">
-        <h3>
-          <%= section.title %>
-        </h3>
-    <div class="row">
+<% @course.sections.each do |section| %>
+<div class="section">
+<h3>
+<%= section.title %>
+</h3>
+<div class="row">
 
-      <% section.lessons.each do |lesson| %>
-      <div class="col-md-4 mb-4">
+<% section.lessons.each do |lesson| %>
+<div class="col-md-4 mb-4">
 
-        <!-- Card -->
-          <%= link_to lesson_path(lesson), class: "card hoverable" do %>
+<!-- Card -->
+<%= link_to lesson_path(lesson), class: "card hoverable" do %>
 
-          
-          <!-- Card content -->
-           
-          <div class="card-body my-4">
 
-            <p><i class="fas fa-play fa-2x"></i></p>
-            <h5 class="black-text mb-0"><%= lesson.title %></h5>
-            
-          </div>
+<!-- Card content -->
 
-      <% end %>
+<div class="card-body my-4">
 
-      </div>
-      <% end %>
-      </div>
-    </div>
-      <% end %>
-    </div>
-       
-    </section>
-  </div>
+<p><i class="fas fa-play fa-2x"></i></p>
+<h5 class="black-text mb-0"><%= lesson.title %></h5>
+
+</div>
+
+<% end %>
+
+</div>
+<% end %>
+</div>
+</div>
+<% end %>
+</div>
+
+</section>
+</div>
 
 
 
@@ -130,38 +171,38 @@
 
 
 <div class="text-center">
-    <% if current_user && current_user == @course.user %>
+<% if current_user && current_user == @course.user %>
 
-  <br /><br />
+<br /><br />
 
-  <%= link_to 'Administer', instructor_course_path(@course), class: "btn btn-deep-orange" %>
-  <% end %>
+<%= link_to 'Administer', instructor_course_path(@course), class: "btn btn-deep-orange" %>
+<% end %>
 </div>
 
 <div class="container">
 
-  <div class="col-12">
-    <% @course.sections.each do |section| %>
-      <div class="section">
-        <h3>
-          <%= section.title %>
-        </h3>
-        <div class="row">
-          <% section.lessons.each do |lesson| %>
-            <div class="col-12 col-sm-6">
-              <div class="lesson text-center">
-                  <p><i class="fas fa-play fa-2x"></i></p>
-                <%= link_to lesson_path(lesson) do %>
-                  <b><%= lesson.title %></b>
-                  <br />
-                  <%= lesson.content %>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <br class="clr" />
-      </div>
-    <% end %>
-  </div>
+<div class="col-12">
+<% @course.sections.each do |section| %>
+<div class="section">
+<h3>
+<%= section.title %>
+</h3>
+<div class="row">
+<% section.lessons.each do |lesson| %>
+<div class="col-12 col-sm-6">
+<div class="lesson text-center">
+<p><i class="fas fa-play fa-2x"></i></p>
+<%= link_to lesson_path(lesson) do %>
+<b><%= lesson.title %></b>
+<br />
+<%= lesson.content %>
+<% end %>
+</div>
+</div>
+<% end %>
+</div>
+<br class="clr" />
+</div>
+<% end %>
+</div>
 </div>

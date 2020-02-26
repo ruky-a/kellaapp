@@ -2,6 +2,7 @@ class Instructor::LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :require_authorized_for_current_section
 
+
   def new
     @lesson = Lesson.new
   end
@@ -11,7 +12,16 @@ class Instructor::LessonsController < ApplicationController
     redirect_to instructor_course_path(current_section.course)
   end
 
+
+
   private
+
+
+  def current_lesson
+    @current_lesson ||= Lesson.find(params[:id])
+  end
+
+
 
 def require_authorized_for_current_section
     if current_section.course.user != current_user

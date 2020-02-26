@@ -1,47 +1,196 @@
-<br />
-<div class="booyah-box col-10 offset-1">
-  <h1 class="text-center"><%=  current_course.title %></h1>
+<br /><br />
 
-  <%= image_tag current_course.image, class: 'img-fluid' %>
-  <br />
-  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
+<div class="container my-5 py-5 z-depth-1 text-center text-lg-left">
+<section class="px-md-5 mx-md-5 dark-grey-text">
+<div class="row">
+<div class="col-lg-6 mb-4">
+
+
+
+
+<h3 class="font-weight-bold"><%= current_course.title %></h3>
+
+<p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= current_course.description %></p>
+
+
+
+
+
+
+
+
+<% if current_user %>
+<% if current_user.enrolled_in?(current_course) %>
+<h3 class="badge badge-info">You Are Enrolled!</h3>
+
+<% else %>
+
+<% if @course.free? %>
+<%= link_to 'Enroll', course_enrollments_path(current_course), class: 'btn btn-primary', method: :post %>
+<% else %>
+
+
+
+
+<%= form_tag course_enrollments_path(current_course) do %>
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+data-email="<%= current_user.email %>"
+data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+data-amount="<%= (@course.cost * 100).to_i %>"
+data-locale="auto"></script>
+
+<script>
+
+document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+</script>
+
+<span class="badge badge-default">
+<h3><%=current_course.cost == 0? "Free" : "#{ number_to_currency current_course.cost }" %></h3>
+</span>
+
+<button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button>
+
+
+
+
+
+<% end %>
+<% end %>
+
+<% end %>
+<% else %>
+<%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
+<% end %>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="col-lg-6 mb-4">
+
+<!--Image-->
+<div class="overlay z-depth-1-half">
+<%= image_tag current_course.image, class: 'img-fluid' %>
+
+<a href="#">
+<div class="rgba-white-light"></div>
+</a>
+</div>
+
+</div>
+<!--Grid column-->
+
+</div>
+<!--Grid row-->
+
+
+</section>
+<div class="container my-5">
+<section class="dark-grey-text text-center">
+
+
+<% current_course.sections.each do |section| %>
+<div class="section">
+<h3>
+<%= section.title %>
+</h3>
+<div class="row">
+
+<% section.lessons.each do |lesson| %>
+<div class="col-md-4 mb-4">
+
+
+<%= link_to lesson_path(lesson), class: "card hoverable" do %>
+
+
+
+
+<div class="card-body my-4">
+
+<p><i class="fas fa-play fa-2x"></i></p>
+<h5 class="black-text mb-0"><%= lesson.title %></h5>
+
+</div>
+
+<% end %>
+
+</div>
+<% end %>
+</div>
+</div>
+<% end %>
+</div>
+
+</section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+ 
   <br class="clr" />
 
-  <div class="text-center">
+    <div class="text-center">
     <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
+
+    <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning' %>
   </div>
 
-  <ul>
-    <%  current_course.sections.each do |section| %>
-      <li>
-        <%= section.title %>
-        <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
-        <ul>
-          <% section.lessons.each do |lesson| %>
-            <li>
-              <%= link_to lesson_path(lesson) do %>
-          
-              <b><%= lesson.title %></b>
-              -
-              <%= lesson.content %>
-            <% end %>
-            </li>
-          <% end %>
-        </ul>
-        <br class="clr" />
-      </li>
-    <% end %>
-  </ul>
+</div>
 
-</div> 
+<div class="container">
+
+<div class="col-12">
+<% current_course.sections.each do |section| %>
+<div class="section">
+<h3>
+<%= section.title %>
+</h3>
+<div class="row">
+<% section.lessons.each do |lesson| %>
+<div class="col-12 col-sm-6">
+<div class="lesson text-center">
+
+ <li data-item-id=<%= lesson.id %>>
+<%= link_to lesson_path(lesson) do %>
+<b><%= lesson.title %></b>
+<br />
+<%= lesson.content %>
+<% end %>
+</div>
+</div>
+<% end %>
+</div>
+<br class="clr" />
+</div>
+<% end %>
+</div>
+</div>
  
  
  
  
  
+
  
  
  
  
  
- 
+
+

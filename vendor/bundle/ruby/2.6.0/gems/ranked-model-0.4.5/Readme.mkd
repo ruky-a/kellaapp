@@ -1,0 +1,222 @@
+**ranked-model** is a modern row sorting library built for Rails 3, 4 and 5.  It uses ARel aggressively and is better optimized than most other libraries.
+
+[![Build Status](https://travis-ci.org/mixonic/ranked-model.png)](https://travis-ci.org/mixonic/ranked-model)
+
+Installation
+------------
+
+ranked-model passes specs with Rails 4.2, 5.0, 5.1, 5.2, 6.0 for MySQL, Postgres, and SQLite on Ruby 2.4 through 2.6, and jruby-9.1.17.0 where Rails supports the platform. This is with the exception of Postgres before Rails 4.0 on all platforms, which is unsupported by `ranked-model`. Note that the `pg` gem has pulled support for rbx (Rubinius) from version 1 onward.
+
+TL;DR, if you are using Rails 4 and up you are 100% good to go. Before Rails 4, be wary of Postgres.
+
+To install ranked-model, just add it to your `Gemfile`:
+
+``` ruby
+gem 'ranked-model'
+
+# Or pin ranked-model to git
+# gem 'ranked-model',
+#   :git => 'git@github.com:mixonic/ranked-model.git'
+```
+
+Then use `bundle install` to update your `Gemfile.lock`.
+
+Simple Use
+----------
+
+Use of ranked-model is straight ahead.  Get some ducks:
+
+``` ruby
+class Duck < ActiveRecord::Base
+end
+```
+
+Put your ducks in a row:
+
+``` ruby
+class Duck < ActiveRecord::Base
+
+  include RankedModel
+  ranks :row_order
+
+end
+```
+
+This simple example assumes an integer column called `row_order`.  To order Ducks by this order:
+
+``` ruby
+Duck.rank(:row_order).all
+```
+
+The ranking integers stored in the `row_order` column will be big and spaced apart.  When you
+implement a sorting UI, just update the resource by appending the column name with `_position` and indicating the desired position:
+
+``` ruby
+@duck.update :row_order_position => 0  # or 1, 2, 37. :first, :last, :up and :down are also valid
+```
+
+**IMPORTANT: Note that you MUST append _position to the column name when setting a new position on an instance. This is a fake column that can take relative as well as absolute index-based values for position.**
+
+Position numbers begin at zero.  A position number greater than the number of records acts the
+same as :last. :up and :down move the record up/down the ladder by one step.
+
+So using a normal json controller where `@duck.attributes = params[:duck]; @duck.save`, JS can
+look pretty elegant:
+
+``` javascript
+$.ajax({
+  type: 'PUT',
+  url: '/ducks',
+  dataType: 'json',
+  data: { duck: { row_order_position: 0 } },  // or whatever your new position is
+});
+```
+
+If you need to find the rank of an item with respect to other ranked items, you can use the `{column_name}_rank` method on the model instance. `{column_name}` is your resource ranking column.
+
+Following on from our examples above, the `row_order_rank` method will return the position of the duck object in the list with respect to the order defined by the row_order column.
+
+``` ruby
+Duck.rank(:row_order).first.row_order_rank # => 0
+Duck.rank(:row_order).third.row_order_rank # => 2
+```
+
+Complex Use
+-----------
+
+The `ranks` method takes several arguments:
+
+``` ruby
+class Duck < ActiveRecord::Base
+
+  include RankedModel
+
+  ranks :row_order,                  # Name this ranker, used with rank()
+    :column => :sort_order           # Override the default column, which defaults to the name
+
+  belongs_to :pond
+  ranks :swimming_order,
+    :with_same => :pond_id           # Ducks belong_to Ponds, make the ranker scoped to one pond
+
+  ranks :row_order,
+    :with_same => [:pond_id, :breed] # Lets rank them by breed
+
+  scope :walking, where(:walking => true )
+  ranks :walking_order,
+    :scope => :walking               # Narrow this ranker to a scope
+
+end
+```
+
+When you make a query, add the rank:
+
+``` ruby
+Duck.rank(:row_order)
+
+Pond.first.ducks.rank(:swimming_order)
+
+Duck.walking.rank(:walking)
+```
+
+Single Table Inheritance (STI)
+------------------------------
+
+ranked-model scopes your records' positions based on the class name of the object. If you have
+a STI `type` column set in your model, ranked-model will reference that class for positioning.
+
+Consider this example:
+
+``` ruby
+class Vehicle < ActiveRecord::Base
+  ranks :row_order
+end
+
+class Car < Vehicle
+end
+
+class Truck < Vehicle
+end
+
+car = Car.create!
+truck = Truck.create!
+
+car.row_order
+=> 0
+truck.row_order
+=> 0
+```
+
+In this example, the `row_order` for both `car` and `truck` will be set to `0` because they have
+different class names (`Car` and `Truck`, respectively).
+
+If you would like for both `car` and `truck` to be ranked together based on the base `Vehicle`
+class instead, use the `class_name` option:
+
+``` ruby
+class Vehicle < ActiveRecord::Base
+  ranks :row_order, class_name: 'Vehicle'
+end
+
+class Car < Vehicle
+end
+
+class Truck < Vehicle
+end
+
+car = Car.create!
+truck = Truck.create!
+
+car.row_order
+=> 0
+truck.row_order
+=> 4194304
+```
+
+Internals
+---------
+
+This library is written using ARel from the ground-up.  This leaves the code much cleaner
+than many implementations.  ranked-model is also optimized to write to the database as little
+as possible: ranks are stored as a number between -2147483648 and 2147483647 (the INT range in MySQL).
+When an item is given a new position, it assigns itself a rank number between two neighbors.
+This allows several movements of items before no digits are available between two neighbors. When
+this occurs, ranked-model will try to shift other records out of the way. If items can't be easily
+shifted anymore, it will rebalance the distribution of rank numbers across all members
+of the ranked group.
+
+Contributing
+------------
+
+Fork, clone, write a test, write some code, commit, push, send a pull request.  Github FTW!
+
+The specs can be run with sqlite, postgres, and mysql:
+
+```
+bundle
+appraisal install
+DB=postgresql bundle exec appraisal rake
+```
+
+If no DB is specified (`sqlite`, `mysql`, or `postgresql`), the tests run against sqlite.
+
+RankedModel is mostly the handiwork of Matthew Beale:
+
+* [madhatted.com](http://madhatted.com) is where I blog. Also [@mixonic](http://twitter.com/mixonic).
+
+A hearty thanks to these contributors:
+
+* [Harvest](http://getharvest.com) where this Gem started. They are great, great folks.
+* [yabawock](https://github.com/yabawock)
+* [AndrewRadev](https://github.com/AndrewRadev)
+* [adheerajkumar](https://github.com/adheerajkumar)
+* [mikeycgto](https://github.com/mikeycgto)
+* [robotex82](https://github.com/robotex82)
+* [rociiu](https://github.com/rociiu)
+* [codepodu](https://github.com/codepodu)
+* [kakra](https://github.com/kakra)
+* [metalon](https://github.com/metalon)
+* [jamesalmond](https://github.com/jamesalmond)
+* [jguyon](https://github.com/jguyon)
+* [pehrlich](https://github.com/pehrlich)
+* [petergoldstein](https://github.com/petergoldstein)
+* [brendon](https://github.com/brendon)
