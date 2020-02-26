@@ -313,6 +313,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
@@ -344,6 +346,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (>= 2.15)
+  coffee-rails
   devise
   figaro
   font-awesome-rails
@@ -367,6 +370,7 @@ DEPENDENCIES
   stripe
   turbolinks (~> 5)
   tzinfo-data
+  uglifier
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
