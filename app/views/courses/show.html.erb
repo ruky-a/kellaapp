@@ -1,11 +1,28 @@
+<% content_for :head do %>
+<title><%= @course.title %> | KellaHospitality %></title>
 
+
+    <!-- Twitter card property -->
+<meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@KellaHospitality">
+    <meta name="twitter:title" content="<%= @course.title %>">
+    <meta name="twitter:description" content="<%= @course.description %>">
+    <meta name="twitter:image:src" content="<%= image_tag @course.image %>">
+
+  <meta property="og:type" content="website">
+    <meta property="og:site_name" content="KellaHospitality">
+    <meta property="og:title" content="<%= @course.title %>">
+    <meta property="og:description" content="<%= @course.description %>">
+    <meta property="og:image" content="<%= @course.image %>">
+
+
+
+<% end %>
+<div class="row">
 <div class="container my-5 py-5 z-depth-1 text-center text-lg-left">
 
 
-<!--Section: Content-->
 <section class="px-md-5 mx-md-5 dark-grey-text">
-
-<!--Grid row-->
 <div class="row">
 
 <!--Grid column-->
@@ -205,5 +222,6 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 <br class="clr" />
 </div>
 <% end %>
+</div>
 </div>
 </div>

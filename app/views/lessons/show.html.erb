@@ -1,16 +1,30 @@
 <br />
 
 <div class="container">
-  <div class="row">
-<div class="box col-md-10">
+<%= current_lesson.title %>
+<div class="row">
+  <div class="col-6">
+  <% if current_lesson.prev_lesson.present? %>
+       <%= link_to lesson_path(current_lesson.prev_lesson), class: 'btn btn-default btn-sm' do %>
+      Prev Lesson &nbsp;
+      <span class="fa fa-backward"></span>
+      <% end %>
+     <% end %>
+   </div>
 
+
+  <div class="col-6">
   <% if current_lesson.next_lesson.present? %>
-       <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default float-right' do %>
+       <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default btn-sm float-right' do %>
       Next Lesson &nbsp;
       <span class="fa fa-forward"></span>
       <% end %>
      <% end %>
-<h1><%= current_lesson.title %></h1>
+   </div>
+ </div>
+
+
+
  
 
 

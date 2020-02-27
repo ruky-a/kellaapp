@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kellaapp</title>
+    <title>KellHospitality</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +11,9 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
        <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
+           <%= yield :head %>
+
+           <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='4c210edf1ee3c165c3a625aa4c5afb9528217dbd483422daf9c99c2d1b558b16';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
   </head>
 
   <body>
@@ -32,7 +35,9 @@
 
 
 <main>
+
     <%= yield %>
+
   </main>
 
 
