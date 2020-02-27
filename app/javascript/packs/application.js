@@ -19,7 +19,7 @@ require('jquery-ui');
 
 import 'bootstrap'
 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../stylesheets/application"
 
 
