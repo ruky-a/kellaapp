@@ -1,97 +1,70 @@
-<br /><br />
-
-<div class="container my-5 py-5 z-depth-1 text-center text-lg-left">
-<section class="px-md-5 mx-md-5 dark-grey-text">
-<div class="row">
-<div class="col-lg-6 mb-4">
 
 
-
-
-<h3 class="font-weight-bold"><%= current_course.title %></h3>
-
-<p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= current_course.description %></p>
-
-
-
-
-
-
-
-
-<% if current_user %>
-<% if current_user.enrolled_in?(current_course) %>
-<h3 class="badge badge-info">You Are Enrolled!</h3>
-
-<% else %>
-
-<% if @course.free? %>
-<%= link_to 'Enroll', course_enrollments_path(current_course), class: 'btn btn-primary', method: :post %>
-<% else %>
-
-
-
-
-<%= form_tag course_enrollments_path(current_course) do %>
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-data-email="<%= current_user.email %>"
-data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
-data-amount="<%= (@course.cost * 100).to_i %>"
-data-locale="auto"></script>
-
-<script>
-
-document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-</script>
-
-<span class="badge badge-default">
-<h3><%=current_course.cost == 0? "Free" : "#{ number_to_currency current_course.cost }" %></h3>
-</span>
-
-<button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button>
-
-
-
-
-
-<% end %>
-<% end %>
-
-<% end %>
-<% else %>
-<%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
-<% end %>
-</div>
-
-
-
-
-
-
-
-
-
-<div class="col-lg-6 mb-4">
-
-<!--Image-->
-<div class="overlay z-depth-1-half">
+<br />
+<div class="booyah-box col-10 offset-1">
+  <h1 class="text-center"><%= current_course.title %></h1>
 <%= image_tag current_course.image, class: 'img-fluid' %>
+  <br />
+  
+  <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning float-right' %>
+  <br class="clr" />
 
-<a href="#">
-<div class="rgba-white-light"></div>
-</a>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+        <h5 class="modal-title" id="newSectionModalLabel">Add a new section</h5>
+      </div>
+      <%= form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+      <div class="modal-body">
+        <%= f.text_field :title %>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <%= f.submit "Add a section", class: 'btn btn-primary' %>
+       </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+        <h4 class="modal-title" id="newLessonModalLabel">Add a new lesson</h4>
+      </div>
+       <%= form_for @lesson, url: "#",html: {id: 'newLessonForm'} do |f| %>
+       <div class="modal-body">
+        <%= f.text_field :title %>
+       <%= f.text_field :content %>
+       <%= f.file_field :video %>
+       </div>
+         <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       <%= f.submit "Add the lesson" , class: 'btn btn-primary' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-<!--Grid column-->
-
-</div>
-<!--Grid row-->
 
 
-</section>
+
 <div class="container my-5">
+
+
+<!--Section: Content-->
 <section class="dark-grey-text text-center">
 
 
@@ -101,16 +74,9 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 <%= section.title %>
 </h3>
 <div class="row">
-
 <% section.lessons.each do |lesson| %>
 <div class="col-md-4 mb-4">
-
-
 <%= link_to lesson_path(lesson), class: "card hoverable" do %>
-
-
-
-
 <div class="card-body my-4">
 
 <p><i class="fas fa-play fa-2x"></i></p>
@@ -140,33 +106,30 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 
 
 
-  
 
- 
-  <br class="clr" />
 
-    <div class="text-center">
-    <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
+<div class="text-center">
+<% if current_user && current_user == current_course.user %>
 
-    <%= link_to 'Preview As Student...', course_path(current_course), class: 'btn btn-warning' %>
-  </div>
+<br /><br />
 
+<%= link_to 'Administer', instructor_course_path(current_course), class: "btn btn-deep-orange" %>
+<% end %>
 </div>
 
 <div class="container">
 
 <div class="col-12">
-<% current_course.sections.each do |section| %>
+     <% current_course.sections.each do |section| %>
 <div class="section">
 <h3>
 <%= section.title %>
 </h3>
 <div class="row">
-<% section.lessons.each do |lesson| %>
+     <% section.lessons.each do |lesson| %>
 <div class="col-12 col-sm-6">
 <div class="lesson text-center">
-
- <li data-item-id=<%= lesson.id %>>
+<p><i class="fas fa-play fa-2x"></i></p>
 <%= link_to lesson_path(lesson) do %>
 <b><%= lesson.title %></b>
 <br />
@@ -181,16 +144,4 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 <% end %>
 </div>
 </div>
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
-
 

@@ -3,8 +3,15 @@
 <div class="container">
   <div class="row">
 <div class="box col-md-10">
-<h1><%= current_lesson.title %></h1>
 
+  <% if current_lesson.next_lesson.present? %>
+       <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-default float-right' do %>
+      Next Lesson &nbsp;
+      <span class="fa fa-forward"></span>
+      <% end %>
+     <% end %>
+<h1><%= current_lesson.title %></h1>
+ 
 
 
 <div class="container">
@@ -27,12 +34,11 @@
 
 
 </div>
-<div class="box col-md-2">
-  <ul>
+
 
 <div class="container">
-<p>
-  <%= current_lesson.content %>
-</p>
-
+  <div class="col-md-10 offset-md-1">
+ <p class="text-center text-bold"><%= current_lesson.content %></p>
 </div>
+</div>
+

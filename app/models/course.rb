@@ -1,4 +1,7 @@
 class Course < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   belongs_to :user
   has_many :sections
   has_one_attached :image

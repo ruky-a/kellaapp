@@ -18,19 +18,14 @@ Rails.application.routes.draw do
   resources :enrollments, only: :create
  end
  resources :lessons, only: [:show]
- namespace :instructor do 
-  
-  resources :sections, only: [] do
-    resources :lessons, only: [:new, :create]
+ namespace :instructor do
+   resources :lessons, only: [:update]
+    resources :sections, only: [:update] do
+    resources :lessons, only: [:create]
   end
   resources :courses, only: [:new, :create, :show] do
-    resources :sections, only: [:new, :create] 
-    member do 
-      delete :delete_image
-      post :upload_image
-    end
-    
-
+    resources :sections, only: [:create]
   end
- end
 end
+end
+    

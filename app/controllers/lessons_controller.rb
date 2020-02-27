@@ -4,7 +4,8 @@ class LessonsController < ApplicationController
  
 
   def show
-
+    @section = Lesson.find(params[:id])
+    
   end
 
   private

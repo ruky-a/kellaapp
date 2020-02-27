@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_25_170506) do
+ActiveRecord::Schema.define(version: 2020_02_27_011129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_02_25_170506) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_courses_on_slug", unique: true
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -55,13 +57,28 @@ ActiveRecord::Schema.define(version: 2020_02_25_170506) do
     t.index ["user_id", "course_id"], name: "index_enrollments_on_user_id_and_course_id"
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
   create_table "lessons", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.integer "section_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "row_order"
+    t.string "slug"
+    t.index ["row_order"], name: "index_lessons_on_row_order"
     t.index ["section_id"], name: "index_lessons_on_section_id"
+    t.index ["slug"], name: "index_lessons_on_slug", unique: true
   end
 
   create_table "sections", force: :cascade do |t|
@@ -69,7 +86,9 @@ ActiveRecord::Schema.define(version: 2020_02_25_170506) do
     t.integer "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "row_order"
     t.index ["course_id"], name: "index_sections_on_course_id"
+    t.index ["row_order"], name: "index_sections_on_row_order"
   end
 
   create_table "subscriptions", force: :cascade do |t|

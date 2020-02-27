@@ -50,9 +50,9 @@ height: 400px;
 }
 
 .mask {
-  padding-top: 50px;
+  padding-top: 100px;
     padding-bottom: 50px;
-background-color: #fff;
+ background-color: #013953 !important;
 
 }
 
@@ -105,7 +105,7 @@ margin-bottom: 1.5rem !important;
 }
 
 .top-nav-collapse {
-background-color: #9da4b1 !important;
+background-color: #fff !important;
 margin-bottom: 30%;
 }
 .navbar:not(.top-nav-collapse) {
@@ -129,15 +129,12 @@ background-color: #9da4b1;
   font-family: "Helvetica Neue", Helvetica;
 }
 
-.card {
-margin-top: 20%;
-}
 
 
 
 .navbar-brand h2{
-font-weight: bold;
-font-family: "Roboto-bold";
+
+ font-family: "Roboto", sans-serif;
 }
 
 
@@ -199,9 +196,27 @@ color: #212529;
 }
 
 .jumbotron  {
-  background: #007bff;
+ background-color: #013953 !important;
   color: white;
 }
 h2.text-purple {
-  color: purple;
+  color: #73259a;
 }
+
+
+.btn-default {
+    color: #fff;
+    background-color: #013953 !important;
+}
+
+
+ 
+.dropdown-menu a:hover{
+
+ background: linear-gradient(left, #0272a7, #013953);
+ background: -moz-linear-gradient(left, #0272a7, #013953)!important;
+ background: -webkit-gradient(linear, 100% 100%, 0% 0%, from(#0272a7), to(#013953))!important;
+color: #f8f9fa !important;
+ -webkit-transition: all 0.2s ease-in-out;
+ -moz-transition: all 0.2s ease-in-out;
+ transition: all 0.2s ease-in-out; }

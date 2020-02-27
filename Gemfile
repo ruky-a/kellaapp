@@ -37,6 +37,11 @@ gem 'rails_admin_nestable', '~> 0.3.2'
 gem 'load_and_authorize_resource'
 
 gem 'rails_admin_rollincode', '~> 1.0'
+gem 'ranked-model'
+
+gem 'redcarpet', '~> 3.5'
+gem 'coderay', '~> 1.1', '>= 1.1.2'
+gem 'friendly_id', '~> 5.3'
 
 
 

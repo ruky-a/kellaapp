@@ -27,6 +27,13 @@ global.toastr = require("toastr")
 
 
 
+  $(document).ready(() => {
+  // SideNav Initialization
+  $(".button-collapse").sideNav();
+
+  new WOW().init();
+});
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -1,7 +1,7 @@
-class AddSuperadmin < ActiveRecord::Migration[6.0]
+class AddAdmin < ActiveRecord::Migration[6.0]
   def change
      User.create! do |u|
-        u.email     = 'admin@kellaapp.com'
+        u.email     = 'admin@rukevwe'
         u.password  = 'coding'
         u.superadmin_role = true
     end

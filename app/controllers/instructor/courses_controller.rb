@@ -16,20 +16,9 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
+      @section = Section.new
+    @lesson = Lesson.new
   end
-
-  def upload_image
-     @course.image.attach(params[:file])
-    render json: { success: true }
-end
-
-def delete_image
-
- @image = ActiveStorage::Attachment.find(params[:image_id])
-    @image.purge
-    redirect_to root_path
-end
-
 
 
   
