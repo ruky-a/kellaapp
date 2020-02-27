@@ -1,5 +1,5 @@
 <% content_for :head do %>
-<title><%= @course.title %> | KellaHospitality %></title>
+<title><%= @course.title %> | KellaHospitality </title>
 
 
     <!-- Twitter card property -->
@@ -7,7 +7,7 @@
    <meta name="twitter:site" content="@KellaHospitality">
     <meta name="twitter:title" content="<%= @course.title %>">
     <meta name="twitter:description" content="<%= @course.description %>">
-    <meta name="twitter:image:src" content="<%= image_tag @course.image %>">
+<!--     <meta name="twitter:image:src" content="<%= image_tag @course.image %>"> -->
 
   <meta property="og:type" content="website">
     <meta property="og:site_name" content="KellaHospitality">
@@ -182,6 +182,26 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 
 
 
+<div class="container">
+<div id="discussions" class="col-12">
+    <div id="disqus_thread"></div>
+<script>
+var disqus_identifier = '<%= @course.id %>';
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://kellahospitality.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+</div>
+</div>
+</div>
+
+
 
 
 
@@ -224,4 +244,8 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 <% end %>
 </div>
 </div>
+
+
+
+
 </div>
