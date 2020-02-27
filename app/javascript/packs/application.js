@@ -15,11 +15,11 @@ global.$ = $
 global.jQuery = $
 
 
-require('jquery-ui');
+// require('jquery-ui');
 
 import 'bootstrap'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "../stylesheets/application"
 
 
