@@ -1,13 +1,15 @@
 <br />
 
 <div class="container">
-<%= current_lesson.title %>
+<h2><strong><%= current_lesson.title %></strong></h2>
 <div class="row">
   <div class="col-6">
-  <% if current_lesson.prev_lesson.present? %>
+  <% if current_lesson.prev_lesson.present? %>   
+
        <%= link_to lesson_path(current_lesson.prev_lesson), class: 'btn btn-default btn-sm' do %>
+       <span class="fa fa-backward"></span>
       Prev Lesson &nbsp;
-      <span class="fa fa-backward"></span>
+  
       <% end %>
      <% end %>
    </div>
@@ -55,4 +57,8 @@
  <p class="text-center text-bold"><%= current_lesson.content %></p>
 </div>
 </div>
+
+
+
+
 

@@ -33,6 +33,7 @@
 
 <h3 class="font-weight-bold"><%= @course.title %></h3>
 
+<span><%= @course.average_rating %> <%= @reviews.count %> <%= @reviews.count > 1? "Reviews" : "Review" %></span>
 <p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
 
 
@@ -45,7 +46,7 @@
 <% else %>
 
 <% if @course.free? %>
-<%= link_to 'Enroll', course_enrollments_path(@course), class: 'btn btn-primary', method: :post %>
+<%= link_to 'Start', course_enrollments_path(@course), class: 'btn btn-danger', method: :post %>
 <% else %>
 
 
@@ -140,7 +141,7 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 
 
 <% @course.sections.each do |section| %>
-<div class="section">
+
 <h3>
 <%= section.title %>
 </h3>
@@ -169,37 +170,68 @@ document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
 </div>
 </div>
 <% end %>
-</div>
+
 
 </section>
 </div>
 
+<div class="container">
+
+<div class="col-12">
+<% @course.sections.each do |section| %>
+
+<h3>
+<%= section.title %>
+</h3>
+<div class="row">
+<% section.lessons.each do |lesson| %>
+<div class="col-md-4 mb-4">
+<div class="lesson text-center">
+<p><i class="fas fa-play fa-2x"></i></p>
+<%= link_to lesson_path(lesson) do %>
+<b><%= lesson.title %></b>
+<br />
+<%= lesson.content %>
+<% end %>
+</div>
+</div>
+<% end %>
+</div>
+<br class="clr" />
+</div>
+<% end %>
+
+</div>
 
 
 
 
-
+</div>
 
 
 
 <div class="container">
-<div id="discussions" class="col-12">
-    <div id="disqus_thread"></div>
-<script>
-var disqus_identifier = '<%= @course.id %>';
+<div class="col-md-10">
 
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://kellahospitality.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                            
+
+    <h4>Reviews</h4>
+
+<% if current_user %>
+<% if current_user.enrolled_in?(@course) %>
+
+
+
+    <% end %>
+    <% end %>
+
+
+
 </div>
 </div>
-</div>
+
+
+
+
 
 
 
@@ -217,35 +249,22 @@ s.setAttribute('data-timestamp', +new Date());
 <% end %>
 </div>
 
+
+
+
+
 <div class="container">
-
-<div class="col-12">
-<% @course.sections.each do |section| %>
-<div class="section">
-<h3>
-<%= section.title %>
-</h3>
-<div class="row">
-<% section.lessons.each do |lesson| %>
-<div class="col-12 col-sm-6">
-<div class="lesson text-center">
-<p><i class="fas fa-play fa-2x"></i></p>
-<%= link_to lesson_path(lesson) do %>
-<b><%= lesson.title %></b>
-<br />
-<%= lesson.content %>
-<% end %>
-</div>
-</div>
-<% end %>
-</div>
-<br class="clr" />
-</div>
-<% end %>
-</div>
-</div>
+    <%= link_to 'Preview As Student...', course_path(@course), class: 'btn btn-warning float-right' %>
+  <br class="clr" />
 
 
 
 
+<%= link_to 'Administer', instructor_course_path(@course), class: "btn btn-deep-orange" %>
+
+
 </div>
+
+
+
+<%= render 'comments/comments' %>

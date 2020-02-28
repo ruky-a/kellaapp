@@ -13,54 +13,6 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        </button>
-        <h5 class="modal-title" id="newSectionModalLabel">Add a new section</h5>
-      </div>
-      <%= form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
-      <div class="modal-body">
-        <%= f.text_field :title %>
-        </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         <%= f.submit "Add a section", class: 'btn btn-primary' %>
-       </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        </button>
-        <h4 class="modal-title" id="newLessonModalLabel">Add a new lesson</h4>
-      </div>
-       <%= form_for @lesson, url: "#",html: {id: 'newLessonForm'} do |f| %>
-       <div class="modal-body">
-        <%= f.text_field :title %>
-       <%= f.text_field :content %>
-       <%= f.file_field :video %>
-       </div>
-         <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       <%= f.submit "Add the lesson" , class: 'btn btn-primary' %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-
-
 <div class="container my-5">
 
 
@@ -69,7 +21,7 @@
 
 
 <% current_course.sections.each do |section| %>
-<div class="section">
+
 <h3>
 <%= section.title %>
 </h3>
@@ -91,7 +43,7 @@
 </div>
 </div>
 <% end %>
-</div>
+
 
 </section>
 </div>
@@ -121,17 +73,19 @@
 
 <div class="col-12">
      <% current_course.sections.each do |section| %>
-<div class="section">
+
 <h3>
 <%= section.title %>
 </h3>
 <div class="row">
      <% section.lessons.each do |lesson| %>
-<div class="col-12 col-sm-6">
+
+<div class="col-md-4 mb-4">
 <div class="lesson text-center">
+  <%= link_to lesson_path(lesson) do %>
 <p><i class="fas fa-play fa-2x"></i></p>
-<%= link_to lesson_path(lesson) do %>
-<b><%= lesson.title %></b>
+
+<b><h2><%= lesson.title %></h2></b>
 <br />
 <%= lesson.content %>
 <% end %>
@@ -140,8 +94,12 @@
 <% end %>
 </div>
 <br class="clr" />
-</div>
+
 <% end %>
-</div>
-</div>
+
+
+
+
+
+
 

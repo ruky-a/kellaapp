@@ -7,11 +7,19 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+ @comment = Comment.new
     @joined = false
 
     if !current_user.nil? && !current_user.courses.nil?
       @joined = current_user.courses.include?(@course)
     end
+
+    @review = Review.new
+    @reviews = @course.reviews
+    @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
+ 
+
+
 
   end
 end

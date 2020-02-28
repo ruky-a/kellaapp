@@ -32,3 +32,66 @@
 
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+<ul class="stepper">
+  <li class="step active">
+    <div data-step-label="Just add a data-step-label!" class="step-title waves-effect waves-dark">Step 1</div>
+    <div class="step-new-content">
+      <div class="row">
+        <div class="md-form col-12 ml-auto">
+     <%= form_for @lesson, url: instructor_section_lessons_path(current_section) do |f| %>
+
+             <%= f.text_field :title, autofocus: true, placeholder: "title", class: "form-control validate" %>
+       
+        </div>
+      </div>
+      <div class="step-actions">
+        <button class="waves-effect waves-dark btn btn-sm btn-primary next-step">CONTINUE</button>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <div class="step-title waves-effect waves-dark">Step 2</div>
+    <div class="step-new-content">
+      <div class="row">
+        <div class="md-form col-12 ml-auto">
+        <%= f.text_area
+         :content, autocomplete: "off", placeholder: "description", class: "form-control  validate" %>
+        </div>
+      </div>
+      <div class="step-actions">
+        <button class="waves-effect waves-dark btn btn-sm btn-primary next-step">CONTINUE</button>
+        <button class="waves-effect waves-dark btn btn-sm btn-secondary previous-step">BACK</button>
+      </div>
+    </div>
+  </li>
+  <li class="step">
+    <div class="step-title waves-effect waves-dark">Step 3</div>
+    <div class="step-new-content">
+      Finish!
+      <div class="step-actions">
+        <button class="waves-effect waves-dark btn btn-sm btn-primary m-0 mt-4" type="button">SUBMIT</button>
+      </div>
+
+      <% end %>
+    </div>
+  </li>
+</ul>
+
+<script>
+
+    $(document).ready(function () {
+$('.stepper').mdbStepper();
+})
+
+
+</script>
+

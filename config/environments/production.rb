@@ -2,9 +2,9 @@ Rails.application.configure do
 
     config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
+   port: '587',
+    domain: "heroku.com",
+    authentication: :plain,
     enable_starttls_auto: true,
     user_name: ENV['GMAIL_ADDRESS'],
     password: ENV['GMAIL_PASSWORD']
@@ -37,9 +37,9 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  config.assets.compile = false
 
-  config.assets.compress = true
+
 
   config.assets.js_compressor  = :uglifier
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

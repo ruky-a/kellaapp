@@ -58,6 +58,7 @@
     </a>
     <div class="dropdown-menu dropdown-menu-right dropdown-default"
     aria-labelledby="navbarDropdownMenuLink-333">
+   
     <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
     <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
     <% if current_user.superadmin_role? || current_user.supervisor_role? %>
@@ -67,6 +68,8 @@
     <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
     <% end %>
   </li>
+
+
   <% end %>
 </ul>
 
@@ -75,4 +78,8 @@
 
 
 
-
+<!-- 
+ <% Course.all.each do |course| %>
+<li><%= link_to course.title, course_path(course) %></li>
+<% end %>
+ -->

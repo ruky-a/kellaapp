@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :courses
    has_many :enrollments
+   has_many :reviews
+   has_many :comments
 
     has_many :subscriptions
    has_many :courses, through: :subscriptions

@@ -11,6 +11,7 @@
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
     "popper.js": "^1.16.1",
+    "raty-js": "^2.9.0",
     "toastr": "^2.1.4",
     "turbolinks": "^5.2.0"
   },

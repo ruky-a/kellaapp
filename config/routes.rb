@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  get 'comments/create'
  devise_for :users,
   path: '',
   path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register', edit: 'profile'},
@@ -16,6 +17,9 @@ Rails.application.routes.draw do
  root 'homepage#index'
  resources :courses, only: [:index, :show] do
   resources :enrollments, only: :create
+   resources :comments, only: [:create]
+
+    resources :reviews, only: [:create, :destroy]
  end
  resources :lessons, only: [:show]
  namespace :instructor do
@@ -25,7 +29,9 @@ Rails.application.routes.draw do
   end
   resources :courses, only: [:new, :create, :show] do
     resources :sections, only: [:create]
-  end
+     end
+
+ 
 end
 end
     
