@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'users/edit', to: 'users#update'
   get 'users/:id', to: 'users#show'
   post '/free' => 'charge#free'
+    get '/search', to: 'homepage#search'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

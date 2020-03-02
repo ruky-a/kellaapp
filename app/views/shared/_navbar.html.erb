@@ -1,84 +1,83 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar">
-<div class="container">
-  <div class="navbar-brand"> <%= link_to root_path do %> <h5 class="text-cyan"></i>Kella<span class="text-color">Hospitality</span></h5>
-    <% end %>
-  </div>
+  <div class="container">
+    <div class="navbar-brand"> <%= link_to root_path do %> <h5 class="text-cyan"></i>Kella<span class="text-color">Hospitality</span></h5>
+      <% end %>
+    </div>
 
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
-  aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
+    aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
 
 
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-      aria-expanded="false">Courses</a>
-      <div class="dropdown-menu dropdown-success">
-        <% Course.all.each do |course| %>
-        <%= link_to course.title, course_path(course), class: "dropdown-item" %>
-        <% end %>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
-      </div>
-    </li>
-  </ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+        aria-expanded="false">Courses</a>
+        <div class="dropdown-menu dropdown-success">
+          <% Category.all.each do |item| %>
+          <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
+          <% end %>
+
+        </div>
+      </li>
+    </ul>
+
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 
 
-  </div>
-  <ul class="navbar-nav ml-auto nav-flex-icons">
-    <% if (!user_signed_in?)  %>
-    <li class="nav-item">
-      <a href="" class=" nav-link btn btn-deep-orange btn-rounded btn-sm text-white" data-toggle="modal" data-target="#modal2"><i class="fas fa-user left">
-     Register</i></a>
-    </li>
+    </div>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <% if (!user_signed_in?)  %>
+      <li class="nav-item">
+        <a href="" class=" nav-link btn btn-deep-orange btn-rounded btn-sm text-white" data-toggle="modal" data-target="#modal2"><i class="fas fa-user left">
+        Register</i></a>
+      </li>
 
-    <li class="nav-item">
+      <li class="nav-item">
 
-      <a href="" class=" nav-link btn btn-outline-pink btn-rounded btn-sm" data-toggle="modal" data-target="#modal1"><i class="fas fa-key left">
-      Login</i></a>
-    </li>
+        <a href="" class=" nav-link btn btn-outline-pink btn-rounded btn-sm" data-toggle="modal" data-target="#modal1"><i class="fas fa-key left">
+        Login</i></a>
+      </li>
 
-    <% else %>
-
-
-    <li class="nav-item avatar dropdown">
-
-      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-      aria-haspopup="true" aria-expanded="false">
-      Hi,  <%= current_user.first_name %>  <%= current_user.last_name %>
-
-      <%= image_tag photo_url(current_user), class: "rounded-circle z-depth-0" %>
+      <% else %>
 
 
-    </a>
-    <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
-    aria-labelledby="navbarDropdownMenuLink-55">
+      <li class="nav-item avatar dropdown">
 
-    <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-    <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
-    <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-    <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Hi,  <%= current_user.first_name %>  <%= current_user.last_name %>
 
-    <% else %>
-    <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
-    <% end %>
-  </div>
-</li>
+        <%= image_tag photo_url(current_user), class: "rounded-circle z-depth-0" %>
+
+
+      </a>
+      <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+      aria-labelledby="navbarDropdownMenuLink-55">
+
+      <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+      <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
+      <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+      <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
+
+      <% else %>
+      <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
+      <% end %>
+    </div>
+  </li>
 </ul>
 </div>
 

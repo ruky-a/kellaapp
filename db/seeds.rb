@@ -8,3 +8,11 @@
 
 
 Category.create(name: "Front Office")
+
+
+Category.where(name: "Reservations").first_or_create(name: "Reservations")
+Category.where(name: "Sales").first_or_create(name: "Sales")
+Category.where(name: "Food & Beverage").first_or_create(name: "Food & Beverage")
+Category.where(name: "Marketing").first_or_create(name: "Marketing")
+Category.where(name: "Housekeeping").first_or_create(name: "Housekeeping")
+Category.where(name: "Revenue Management").first_or_create(name: "Revenue Management")

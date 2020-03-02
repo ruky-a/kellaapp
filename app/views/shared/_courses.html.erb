@@ -1,0 +1,25 @@
+ <div class="top container">
+  <% @courses.each do |course| %>
+
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="overlay zoom z-depth-2">
+                <%= link_to course_path(course) do %>
+                <% if course.image.attached? %>
+                <%= image_tag course.image, class: 'img-fluid' %>
+                <% end %>
+                <% end %>
+              </div>
+              <p class="text-uppercase text-center font-weight-bold my-4"><%= link_to course.title, course_path(course) %></p>
+
+              <div class="text-center footer">
+
+                <%= link_to 'Enroll', course_path(course), class: 'btn btn-deep-orange  btn-sm' %>
+              </div>
+            </div>
+
+          </div>
+
+          <% end %>
+        </div>
+        
