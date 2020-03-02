@@ -16,8 +16,7 @@ module Kellaapp
    config.assets.paths << Rails.root.join("vendor", "assets", "addons-pro")
     config.assets.paths << Rails.root.join("vendor", "assets", "flash")
        config.assets.paths << Rails.root.join("vendor", "assets", "addons-pro")
-    config.assets.paths << Rails.root.join("vendor", "assets", "javascripts", "addons-pro")
-        config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets", "addons-pro")
+   
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

@@ -82,7 +82,7 @@
           <div class="d-flex flex-column pl-3">
             <div class="">
               <a href="#!" class="font-weight-normal mb-0"><%= comment.user.first_name %> <%= comment.user.last_name %></a>
-              <p class="small text-muted float-right mb-0">8:35 PM Today</p>
+              <p class="small text-muted float-right mb-0"> <td><%=comment.created_at.strftime('%d %b %Y') %></td></p>
             </div>
             <p class="font-weight-light dark-grey-text mb-0"> <%= comment.message %></p>
           </div>

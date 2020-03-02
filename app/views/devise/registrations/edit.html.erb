@@ -1,5 +1,5 @@
 
-
+<br /><br /><br />
 <div class="slide">
   <div class="container">
     <!--Grid row-->
@@ -19,10 +19,13 @@
 
             <%= image_tag resource.photo %>
             <% else %>
-            <%= image_tag photo_url(current_user) %>
+            <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %>
             <% end %>
 
           </div>
+
+
+      
 
 
 
@@ -30,11 +33,26 @@
           <div class="card-body">
             <!-- Name -->
             <h4 class="card-title"><%= current_user.first_name %> <%=current_user.last_name %></h4>
-            <hr>
-            <!-- Quotation -->
-            <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
-            </p>
-          </div>
+            
+  <hr />
+    <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
+ 
+   
+           <div class="file-field">
+    <div class="d-flex justify-content-center">
+      <div class="btn btn-unique btn-sm float-left">
+        <span>Add profile photo</span>
+       <%= f.file_field :photo, onchange: "this.form.submit();" %>
+     </div>
+   </div>
+
+                                               
+   
+        <% end %>
+      </div>
+    </div>
+
+
 
         </div>
         <!-- Card -->
@@ -48,22 +66,22 @@
           <!-- Content -->
           <div class="card-body">
             <!-- Name -->
-            <h5 class="text-center">Upload profile picture
+            <h5 class="text-center">About me
               <hr>
 
-              <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post do |f| %>
-              <div class="file">
-
-                <%= f.file_field :photo, placeholder: "Upload", class: "form-control-file mt-2 pt-1", onchange: "this.form.submit();" %>
-
-              </div>
-              <% end %>
+                <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            </p>
+     
             </h5>
           </div>
           <br />
 
 
         </div>
+
+
+        
+
         <div class="card-body">
           <!-- Name -->
 

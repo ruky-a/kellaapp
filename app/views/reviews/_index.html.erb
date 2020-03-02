@@ -3,8 +3,9 @@
 <div class="col-12 ">
 <% @reviews.order("id desc").each do |r| %>
     <div class="media">
- <%= image_tag photo_url(r.user), class: "d-flex rounded-circle avatar z-depth-1-half mr-3"  %>
+  <%= image_tag photo_url(r.user), class: "d-flex rounded-circle avatar z-depth-1-half mr-3"  %> 
   <div class="media-body">
+     <td><%= r.created_at.strftime('%d %b %Y') %></td>
     <h5 class="mt-0 font-weight-bold blue-text"><%= r.user.first_name %> <%= r.user.last_name %> </h5><br />
  
       <div id="stars_<%= r.id %>"></div>
@@ -30,65 +31,3 @@ $('#stars_')
 
 
 
-<!-- 
-<div class="container">
-<div class="col-12 ">
-<% @reviews.order("id desc").each do |r| %>
-    <div class="media">
- <%= image_tag photo_url(r.user), class: "d-flex rounded-circle avatar z-depth-1-half mr-3"  %>
-  <div class="media-body">
-    <h5 class="mt-0 font-weight-bold blue-text"><%= r.user.first_name %> <%= r.user.last_name %> </h5><br />
-    <p>
-      <div id="stars_<%= r.id %>"></div>
-     <%= r.review %></p>
-
-
-  </div>
-</div>
-<script>
-$('#stars_')
-
-
-  $('#stars_<%= r.id %>').raty({
-            path: '/assets/raty-js/lib/images',
-            readOnly: true,
-            score: <%= r.stars %>
-        });
-      </script>
-
-<% end %>
-
-
-
-
-  <%= form_for ([@course, @review]) do |f| %>
-    <div class="media mt-3 shadow-textarea">
-     <%= image_tag photo_url(current_user), class: "d-flex rounded-circle avatar z-depth-1-half mr-3"  %>
-      <div class="media-body">
-        <h6 class="mt-0 font-weight-bold blue-text"><%= current_user.first_name %></h>
-        <div class="form-group basic-textarea rounded-corners">
-           <%= f.text_area :review, placeholder: "Write your review...", class: "form-control" %>
-           <%= f.hidden_field :course_id, :value => @course.id %>
-         <%= f.hidden_field :user_id, :value => current_user.id %>
-           <div class="text-right">
-          <%= f.submit "Add review", class: "btn btn-danger btn-rounded z-depth-1a" %>
-    
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-</div>
-</div>
-
-<script>
-
-  $('#star').raty({
-            path: '/assets/raty-js/lib/images',
-            scoreName: 'review[stars]',
-            score: 1
-        });
-</script> -->

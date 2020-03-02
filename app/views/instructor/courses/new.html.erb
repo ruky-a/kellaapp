@@ -21,6 +21,9 @@
     <%= f.file_field :image %>
     <br /><br />
 
+    <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
+    <br /><br />
+
  
 
 

@@ -1,30 +1,7 @@
 
-<div class="jumbotron text-center">
 
-  <!-- Title -->
-  <h1 class="card-title">Hospitality Courses</strong> </h1>
-  <!-- Subtitle -->
-  <h2 class=" my-4 font-weight-bold">Enroll and study at your own pace</h2>
-
-  <!-- Grid row -->
-  <div class="row d-flex justify-content-center">
-
-    <!-- Grid column -->
-    <div class="col-xl-7 pb-2">
-
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui, quas eum architecto, amet quasi accusantium, fugit consequatur ducimus obcaecati numquam molestias hic itaque accusantium doloremque laudantium, totam rem aperiam.</p>
-
-    
-      </div>
-
-
-         
-      </div>
-  </div>
-
-
-
-  <div class="container mt-5">
+<br /><br />
+<div class="container mt-5">
 
 
   <!--Section: Content-->
@@ -35,39 +12,39 @@
         background-color: #ff7043;
       }
     </style>
-    
 
-  
-      <div class="row">
-        
-        <!--First column-->
-        <div class="col-12">
-          
-          <!-- Nav tabs -->
-          <ul class="nav md-pills flex-center flex-wrap mx-0" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active font-weight-bold c-text" data-toggle="tab" href="#panel31" role="tab">FRONT OFFICE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel32" role="tab">SALES & MARKETING</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel33" role="tab">FOOD & BEVERAGE</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel34" role="tab">RESERVATIONS</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel34" role="tab">REVENUE MANAGEMENT</a>
-            </li>
-          </ul>
-          
-        </div>
-        <!--First column-->
+
+
+    <div class="row">
+
+      <!--First column-->
+      <div class="col-12">
+
+        <!-- Nav tabs -->
+        <ul class="nav md-pills flex-center flex-wrap mx-0" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active font-weight-bold c-text" data-toggle="tab" href="#panel31" role="tab">FRONT OFFICE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel32" role="tab">SALES & MARKETING</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel33" role="tab">FOOD & BEVERAGE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel34" role="tab">RESERVATIONS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" data-toggle="tab" href="#panel34" role="tab">REVENUE MANAGEMENT</a>
+          </li>
+        </ul>
+
+      </div>
+      <!--First column-->
 
     </div>
     <!--First row-->
-    
+
     <!--Tab panels-->
     <div class="tab-content">
 
@@ -76,45 +53,45 @@
 
         <!--First row-->
         <div class="row">
-        
-          <% @courses.each do |course| %>
-   
-          <div class="col-lg-4 col-md-12 mb-4">
-                <div class="card">
-            <div class="overlay zoom z-depth-2">
-                 <%= link_to course_path(course) do %>
-          <% if course.image.attached? %>
-        <%= image_tag course.image, class: 'img-fluid' %>
-        <% end %>
-        <% end %>
-            </div>
-            <p class="text-uppercase text-center font-weight-bold my-4"><%= link_to course.title, course_path(course) %></p>
 
-              <p class="mx-auto">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit id laborum.</p>
+          <% @courses.each do |course| %>
+
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="overlay zoom z-depth-2">
+                <%= link_to course_path(course) do %>
+                <% if course.image.attached? %>
+                <%= image_tag course.image, class: 'img-fluid' %>
+                <% end %>
+                <% end %>
+              </div>
+              <p class="text-uppercase text-center font-weight-bold my-4"><%= link_to course.title, course_path(course) %></p>
+
+              <!--     <p class="mx-auto">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit id laborum.</p> -->
               <div class="footer">
-          
-           <%= link_to 'Enroll', course_path(course), class: 'btn btn-deep-orange  btn-sm' %>
+
+                <%= link_to 'Enroll', course_path(course), class: 'btn btn-deep-orange  btn-sm' %>
+              </div>
+            </div>
+
           </div>
-        </div>
-          
- </div>
 
           <% end %>
 
         </div>
-        
-          
 
-        </div>
-           
-     
+
+
+      </div>
+
+
 
       <!--Panel 2-->
       <div class="tab-pane fade" id="panel32" role="tabpanel">
 
         <!--First row-->
         <div class="row">
-          
+
           <!--First column-->
           <div class="col-lg-4 col-md-12 mb-4">
             <!--Featured image-->
@@ -122,10 +99,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--First column-->
-          
+
           <!--Second column-->
           <div class="col-lg-4 col-md-6 mb-4">
             <!--Featured image-->
@@ -133,10 +110,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project5.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--Second column-->
-          
+
           <!--Third column-->
           <div class="col-lg-4 col-md-6 mb-4">
             <!--Featured image-->
@@ -144,10 +121,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project1.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--Third column-->
-          
+
         </div>
         <!--First row-->
 
@@ -159,7 +136,7 @@
 
         <!--First row-->
         <div class="row">
-          
+
           <!--First column-->
           <div class="col-lg-4 col-md-12 mb-4">
             <!--Featured image-->
@@ -167,10 +144,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project3.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--First column-->
-          
+
           <!--Second column-->
           <div class="col-lg-4 col-md-6">
             <!--Featured image-->
@@ -178,10 +155,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project6.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--Second column-->
-          
+
           <!--Third column-->
           <div class="col-lg-4 col-md-6 mb-4">
             <!--Featured image-->
@@ -189,7 +166,7 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project8.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--Third column-->
 
@@ -204,7 +181,7 @@
 
         <!--First row-->
         <div class="row">
-          
+
           <!--First column-->
           <div class="col-lg-4 col-md-12 mb-4">
             <!--Featured image-->
@@ -212,10 +189,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project1.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--First column-->
-          
+
           <!--Second column-->
           <div class="col-lg-4 col-md-6 mb-4">
             <!--Featured image-->
@@ -223,10 +200,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project7.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--Second column-->
-          
+
           <!--Third column-->
           <div class="col-lg-4 col-md-6 mb-4">
             <!--Featured image-->
@@ -234,10 +211,10 @@
               <img src="https://mdbootstrap.com/img/Photos/Others/project8.jpg" class="img-fluid">
             </div>
             <p class="text-uppercase text-center font-weight-bold text-muted my-4">Lorem ipsum dolor sit
-              amet</p>
+            amet</p>
           </div>
           <!--Third column-->
-          
+
         </div>
         <!--First row-->
 
@@ -248,10 +225,13 @@
     <!--Tab panels-->
 
   </section>
-  
+
+</div>
 
 
 
 
 
-      
+
+
+]
