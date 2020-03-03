@@ -1,73 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>KellHospitality</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <title>KellHospitality</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-       <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
-           <%= yield :head %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
+  <%= yield :head %>
 
-           <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='4c210edf1ee3c165c3a625aa4c5afb9528217dbd483422daf9c99c2d1b558b16';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
+  <script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='4c210edf1ee3c165c3a625aa4c5afb9528217dbd483422daf9c99c2d1b558b16';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159440316-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159440316-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-159440316-1');
-</script>
+    gtag('config', 'UA-159440316-1');
+  </script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-159233743-1');
-</script>
-
-<!-- Start of  Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=f9938f59-2cfa-4bfe-9c8b-393b6fc56522"> </script>
-
-<link href="css/addons-pro/steppers.css" rel="stylesheet">
-<!-- Stepper CSS - minified-->
-<link href="css/addons-pro/steppers.min.css" rel="stylesheet">
-
-<!-- Stepper JavaScript -->
-<script type="text/javascript" src="js/addons-pro/steppers.js"></script>
-<!-- Stepper JavaScript - minified -->
-<script type="text/javascript" src="js/addons-pro/steppers.min.js"></script>
+    gtag('config', 'UA-159233743-1');
+  </script>
 
 
-<!-- End of  Zendesk Widget script -->
 
-  </head>
+</head>
 
-  <body>
+<body>
 
 
-   <%= render 'shared/navbar' %>
+  <%= render 'shared/navbar' %>
 
-   <% unless flash.empty? %>
-   <script type="text/javascript">
-      <% flash.each do |f| %>
-    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-     toastr['<%= type %>']('<%= f[1] %>');
-   <% end %>
-   </script>
-<% end %>
+    <%= render "devise/shared/alert" %>
 
 
 
 
 
-<main>
+
+  <main>
 
     <%= yield %>
 
@@ -75,16 +56,16 @@
 
 
 
-   <%= render 'shared/footer' %>
+  <%= render 'shared/footer' %>
 
 
 
 
-  
-  
+
+
   <script src='https://vjs.zencdn.net/7.6.0/video.js'></script>
-    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-    <script id="dsq-count-scr" src="//kellahospitality.disqus.com/count.js" async></script>
-  </body>
+  <script id="dsq-count-scr" src="//kellahospitality.disqus.com/count.js" async></script>
+</body>
 </html>

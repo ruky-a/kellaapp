@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_231545) do
+ActiveRecord::Schema.define(version: 2020_03_03_062301) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "action_text_rich_texts", force: :cascade do |t|
@@ -44,6 +45,22 @@ ActiveRecord::Schema.define(version: 2020_03_02_231545) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "applications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.date "due_date"
+    t.string "title"
+    t.integer "status", default: 0
+    t.string "recruiter_name"
+    t.string "applicant_name"
+    t.bigint "job_id"
+    t.bigint "recruiter_id"
+    t.bigint "applicant_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["applicant_id"], name: "index_applications_on_applicant_id"
+    t.index ["job_id"], name: "index_applications_on_job_id"
+    t.index ["recruiter_id"], name: "index_applications_on_recruiter_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -184,6 +201,9 @@ ActiveRecord::Schema.define(version: 2020_03_02_231545) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "applications", "jobs"
+  add_foreign_key "applications", "users", column: "applicant_id"
+  add_foreign_key "applications", "users", column: "recruiter_id"
   add_foreign_key "reviews", "courses"
   add_foreign_key "subscriptions", "courses"
   add_foreign_key "subscriptions", "users"

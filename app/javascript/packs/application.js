@@ -28,7 +28,8 @@ import 'bootstrap'
 import "../stylesheets/application"
 
 
-global.toastr = require("toastr")
+window.Noty = require("noty")
+// global.toastr = require("toastr")
 
 
 

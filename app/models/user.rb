@@ -10,6 +10,7 @@ class User < ApplicationRecord
    has_many :reviews
    has_many :comments
    has_many :jobs
+ # create_table :applications, id: :uuid do |t|
 
     has_many :subscriptions
    has_many :courses, through: :subscriptions

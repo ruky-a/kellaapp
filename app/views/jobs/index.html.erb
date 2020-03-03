@@ -58,7 +58,44 @@
 
 
   </div>
+<div class="container my-5">
+  
+  <!--Section: Content-->
+  <section class="dark-grey-text">
 
-  <!-- Section: Block Content -->
+    
+
+    <!-- Grid row -->
+    <div class="row">
+     
+           <% @jobs.each do |job| %>
+      <div class="col-12 mb-4">
+        <div class="card z-depth-0 bordered border-light">
+          <div class="card-body p-0">
+            <div class="row mx-0">
+              <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                <h5 class="font-weight-bold"><%= link_to job.title, job_path(job) %></h5>
+                <%= job.company %>
+                <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
+              </div>
+              <div class="col-md-4 text-center pt-4">
+                <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
+                
+   
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    
+
+    
+        <% end %>
+  </section>
+  <!--Section: Content-->
+
+
+</div> 
  
 </div>

@@ -2,15 +2,11 @@ class JobsController < ApplicationController
 before_action :authenticate_user!, :except => [:index, :show]
 
 
-
-
-
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order("created_at desc")
   end
 
  def new
-
     @job = current_user.jobs.build
     @categories = Category.all
   end
@@ -19,7 +15,7 @@ before_action :authenticate_user!, :except => [:index, :show]
     @job = current_user.jobs.build(job_params)
 
     if @job.save
-      redirect_to root_path(@job), notice: "Saved..."
+      redirect_to root_path, notice: "Saved..."
     else
          render :new, status: :unprocessable_entity
       end

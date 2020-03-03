@@ -25,6 +25,8 @@
        
       </li>
 
+     
+
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
@@ -36,6 +38,11 @@
 
         </div>
       </li>
+
+       <li class="nav-item">
+      <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-purple btn-rounded btn-sm text-white" %>
+       
+      </li>
     </ul>
 
 
@@ -46,6 +53,8 @@
 
     </div>
     <ul class="navbar-nav ml-auto nav-flex-icons">
+
+
       <% if (!user_signed_in?)  %>
       <li class="nav-item">
         <a href="" class=" nav-link btn btn-deep-orange btn-rounded btn-sm text-white" data-toggle="modal" data-target="#modal2"><i class="fas fa-user left">
@@ -84,6 +93,7 @@
       <% end %>
     </div>
   </li>
+
 </ul>
 </div>
 

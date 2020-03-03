@@ -11,6 +11,7 @@
     "dropzone": "^5.7.0",
     "jquery": "^3.4.1",
     "jquery-ui-dist": "^1.12.1",
+    "noty": "^3.2.0-beta",
     "popper.js": "^1.16.1",
     "raty-js": "^2.9.0",
     "timeago": "^1.6.7",
