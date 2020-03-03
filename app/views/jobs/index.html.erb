@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="container my-5 py-5">
+
+
+    <!--Section: Content-->
+    <section class="text-center">
+
+
+      <!--Grid row-->
+      <div class="row">
+           <% @jobs.each do |job| %>
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          
+          <div class="card">
+            <div class="card-body">
+
+              <p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= link_to job.title, job_path(job) %></h3></a></p>
+
+              <h5 class="mb-1"><small class="mr-1"><%= job.company %></small><strong></strong></h5>
+
+              <div class="amber-text fa-xs mb-1">
+               <%= job.location %>
+              </div>
+
+              <hr />
+            <div class="row">
+              <p class="text-muted card-text mt-2 px-4 mb-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua.
+              </p>
+            </div>
+
+              <button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply</button>
+              <button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <!--Grid column-->
+
+      
+        <% end %>
+
+
+      </div>
+ 
+
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+
+  <!-- Section: Block Content -->
+ 
+</div>

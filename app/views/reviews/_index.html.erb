@@ -5,7 +5,7 @@
     <div class="media">
   <%= image_tag photo_url(r.user), class: "d-flex rounded-circle avatar z-depth-1-half mr-3"  %> 
   <div class="media-body">
-     <td><%= r.created_at.strftime('%d %b %Y') %></td>
+     <td>Posted <%= timeago(r.created_at)%></td>
     <h5 class="mt-0 font-weight-bold blue-text"><%= r.user.first_name %> <%= r.user.last_name %> </h5><br />
  
       <div id="stars_<%= r.id %>"></div>
@@ -31,3 +31,8 @@ $('#stars_')
 
 
 
+<script>
+  $(function() {
+ $("time.timeago").timeago();
+});
+</script>

@@ -1,0 +1,64 @@
+<div class="top container">
+
+  <!-- Horizontal Steppers -->
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+   <div class="card col-md-10 offset-md-1">
+  <!-- Card body -->
+  <div class="card-body">
+       
+
+    <!-- Default form subscription -->
+      <%= form_for @job, url: jobs_path do |f| %>
+
+      <p class="h4 text-center py-4">Add a new job</p>
+       
+          <label class="label">Job Title</label>
+      <%= f.text_field :title, autocomplete: "title", class: "form-control" %>
+      <br />
+       <label class="label">Summary</label>
+      <%= f.rich_text_area :description, autocomplete: "title", class: "form-control" %>
+      <br />
+       <label class="label">Company</label>
+      <%= f.text_field :company, autocomplete: "title", class: "form-control" %>
+      <br />
+ <%= f.file_field :logo, placeholder: "Upload Photos" %>
+                        </div>
+      <br />
+       <label class="label">Category</label>
+       <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
+    
+   
+
+      <br>
+ 
+
+
+      <div class="text-center py-4 mt-3">
+  <%= f.submit "Create", class: 'btn btn-primary' %>
+      </div>
+  <% end %>
+    <!-- Default form subscription -->
+
+  </div>
+  <!-- Card body -->
+
+</div>
+</div>
+</ul>
+
+
+
+
+
+
+

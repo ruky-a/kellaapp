@@ -4,6 +4,7 @@ class Instructor::CoursesController < ApplicationController
 
   def new
     @course = Course.new
+
   end
 
   def create
@@ -36,7 +37,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :description, :cost, :image, :category_id)
+    params.require(:course).permit(:title, :description, :cost, :image, :category_id, :attachment_file)
   end
 end
 

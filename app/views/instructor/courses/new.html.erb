@@ -22,7 +22,13 @@
     <br /><br />
 
     <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
-    <br /><br />
+    <br />
+
+
+    <%= f.file_field :attachment_file, class: "file-input" %>
+    <span class="file-label">Attach Resume</span>
+    <span class="file-name" id="file-name">No file selected</span>
+    <br />
 
  
 

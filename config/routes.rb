@@ -8,14 +8,16 @@ Rails.application.routes.draw do
   controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'dashboard', to: 'users#dashboard'
-  post 'users/edit', to: 'users#update'
-  get 'users/:id', to: 'users#show'
+  
   post '/free' => 'charge#free'
     get '/search', to: 'homepage#search'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
  root 'homepage#index'
+ resources :jobs, only: [:index, :new,:show, :create]
+
+ resources :users, only: [:index, :show, :edit]
  resources :courses, only: [:index, :show] do
   resources :enrollments, only: :create
    resources :comments, only: [:create]

@@ -1,0 +1,61 @@
+
+
+<div class="top container mt-5">
+<section class="mb-5">
+<div class="col-md-12">
+<!--News card-->
+<div class="card">
+
+<div class="card-body">
+<% if @job.logo.attached? %>
+<%= image_tag @job.logo, class: "rounded-circle", size: 60 %><br/>
+<% end %>
+
+<p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= @job.title %></h3></a></p>
+
+<h5 class="mb-1"><small class="mr-1"><%= @job.company %></small><strong></strong></h5>
+
+<div class="amber-text fa-xs mb-1">
+<%= @job.location %>
+</div>
+<a class="text-white"><%= link_to 'Apply on company site', @job.url, class: "btn btn-danger" %></a>
+<hr />
+<div class="row h-100 d-flex align-items-center">
+<div class="col-lg-6">
+<h5>Job Responsibilities</h5>
+<p><%= @job.description %>
+</p>
+
+
+<h5>Qualification required</h5>
+<p><%=  @job.qualifications %></p>
+<br >
+
+<h5>Benefits</h5>
+<p><%=@job.benefits %></p>
+
+<div class="d-flex justify-content-between ml-3">
+<button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply now</button>
+<div class="text-center">
+
+<small class="grey-text"></small>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<!--Grid column-->
+
+</div>
+</section>
+<!--Section: Content-->
+
+
+</div>
+
+
+
+]

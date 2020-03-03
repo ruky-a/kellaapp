@@ -19,7 +19,7 @@
 
             <%= image_tag resource.photo %>
             <% else %>
-            <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %>
+            <%= image_tag photo_url(current_user), class: "img-fluid rounded-circle z-depth-1", size: 40 %>
             <% end %>
 
           </div>

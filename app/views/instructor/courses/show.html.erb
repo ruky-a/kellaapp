@@ -49,7 +49,17 @@
 </div>
 
 
-
+<script>
+  $(document).ready(function() {
+    var file = $('.file-input');
+    file.change(function(e) {
+      if (file[0].files.length > 0) {
+        var attachment = file[0].files[0];
+        $('.file-name').text(attachment.name + " (" + attachment.size + "bytes)");
+      }
+    })
+  })
+</script>
 
 
 
