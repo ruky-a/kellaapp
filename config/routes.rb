@@ -18,8 +18,8 @@ Rails.application.routes.draw do
    get '/job_applications', to: 'jobapplications#job_applications'
    get '/plans', to: 'homepage#plans'
   get '/settings/payment', to:'users#payment', as: 'settings_payment'
-   post '/subscribe', to: 'subscription_plans#subscribe'
-    post '/webhook', to: 'subscription_plans#webhook'
+   post '/subscribe', to: 'subscriptionplans#subscribe'
+    post '/webhook', to: 'subscriptionplans#webhook'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
