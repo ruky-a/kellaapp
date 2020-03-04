@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_191439) do
+ActiveRecord::Schema.define(version: 2020_03_04_163140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -184,6 +184,17 @@ ActiveRecord::Schema.define(version: 2020_03_03_191439) do
     t.index ["row_order"], name: "index_sections_on_row_order"
   end
 
+  create_table "subscription_plans", force: :cascade do |t|
+    t.string "plan_id"
+    t.string "sub_id"
+    t.integer "status", default: 0
+    t.date "expired_at"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_subscription_plans_on_user_id"
+  end
+
   create_table "subscriptions", force: :cascade do |t|
     t.bigint "course_id", null: false
     t.bigint "user_id", null: false
@@ -212,6 +223,8 @@ ActiveRecord::Schema.define(version: 2020_03_03_191439) do
     t.string "last_name"
     t.text "about"
     t.boolean "status", default: false
+    t.string "stripe_last_4"
+    t.string "stripe_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -221,6 +234,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_191439) do
   add_foreign_key "applications", "users", column: "applicant_id"
   add_foreign_key "applications", "users", column: "recruiter_id"
   add_foreign_key "reviews", "courses"
+  add_foreign_key "subscription_plans", "users"
   add_foreign_key "subscriptions", "courses"
   add_foreign_key "subscriptions", "users"
 end

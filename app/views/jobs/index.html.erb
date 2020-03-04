@@ -1,75 +1,16 @@
-<div class="container">
-    <div class="container my-5 py-5">
 
 
-    <!--Section: Content-->
-    <section class="text-center">
+<div class="top slide">
+  <div class="container">
+    <!--Grid row-->
+    <div class="row mt-5">
 
 
-      <!--Grid row-->
-      <div class="row">
+      <div class="col-md-8 ">
+        <!--Form-->
+        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
            <% @jobs.each do |job| %>
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
-
-          
-          <div class="card">
-            <div class="card-body">
-
-              <p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= link_to job.title, job_path(job) %></h3></a></p>
-
-              <h5 class="mb-1"><small class="mr-1"><%= job.company %></small><strong></strong></h5>
-
-              <div class="amber-text fa-xs mb-1">
-               <%= job.location %>
-              </div>
-
-              <hr />
-            <div class="row">
-              <p class="text-muted card-text mt-2 px-4 mb-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-              </p>
-            </div>
-             <%= link_to 'Apply', job_path(job), class: 'btn btn-unique btn-rounded btn-sm px-3' %>
-            
-              <button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
-
-            </div>
-          </div>
-
-
-
-        </div>
-        <!--Grid column-->
-
-      
-        <% end %>
-
-
-      </div>
- 
-
-
-    </section>
-    <!--Section: Content-->
-
-
-  </div>
-<div class="container my-5">
   
-  <!--Section: Content-->
-  <section class="dark-grey-text">
-
-    
-
-    <!-- Grid row -->
-    <div class="row">
-     
-           <% @jobs.each do |job| %>
-      <div class="col-12 mb-4">
         <div class="card z-depth-0 bordered border-light">
           <div class="card-body p-0">
             <div class="row mx-0">
@@ -79,23 +20,85 @@
                 <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
               </div>
               <div class="col-md-4 text-center pt-4">
-                <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
+                <%= link_to job_path(job) do %> 
                 
-   
-              </div>
-            </div>
+                <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
+                <% end %>
           </div>
         </div>
       </div>
-      
-    
+    </div>
+  
 
     
         <% end %>
-  </section>
-  <!--Section: Content-->
+      </div>
+    </div>
+       
+      <div class="col-md-4 mb-5 text-md-left">
+        <!-- Card -->
+        <div class="testimonial-card">
 
+      
+          <div class="card-up orange lighten-1"></div>
+          <br /><br />
+<button class="btn btn-primary btn-lg btn-block" type="submit">Advertise Here</button>
 
-</div> 
- 
+            <!--Card-->
+            <div class="card z-depth-0 border border-light rounded-0">
+
+              <!--Card content-->
+              <div class="card-body">
+                <h4 class="mb-4 mt-1 h5 text-center font-weight-bold"></h4>
+
+                <hr>
+
+                <dl class="row">
+                  <dd class="col-sm-12">
+                    <%= image_tag 'slide.jpg', class: 'img-fluid' %>
+                  </dd>
+                  
+                </dl>
+
+                <hr>
+
+                <dl class="row">
+                  <dd class="col-sm-8">
+            
+                  </dd>
+                  <dd class="col-sm-4">
+           
+                  </dd>
+                </dl>
+
+                <hr>
+
+                <dl class="row">
+                  <dd class="col-sm-8">
+                 
+                  </dd>
+                  <dd class="col-sm-4">
+           
+                  </dd>
+                </dl>
+
+                <hr>
+
+                <dl class="row">
+                  <dt class="col-sm-8">
+          
+                  </dt>
+                  <dt class="col-sm-4">
+             
+                  </dt>
+                </dl>
+              </div>
+
+            </div>
+            <!--/.Card-->
+
+</div>
+</div>
+</div>
+</div>
 </div>

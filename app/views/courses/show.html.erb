@@ -54,7 +54,7 @@
 
 
 
-          <%= form_tag course_enrollments_path(@course) do %>
+       <!--    <%= form_tag course_enrollments_path(@course) do %>
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-email="<%= current_user.email %>"
@@ -71,7 +71,7 @@
         <script>
 
           document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-        </script>
+        </script> -->
 
         <span class="badge badge-default">
           <h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
