@@ -18,7 +18,6 @@ Rails.application.routes.draw do
    get '/job_applications', to: 'jobapplications#job_applications'
    get '/plans', to: 'homepage#plans'
   get '/settings/payment', to:'users#payment', as: 'settings_payment'
-    post '/settings/payment', to: 'users#update_payment', as: 'update_payment'
    post '/subscribe', to: 'subscription_plans#subscribe'
     post '/webhook', to: 'subscription_plans#webhook'
 

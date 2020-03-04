@@ -25,11 +25,11 @@ import 'bootstrap'
 
 
 
-import "../stylesheets/application"
+
 
 
 window.Noty = require("noty")
-// global.toastr = require("toastr")
+
 
 
 

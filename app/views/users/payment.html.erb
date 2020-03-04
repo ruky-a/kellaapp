@@ -34,14 +34,16 @@
 
     <div class="top container-fluid">
         <div class="col-md-8 offset-md-2">
-        <h1 class="mt-5">Stripe.js v3 with Bootstrap 4 (beta) Test</h1>
+        <h1 class="mt-5"></h1>
         <div id="card-errors" role="alert"></div>
         <div class="card">
             <div class="card-body">
             
-      <%= form_with url: update_payment_path, local: true, id: "payment-form" do |f| %>
-  <div class="form-row">
-    
+    <form action="/charge" method="post" id="payment-form">
+  <div class="form-group">
+    <label for="card-element">
+        Credit or debit card
+    </label>
     <div id="card-element" class="form-control">
         <!-- A Stripe Element will be inserted here. -->
     </div>
@@ -50,8 +52,8 @@
     <div id="card-errors" role="alert"></div>
   </div>
 
-  <%= f.submit "#{current_user.stripe_id ? "Update Card" : "Add Card"}", class: "btn btn-success" %>
-  <% end %>
+  <button>Submit Payment</button>
+</form>
             </div>
         </div>
     </div>
