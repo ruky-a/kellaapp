@@ -31,7 +31,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
         aria-expanded="false">Courses</a>
-        <div class="dropdown-menu dropdown-success">
+        <div class="dropdown-menu dropdown-danger">
           <% Category.all.each do |item| %>
           <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
           <% end %>
@@ -39,10 +39,7 @@
         </div>
       </li>
 
-       <li class="nav-item">
-      <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-purple btn-rounded btn-sm text-white" %>
        
-      </li>
     </ul>
 
 
@@ -53,7 +50,10 @@
 
     </div>
     <ul class="navbar-nav ml-auto nav-flex-icons">
-
+    <li class="nav-item">
+      <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-unique btn-rounded btn-sm text-white" %>
+       
+      </li>
 
       <% if (!user_signed_in?)  %>
       <li class="nav-item">
@@ -74,9 +74,9 @@
 
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        Hi,  <%= current_user.first_name %>  <%= current_user.last_name %>
-
+       
         <%= image_tag photo_url(current_user), class: "rounded-circle z-depth-0" %>
+       Hi,  <%= current_user.first_name %>  <%= current_user.last_name %>
 
 
       </a>
@@ -85,10 +85,13 @@
 
       <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
+        <%= link_to  "Job Applications", job_applications_path, class: "dropdown-item" %>
+       <%= link_to  "Applications", applications_path, class: "dropdown-item" %>
       <% if current_user.superadmin_role? || current_user.supervisor_role? %>
       <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
 
       <% else %>
+
       <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
       <% end %>
     </div>

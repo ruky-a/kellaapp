@@ -1,0 +1,53 @@
+<div class="top container">
+  <section>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-list">
+          <div class="card-header white d-flex justify-content-between align-items-center py-3">
+            <p class="h5-responsive font-weight-bold mb-0">Job Applications</p>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                      <th scope="col">Date</th>
+                  <th scope="col">Application ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Resume</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <% @jobapplications.each do |j| %>
+                <tr>
+                   <th scope="row"><a class="text-primary">  <%= j.created_at.strftime('%d %b %y') %></a></th>
+                  <th scope="row"><a class="text-primary">  <%= j.title %></a></th>
+                  <td>  <%= j.firstname %></td>
+                   <td>  <%= j.lastname %></td>
+                  <td><span class="badge badge-success"><%= j.status %></span></td>
+                  
+                  <% if j.attachment_file.attached? %>
+                 <td> <%= link_to url_for(j.attachment_file), class: "tag small warning m-t-20",
+               download: "Attachment_#{j.attachment_file.id}" do %>
+              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=j.attachment_file.filename %></td>
+              <% end %>
+                  </td>
+                </tr>
+        <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer white py-3 d-flex justify-content-between">
+            <button class="btn btn-primary btn-md px-3 my-0 mr-0">Place New Order</button>
+            <button class="btn btn-light btn-md px-3 my-0 ml-0">View All Orders</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  </div>
+<script>

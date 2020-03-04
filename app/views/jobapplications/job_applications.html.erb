@@ -1,0 +1,175 @@
+<!-- <div class="top container">
+  <h1>Job Applications</h1>
+<% @jobs.each do |job| %>
+
+<% job.jobapplications.each do |jobapplication| %>
+
+<div class="row">
+  <div class="col-md-2">
+<h2><%= jobapplication.job.title %></h2>
+
+<%= link_to job_path(jobapplication.job) do %>
+<%= image_tag jobapplication.job.logo, size: 40 %>
+<% end %>
+</div>
+
+<div class="col-md-8">
+  <%= link_to user_path(jobapplication.user) do %>
+  <%= image_tag photo_url(jobapplication.user), class: "rouded circle", size: 60 %>
+  <% end %>
+
+  </div>
+
+<%= jobapplication.firstname %> <%= jobapplication.lastname %><br />
+<%= jobapplication.message %>
+
+<% end %>
+
+<% end %>
+
+
+</div>
+ -->
+
+
+
+<div class="top container">
+  <section>
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-list">
+          <div class="card-header white d-flex justify-content-between align-items-center py-3">
+            <p class="h5-responsive font-weight-bold mb-0">Job Applications</p>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                      <th scope="col">Date</th>
+                  <th scope="col">Position</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Resume</th>
+                </tr>
+              </thead>
+              <tbody>
+        <% @jobs.each do |job| %>
+
+     <% job.jobapplications.each do |jobapplication| %>
+
+                <tr>
+                  <%= link_to job_path(jobapplication.job) do %>
+<%= image_tag jobapplication.job.logo, size: 40 %>
+<% end %>
+                   <th scope="row"><a class="text-primary">  <%= jobapplication.created_at.strftime('%d %b %y') %></a></th>
+                  <th scope="row"><a class="text-primary"> <%= jobapplication.job.title %></a></th>
+        
+                  <td>  <%= jobapplication.firstname %></td>
+                   <td>  <%= jobapplication.lastname %></td>
+                     <td>  <%= jobapplication.email %></td>
+                  <td><span class="badge badge-success"><%= jobapplication.status %></span></td>
+                  
+                  <% if jobapplication.attachment_file.attached? %>
+                 <td> <%= link_to url_for(jobapplication.attachment_file), class: "tag small warning m-t-20",
+               download: "Attachment_#{jobapplication.attachment_file.id}" do %>
+              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=jobapplication.attachment_file.filename %></td>
+              <% end %>
+                  </td>
+                </tr>
+        <% end %>
+                <% end %>
+                <% end %>
+
+
+
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer white py-3 d-flex justify-content-between">
+            <button class="btn btn-primary btn-md px-3 my-0 mr-0">Place New Order</button>
+            <button class="btn btn-light btn-md px-3 my-0 ml-0">View All Orders</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  </div>
+
+
+
+   <div class="container my-5 py-5">
+
+
+    <!--Section: Content-->
+    <section class="text-center">
+
+
+      <!--Grid row-->
+      <div class="row">
+           <% @jobs.each do |job| %>
+
+     <% job.jobapplications.each do |jobapplication| %>
+
+
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          
+          <div class="card">
+            <div class="card-body">
+          <%= jobapplication.created_at.strftime('%d %b %y') %></a>
+              <p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= jobapplication.job.title %></h3></a></p>
+
+              <h5 class="mb-1"><small class="mr-1">   <%= jobapplication.firstname %> <%= jobapplication.lastname %><br /></small><strong></strong></h5>
+
+              <div class="amber-text fa-xs mb-1">
+               
+              </div>
+
+              <hr />
+           <div class="row">
+              <p class="text-muted card-text mt-2 px-4 mb-2">
+        <% if jobapplication.attachment_file.attached? %>
+             <%= link_to url_for(jobapplication.attachment_file), class: "tag small warning m-t-20",
+               download: "Attachment_#{jobapplication.attachment_file.id}" do %>
+              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=jobapplication.attachment_file.filename %>
+              <% end %>
+              <% end %>
+              </p>
+            </div>
+              <hr />
+            <div class="row">
+              <p class="text-muted card-text mt-2 px-4 mb-2">
+              <%= jobapplication.message %>
+              </p>
+            </div>
+            
+            
+              <button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <!--Grid column-->
+   <% end %>
+      
+        <% end %>
+
+
+      </div>
+ 
+
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+
+

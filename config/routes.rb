@@ -11,11 +11,15 @@ Rails.application.routes.draw do
   
   post '/free' => 'charge#free'
     get '/search', to: 'homepage#search'
+    get '/applications', to: 'jobapplications#applications'
+   get '/job_applications', to: 'jobapplications#job_applications'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
  root 'homepage#index'
- resources :jobs, only: [:index, :new,:show, :create]
+ resources :jobs, only: [:index, :new,:show, :create] do
+  resources :jobapplications, only: [:create]
+end
 
  resources :users, only: [:index, :show, :edit]
  resources :courses, only: [:index, :show] do

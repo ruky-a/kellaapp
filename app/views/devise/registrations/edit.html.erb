@@ -1,8 +1,7 @@
 
-<br /><br /><br />
+<br />
 <div class="slide">
-  <div class="container">
-    <!--Grid row-->
+  <div class="op container">
     <div class="row mt-5">
       <!--Grid column-->
       <div class="col-md-4 mb-5 text-md-left">
@@ -23,18 +22,11 @@
             <% end %>
 
           </div>
-
-
-      
-
-
-
-          <!-- Content -->
           <div class="card-body">
             <!-- Name -->
             <h4 class="card-title"><%= current_user.first_name %> <%=current_user.last_name %></h4>
             
-  <hr />
+             <hr />
     
    
    
@@ -47,7 +39,7 @@
 
 
         </div>
-        <!-- Card -->
+
 
         <br />
    
@@ -96,11 +88,7 @@
             <div class="widget change-password">
               <h3 class="widget-header user">Edit Password</h3>
 
-              <!-- Current Password -->
-              <div class="form-group">
-                <label for="current_password">Current Password</label>
-                <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
-              </div>
+              
               <!-- New Password -->
               <div class="form-group">
                 <label for="New_password">New Password</label>

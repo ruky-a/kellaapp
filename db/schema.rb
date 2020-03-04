@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_062301) do
+ActiveRecord::Schema.define(version: 2020_03_03_191439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -111,6 +111,22 @@ ActiveRecord::Schema.define(version: 2020_03_03_062301) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "jobapplications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "status", default: 0
+    t.integer "user_id"
+    t.integer "job_id"
+    t.string "firstname"
+    t.string "lastname"
+    t.integer "phone"
+    t.string "title"
+    t.text "message"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["job_id"], name: "index_jobapplications_on_job_id"
+    t.index ["user_id", "job_id"], name: "index_jobapplications_on_user_id_and_job_id"
   end
 
   create_table "jobs", force: :cascade do |t|

@@ -137,28 +137,41 @@ display: block;
     
 
 
-  a {
+.nav-link {
     font-family: "Roboto Slab", serif;
   }
+
+
 
   .btn-danger {
   font-weight: bold;
   }
 
 .text-color {
-   font-size: 25px;
-   font-weight: bold;
-   color: #ff6e40;
+   font-size:25px;
+   color:  #ff7043;
      font-weight: 200;
+    font-family: "Roboto Slab", serif;
+    text-transform: lowercase;
   }
 
  
+.cyan-text {
+  color: #2b40a5  !important;
 
+}
 
 .text-cyan {
   color: #007bff;
-  font-size: 25px;
-   font-weight: bold;
+font-family: "Roboto Slab", serif;
+padding-top: 0.3125rem;
+padding-bottom: 0.3125rem;
+margin-right: 1rem;
+font-size: 25px;
+font-weight: bold;
+line-height: inherit;
+white-space: nowrap;
+text-transform: uppercase;
 }
 
 .navbar.scrolling-navbar{
@@ -171,3 +184,51 @@ display: block;
 }
 
 
+.description {
+  font-size: 15px;
+}
+
+a {
+  color: black;
+}
+
+
+
+.unique-color {
+    background-color:  #33b5e5 !important;
+}
+
+.text-warning {
+
+  font-weight: 500;
+  color:  #ab4c2e !important;
+ 
+}
+
+
+.jumbotron  {
+ background-color: #880e4f !important;
+  color: white;
+}
+
+.display-4 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.btn-deep-orange {
+    color: #fff;
+    background-color: #2b40a5 !important;
+}
+
+.badge-info {
+    color: #fff !important;
+    background-color: #d65538 !important;
+}
+
+.btn-outline-orange {
+    color: #fff !important;
+    background-color: transparent !important;
+    border: 2px solid #f57c00 !important;
+}

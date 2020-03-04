@@ -9,12 +9,15 @@ class Instructor::CoursesController < ApplicationController
 
   def create
     @course = current_user.courses.build(course_params)
-     if @course.save
-      redirect_to instructor_course_path(@course)
+          if @course.save
+      redirect_to instructor_course_path(@course), notice: "Saved..."
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  
+  
 
   def show
       @section = Section.new
