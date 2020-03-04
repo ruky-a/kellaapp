@@ -22,7 +22,7 @@ before_action :authenticate_user!, :except => [:index, :show, :search]
 end
 
 def plans
-@plans = Stripe::Plan.list(product: '#')
+@plans = Stripe::Plan.list(product: 'prod_Gqg6Nz7fn84zrh')
 end
 
 end
