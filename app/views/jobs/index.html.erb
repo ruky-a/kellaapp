@@ -1,48 +1,100 @@
+<div class="space top container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <%= form_tag search_jobs_path, method: :get do |f| %>
+      <div class="form-row">
 
 
-<div class="top slide">
-  <div class="container">
-    <!--Grid row-->
-    <div class="row mt-5">
+        <div class="form-group col-md-4">
+          <%= text_field_tag :location, nil, placeholder: "Location", class: "form-control my-2 my-lg-1" %>
+
+        </div>
+
+        <div class="form-group col-md-4">
+          <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}), prompt: "...Select category...", class: "form-control mt-lg-1 mt-md-2" %>
+
+        </div>
 
 
-      <div class="col-md-8 ">
-        <!--Form-->
-        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
-           <% @jobs.each do |job| %>
-  
-        <div class="card z-depth-0 bordered border-light">
-          <div class="card-body p-0">
-            <div class="row mx-0">
-              <div class="col-md-8 grey lighten-4 rounded-left pt-4">
-                <h5 class="font-weight-bold"><%= link_to job.title, job_path(job) %></h5>
-                <%= job.company %>
-                <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
-              </div>
-              <div class="col-md-4 text-center pt-4">
-                <%= link_to job_path(job) do %> 
-                
-                <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
-                <% end %>
-          </div>
+
+        <div class="form-group col-md-2">
+          <%= submit_tag "Search jobs", class: "form-control  my-lg-1 mt-md-2 btn btn-pink btn-block" %>
+
         </div>
       </div>
-    </div>
-  
+      <% end %>
 
-    
+    </div>
+  </div>
+
+
+
+
+  <div class="slide">
+    <div class="container">
+      <!--Grid row-->
+      <div class="row mt-5">
+
+
+
+
+
+
+        <div class="col-md-4 mb-5 text-md-left">
+          <!-- Card -->
+
+          <div class="card my-3 job">
+            <%= form_tag search_jobs_path, method: :get do |f| %>
+            <h5 class="card-header text-center text-white bg-dark">Search Jobs</h5>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-12">
+                  <%= text_field_tag :location, nil, placeholder: "Location", class: "form-control my-2 my-lg-1" %><br />
+                </div>
+
+                <div class="col-lg-12">
+                  <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}), prompt: "...Select category...", class: "form-control mt-lg-1 mt-md-2" %><br />
+                </div>
+                <br />
+                <br />
+                <hr />
+                <div class="col-lg-12">
+                  <%= submit_tag "Search now", class: "btn btn-pink btn-md btn-block mt-lg-1 mt-md-2" %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+
+
+
+
+
+
+        <!-- Panel -->
+        <div class="card link">
+
+          <div class="card-header white-text primary-color">
+           Featured jobs
+          </div>
+                 <% Job.all.each do |job| %>
+          <div class="card-body">
+            <div class="list-group list-group-flush">
+              <a>
+               <%= link_to job.title, job_path(job) %>
+               <span class="float-right"><%= job.location %></span>
+              </a>
+             
+            </div>
+          </div>
         <% end %>
-      </div>
-    </div>
-       
-      <div class="col-md-4 mb-5 text-md-left">
-        <!-- Card -->
-        <div class="testimonial-card">
+        </div>
+       <br />
 
-      
-          <div class="card-up orange lighten-1"></div>
-          <br /><br />
-<button class="btn btn-primary btn-lg btn-block" type="submit">Advertise Here</button>
+          <div class="testimonial-card">
+           
+
+            <button class="btn btn-dark btn-lg btn-block" type="submit">Advertise Here</button>
 
             <!--Card-->
             <div class="card z-depth-0 border border-light rounded-0">
@@ -57,48 +109,127 @@
                   <dd class="col-sm-12">
                     <%= image_tag 'slide.jpg', class: 'img-fluid' %>
                   </dd>
-                  
+
                 </dl>
 
-                <hr>
+
 
                 <dl class="row">
                   <dd class="col-sm-8">
-            
+
                   </dd>
                   <dd class="col-sm-4">
-           
+
                   </dd>
                 </dl>
 
-                <hr>
+
 
                 <dl class="row">
                   <dd class="col-sm-8">
-                 
+
                   </dd>
                   <dd class="col-sm-4">
-           
+
                   </dd>
                 </dl>
 
-                <hr>
+
 
                 <dl class="row">
                   <dt class="col-sm-8">
-          
+
                   </dt>
                   <dt class="col-sm-4">
-             
+
                   </dt>
                 </dl>
               </div>
 
             </div>
-            <!--/.Card-->
 
-</div>
-</div>
-</div>
-</div>
-</div>
+
+            <div class="card my-4">
+              <h5 class="card-header">banner</h5>
+              <div class="card-body">
+                <img class="card-img-top" src="https://2.bp.blogspot.com/-vvG5hMTFOro/W6RaoxdAikI/AAAAAAAAK1k/jezYdP7fvfYvt15Jv8a0agrGQE2lMU8YgCKgBGAs/s1600/MASAI-2.jpg" alt="Card image cap">
+              </div>
+            </div>
+
+            <div class="card my-3">
+              <h5 class="card-header">Categories</h5>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#">Simba</a>
+                      </li>
+                      <li>
+                        <a href="#">Nyati</a>
+                      </li>
+                      <li>
+                        <a href="#">Faru</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-6">
+                    <ul class="list-unstyled mb-0">
+                      <li>
+                        <a href="#">Kiboko</a>
+                      </li>
+                      <li>
+                        <a href="#">Fisi</a>
+                      </li>
+                      <li>
+                        <a href="#">Pundamlia</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <!--Form-->
+          <div class=" card wow fadeInRight" data-wow-delay="0.3s">
+            <% @jobs.each do |job| %>
+
+            <div class="card z-depth-0 bordered border-light">
+              <div class="card-body p-0">
+                <div class="row mx-0">
+                  <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                    <%= job.category.name %>
+                    <h5 class="font-weight-bold"><%= link_to job.title, job_path(job) %></h5>
+                    <%= job.company %>
+                    <p class="card-text"><i class="far fa-clock pr-2"></i><%= job.location %></i><%= job.city %> <%= job.state %></p>
+                    <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
+                  </div>
+                  <div class="col-md-4 text-center pt-4">
+                    <%= link_to job_path(job) do %> 
+
+                    <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

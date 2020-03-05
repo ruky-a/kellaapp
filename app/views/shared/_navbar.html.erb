@@ -1,124 +1,102 @@
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-navbar">
-  <div class="container">
-    <div class="navbar-brand"> <%= link_to root_path do %> <h5 class="text-cyan"></i>Kella<span class="text-color">Hospitality</span></h5>
+<div id="flex-content-container">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+
+    <div class="container">
+
+      <div class="navbar-brand"> <%= link_to root_path do %> <h2 class="text-white text-capitalize"></i>Kella<span class="text-color">Hospitality</span></h2>
+        <% end %>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Members", users_path, class: "nav-link" %>
+
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Pricing", plans_path, class: "nav-link" %>
+
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Jobs", jobs_path, class: "nav-link" %>
+
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">Courses</a>
+          <div class="dropdown-menu dropdown-danger">
+            <% Category.all.each do |item| %>
+            <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
+            <% end %>
+
+          </div>
+        </li>
+      </ul>
+
+
+
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-deep-orange btn-rounded btn-sm" %>
+
+        </li>
+
+        <% if (!user_signed_in?)  %>
+        <li class="nav-item">
+          <a href="" class=" nav-link btn btn-unique btn-sm btn-rounded" data-toggle="modal" data-target="#modal2"><i class="fas fa-user left">
+          Register</i></a>
+        </li>
+        <li class="nav-item">
+
+          <a href="" class=" nav-link" data-toggle="modal" data-target="#modal1"><i class="fas fa-key left">
+          Login</i></a>
+        </li>
+
+
+        <% else %>
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+
+          aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %></i> Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
+
+
+
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default"
+        aria-labelledby="navbarDropdownMenuLink-333">
+        <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
+        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+        <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
+
+        <% else %>
+        <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
+        <% end %>
+      </li>
       <% end %>
-    </div>
-
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
-    aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-      <%= link_to "Members", users_path, class: "nav-link" %>
-       
-      </li>
-
-      <li class="nav-item">
-      <%= link_to "Pricing", plans_path, class: "nav-link" %>
-       
-      </li>
-
-       <li class="nav-item">
-      <%= link_to "Jobs", jobs_path, class: "nav-link" %>
-       
-      </li>
-
-     
-
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-        aria-expanded="false">Courses</a>
-        <div class="dropdown-menu dropdown-danger">
-          <% Category.all.each do |item| %>
-          <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
-          <% end %>
-
-        </div>
-      </li>
-
-       
     </ul>
+  </div>
 
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-
-    </div>
-    <ul class="navbar-nav ml-auto nav-flex-icons">
-    <li class="nav-item">
-      <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-unique btn-rounded btn-sm text-white" %>
-       
-      </li>
-
-      <% if (!user_signed_in?)  %>
-      <li class="nav-item">
-        <a href="" class=" nav-link btn btn-deep-orange btn-rounded btn-sm text-white" data-toggle="modal" data-target="#modal2"><i class="fas fa-user left">
-        Register</i></a>
-      </li>
-
-      <li class="nav-item">
-
-        <a href="" class=" nav-link btn btn-outline-pink btn-rounded btn-sm" data-toggle="modal" data-target="#modal1"><i class="fas fa-key left">
-        Login</i></a>
-      </li>
-
-      <% else %>
-
-
-      <li class="nav-item avatar dropdown">
-
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-       
-        <%= image_tag photo_url(current_user), class: "rounded-circle z-depth-0" %>
-       Hi,  <%= current_user.first_name %>  <%= current_user.last_name %>
-
-
-      </a>
-      <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
-      aria-labelledby="navbarDropdownMenuLink-55">
-
-      <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-      <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
-        <%= link_to  "Job Applications", job_applications_path, class: "dropdown-item" %>
-       <%= link_to  "Applications", applications_path, class: "dropdown-item" %>
-      <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-      <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
-
-      <% else %>
-
-      <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
-      <% end %>
-    </div>
-  </li>
-
+</nav>
+</li>
 </ul>
 </div>
-
-<% end %>
-</div>
-</nav>
-
-
 
 <%= render 'devise/sessions/login' %>
 
 <%= render 'devise/registrations/signup' %>
-<!-- 
-
-
-
-<% Course.all.each do |course| %>
-<li><%= link_to course.title, course_path(course) %></li>
-<% end %>
---> 

@@ -25,6 +25,9 @@ Rails.application.routes.draw do
  root 'homepage#index'
  resources :jobs, only: [:index, :new,:show, :create] do
   resources :jobapplications, only: [:create]
+  collection do
+  get 'search'
+end
 end
 
  resources :users

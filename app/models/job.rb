@@ -6,4 +6,20 @@ class Job < ApplicationRecord
   has_many :jobapplications
  
 
+   geocoded_by :full_address
+   after_validation :geocode
+   
+
+
+def full_address
+  [city, state].join(', ')
+
+end
+  def self.search(params)
+jobs = Job.where(category_id: params[:category].to_i)
+jobs = jobs.where("title like ? or description like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present? 
+jobs = jobs.near(params[:location], 20) if params[:location].present?
+jobs
+  end
+
 end

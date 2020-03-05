@@ -13,6 +13,7 @@ require("timeago")
 
 
 
+
 import $ from 'jquery';
 
 global.$ = $
@@ -22,7 +23,6 @@ global.jQuery = $
 require('jquery-ui');
 
 import 'bootstrap'
-
 
 
 

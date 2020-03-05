@@ -65,6 +65,34 @@
 
 </div>
 
+ <div class="widget map">
+                <div class="map">
+                  <%= @job.location%>, <%= @job.city %> <%= @job.state %>
+                  <% if @job.latitude.present? && @job.longitude.present? %>
+                  <script>
 
+                    function initMap() {
+                      var myLatLng = {lat: <%= @job.latitude %>, lng: <%= @job.longitude %>};
+
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 12,
+                        center: myLatLng
+                      });
+
+                      var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: 'Hello World!'
+                      });
+                    }
+                  </script>
+
+                  <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUVi5Uoez-7hb5hh3ZBEn2g4kXMbwdYRk&callback=initMap">
+                </script>
+                <div id="map"></div>
+                <% end %>
+              </div>
+            </div>
 
 <%= render 'jobapplications/form' %>

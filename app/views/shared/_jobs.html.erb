@@ -1,0 +1,36 @@
+<div class="container">
+ 
+    <div class="row mt-5">
+
+
+      <div class="col-md-8">
+        <!--Form-->
+        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
+           <% @jobs.each do |job| %>
+  
+        <div class="card z-depth-0 bordered border-light">
+          <div class="card-body p-0">
+            <div class="row mx-0">
+              <div class="col-md-8 grey lighten-4 rounded-left pt-4">
+                <%= job.category.name %>
+                <h5 class="font-weight-bold"><%= link_to job.title, job_path(job) %></h5>
+                <%= job.company %>
+                <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
+              </div>
+              <div class="col-md-4 text-center pt-4">
+                <%= link_to job_path(job) do %> 
+                
+                <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
+                <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+        <% end %>
+    
+    </div>
+  </div>
+</div>

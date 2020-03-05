@@ -4,6 +4,7 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @jobs = Job.all.order("created_at desc")
+  @categories = Category.all
   end
 
  def new
@@ -27,6 +28,11 @@ def show
 
 def edit
     @categories = Category.all
+end
+
+def search
+@jobs = Job.search(params)
+  @categories = Category.all
 end
  
 
