@@ -1,138 +1,56 @@
-      <div class="top container">
-              <div class="row justify-content-center">
-                <div class="col-md-12">
-                   <%= form_tag search_jobs_path, method: :get do |f| %>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}), prompt: "Select category", class: "form-control mt-lg-1 mt-md-2" %>
 
-                    </div>
+<div class="top container">
+  <div class="card col-md-8 offset-md-2">
+    <!-- Card body -->
+    <div class="card-body">
 
-                    <div class="form-group col-md-4">
-                      <%= text_field_tag :location, nil, placeholder: "Location e.g Lagos", class: "form-control my-2 my-lg-1" %>
+      <!-- Default form subscription -->
+      <%= form_for @job, url: new_job_path do |f| %>
+      <p class="h4 text-center py-4">Add a new Course</p>
 
-                    </div>
+      <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
 
-                  
 
-                    <div class="form-group col-md-2">
-                      <%= submit_tag "Find jobs", class: " btn btn-block btn-pink" %>
+      <br>
 
-                    </div>
-                  </div>
-                  <% end %>
-                  
-        </div>
+      <%= f.text_field :location, placeholder: 'Address', class: 'form-control' %>
+
+
+      <br />
+
+      <%= f.text_field :city, placeholder: 'City', class: 'form-control' %>
+
+
+      <br />
+
+      <%= f.text_field :state, placeholder: 'City', class: 'form-control' %>
+
+
+      <br />
+
+
+
+      <%= f.rich_text_area :description, rows: 50, cols: 50,  placeholder: 'Details of job', class: 'form-control'%>
+
+      <br>
+
+
+
+      <%= f.file_field :logo %>
+
+      <br /><BR />
+      <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
+      <br />
+
+
+      <div class="text-center py-4 mt-3">
+        <%= f.submit "Create", class: 'btn btn-primary' %>
       </div>
+      <% end %>
 
 
-
-
-
-<div class="top slide">
-  <div class="container">
-    <!--Grid row-->
-    <div class="row mt-5">
-
-
-      <div class="col-md-8 ">
-        <!--Form-->
-        <div class=" card wow fadeInRight" data-wow-delay="0.3s">
-           <% @jobs.each do |job| %>
-  
-        <div class="card z-depth-0 bordered border-light">
-          <div class="card-body p-0">
-            <div class="row mx-0">
-              <div class="col-md-8 grey lighten-4 rounded-left pt-4">
-                <%= job.category.name %>
-                <h5 class="font-weight-bold"><%= link_to job.title, job_path(job) %></h5>
-                <%= job.company %>
-                <p class="card-text"><i class="far fa-clock pr-2"></i><%= job.location %></i><%= job.city %> <%= job.state %></p>
-                <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
-              </div>
-              <div class="col-md-4 text-center pt-4">
-                <%= link_to job_path(job) do %> 
-                
-                <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
-                <% end %>
-          </div>
-        </div>
-      </div>
     </div>
-  
+    <!-- Card body -->
 
-    
-        <% end %>
-      </div>
-    </div>
-       
-      <div class="col-md-4 mb-5 text-md-left">
-        <!-- Card -->
-        <div class="testimonial-card">
-     <% Job.all.each do |job| %>
-<li><%= link_to job.title, job_path(job) %></li>
-<% end %>
-      
-          <div class="card-up orange lighten-1"></div>
-          <br /><br />
-<button class="btn btn-primary btn-lg btn-block" type="submit">Advertise Here</button>
-
-            <!--Card-->
-            <div class="card z-depth-0 border border-light rounded-0">
-
-              <!--Card content-->
-              <div class="card-body">
-                <h4 class="mb-4 mt-1 h5 text-center font-weight-bold"></h4>
-
-                <hr>
-
-                <dl class="row">
-                  <dd class="col-sm-12">
-                    <%= image_tag 'slide.jpg', class: 'img-fluid' %>
-                  </dd>
-                  
-                </dl>
-
-               
-
-                <dl class="row">
-                  <dd class="col-sm-8">
-            
-                  </dd>
-                  <dd class="col-sm-4">
-           
-                  </dd>
-                </dl>
-
-             
-
-                <dl class="row">
-                  <dd class="col-sm-8">
-                 
-                  </dd>
-                  <dd class="col-sm-4">
-           
-                  </dd>
-                </dl>
-
-              
-
-                <dl class="row">
-                  <dt class="col-sm-8">
-          
-                  </dt>
-                  <dt class="col-sm-4">
-             
-                  </dt>
-                </dl>
-              </div>
-
-            </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
-   <br />
-
-
+  </div>
+</div>

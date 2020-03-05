@@ -43,16 +43,16 @@
             <% end %>
 
           </div>
+        </li> <li class="nav-item">
+          <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-orange btn-rounded btn-sm" %>
+
         </li>
       </ul>
 
 
 
       <ul class="navbar-nav ml-auto nav-flex-icons">
-        <li class="nav-item">
-          <%= link_to "Post A Job", new_job_path, class: "nav-link btn btn-deep-orange btn-rounded btn-sm" %>
-
-        </li>
+       
 
         <% if (!user_signed_in?)  %>
         <li class="nav-item">

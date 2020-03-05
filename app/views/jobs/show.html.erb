@@ -2,8 +2,9 @@
 
 <div class="top container mt-5">
 <section class="mb-5">
-<div class="col-md-12">
-<!--News card-->
+  <div class="row">
+<div class="col-md-8">
+
 <div class="card">
 
 <div class="card-body">
@@ -58,14 +59,8 @@
 </div>
 <!--Grid column-->
 
-</div>
-</section>
-<!--Section: Content-->
 
-
-</div>
-
- <div class="widget map">
+        <div class="col-md-4">
                 <div class="map">
                   <%= @job.location%>, <%= @job.city %> <%= @job.state %>
                   <% if @job.latitude.present? && @job.longitude.present? %>
@@ -94,5 +89,8 @@
                 <% end %>
               </div>
             </div>
+          </div>
+        </section>
+
 
 <%= render 'jobapplications/form' %>
