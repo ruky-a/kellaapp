@@ -80,9 +80,9 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
  .rgba-gradient {
 
-  background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(0, 0, 0, 0.2) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(63, 81, 181, 0.7) 150%);
-  background: linear-gradient(to 45deg, rgba(213, 15, 61, 0.6), rgba(0, 0, 0, 0.7) 100%);
+  background: -moz-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
+  background: linear-gradient(to 45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
 }
 .media .avatar {
     width: 64px;
@@ -252,13 +252,13 @@ a {
 
 
 .space {
-  margin-left: 6%;
-  margin-right: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .color {
-  margin-left: 6%;
-  margin-right: 6%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 
@@ -282,3 +282,7 @@ a {
   
 }
 
+.btn-orange {
+font-weight: bold;
+
+}

@@ -6,17 +6,18 @@
           <div class="row">
             <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
               <h1 class="h1-responsive font-weight-bold mt-sm-5">Start your <span class="text-warning">hospitality</span><br><span class="cyan-text">career </span> with tutorials from industry experts.</h1>
-              <hr class="hr-light">
               <h6 class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi
                 fuga nesciunt
                 dolorum nulla magnam veniam sapiente! Commodi sequi non animi ea dolor molestiae
               iste.</h6>
+              <hr class="hr-light">
+              
 
-              <%= link_to 'Courses', courses_path, class: 'btn btn-unique btn-rounded' %>
+              <%= link_to 'See Courses', courses_path, class: 'btn btn-deep-orange btn-rounded' %>
 
 
               <a href="" class="btn btn-outline-white btn-rounded" data-toggle="modal" data-target="#modalLRForm4"><i class="fas fa-user left">
-              start now</i></a>
+              start learning</i></a>
 
             </div>
 
@@ -35,7 +36,7 @@
 
 
   <section class="color">
-    <div class="row dark-grey-text">
+    <div class="row">
 
       <div class="col-md-6 col-xl-4 mb-4">
         <div class="media">
@@ -122,7 +123,7 @@
 
 
   <!--Section: Content-->
-  <section class="color magazine-section dark-grey-text">
+  <section class="color magazine-section">
 
     <!-- Section heading -->
     <h3 class="text-center font-weight-bold mb-4 pb-2">Course Category</h3>
@@ -134,7 +135,7 @@
 
           <div class="overlay rounded z-depth-2 mb-4">
             <%= link_to search_path(category: 2) do %>
-            <%= image_tag 'pic4.jpg', class: 'img-fluid' %>
+            <%= image_tag 'frontoffice.jpg', class: 'img-fluid' %>
             <% end %>
             <a>
               <div class="rgba-white-slight"></div>
@@ -143,7 +144,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <span class="badge pink"><%= link_to search_path(category: 1) do %><i class="fas fa-camera pr-2"></i>Front Office<% end %></span>
+              <span class="badge red"><%= link_to search_path(category: 1) do %><i class="fas fa-camera pr-2"></i>Front Office<% end %></span>
 
             </div>
             <!-- Grid column -->
@@ -162,7 +163,7 @@
 
           <div class="overlay rounded z-depth-2 mb-4">
             <%= link_to search_path(category: 4) do %>
-            <%= image_tag 'image.png', class: 'img-fluid' %>
+            <%= image_tag 'fnb.jpg', class: 'img-fluid' %>
             <% end %>
             <a>
               <div class="rgba-white-slight"></div>
@@ -171,7 +172,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <span class="badge pink"><%= link_to search_path(category: 1) do %><i class="fas fa-camera pr-2" aria-hidden="true"></i>Food & Beverage<% end %></span>
+              <span class="badge blue"><%= link_to search_path(category: 1) do %><i class="fas fa-camera pr-2" aria-hidden="true"></i>Food & Beverage<% end %></span>
 
             </div>
             <!-- Grid column -->
@@ -221,7 +222,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Reservations</span></a>
+              <a href="#!"><span class="badge indigo"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Reservations</span></a>
 
             </div>
             <!-- Grid column -->
@@ -251,7 +252,7 @@
         <div class="single-news mb-3">
 
           <div class="overlay rounded z-depth-2 mb-4">
-            <%= image_tag 'pic4.jpg', class: 'img-fluid' %>
+            <%= image_tag 'account.jpg', class: 'img-fluid' %>
             <a>
               <div class="rgba-white-slight"></div>
             </a>
@@ -259,7 +260,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Accounting</span></a>
+              <a href="#!"><span class="badge red"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Accounting</span></a>
 
             </div>
             <!-- Grid column -->
@@ -277,7 +278,7 @@
         <div class="single-news mb-3">
 
           <div class="overlay rounded z-depth-2 mb-4">
-            <%= image_tag 'image.png', class: 'img-fluid' %>
+            <%= image_tag 'sales.jpg', class: 'img-fluid' %>
             <a>
               <div class="rgba-white-slight"></div>
             </a>
@@ -285,7 +286,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Sales</span></a>
+              <a href="#!"><span class="badge blue"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Sales & Marketing</span></a>
 
             </div>
             <!-- Grid column -->
@@ -302,7 +303,7 @@
         <div class="single-news mb-3">
 
           <div class="overlay rounded z-depth-2 mb-4">
-            <%= image_tag 'marketing.jpg', class: 'img-fluid' %>
+            <%= image_tag 'media.jpg', class: 'img-fluid' %>
             <a>
               <div class="rgba-white-slight"></div>
             </a>
@@ -310,7 +311,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Marketing</span></a>
+              <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>Media Marketing</span></a>
 
             </div>
             <!-- Grid column -->
@@ -327,7 +328,7 @@
         <div class="single-news mb-3">
 
           <div class="overlay rounded z-depth-2 mb-4">
-            <%= image_tag 'reservationist.jpg', class: 'img-fluid' %>
+            <%= image_tag 'it.jpg', class: 'img-fluid' %>
             <a>
               <div class="rgba-white-slight"></div>
             </a>
@@ -335,7 +336,7 @@
           <div class="row mb-3">
 
             <div class="col-12">
-              <a href="#!"><span class="badge pink"><i class="fas fa-camera pr-2" aria-hidden="true"></i>I.T</span></a>
+              <a href="#!"><span class="badge indigo"><i class="fas fa-camera pr-2" aria-hidden="true"></i>I.T</span></a>
 
             </div>
             <!-- Grid column -->
@@ -354,7 +355,59 @@
 
   <%= render 'devise/registrations/register' %>
 
+  <hr class="w-header my-4">
 
+<br />
+
+
+ 
+    <div class="container my-5 py-5 z-depth-1">
+    <section class="space px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-6 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+       <%= image_tag 'job.jpg', class: 'img-fluid' %>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-6 mb-4 mb-lg-0">
+
+          <h3 class="font-weight-bold">Breaking into the hospitality industry?</h3>
+
+          <p class="font-weight-bold"></p>
+
+          <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+            molestiae
+            numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+            molestiae
+            numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+
+
+          <p class="text-muted">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente
+            molestiae
+            numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum.</p>
+
+         <a class="btn btn-deep-orange btn-md ml-0 text-white" href="#" role="button">Find your dream job</i></a>
+
+        </div>
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+
+    </section>
+  </div>
+   
+
+<br />
 
   <div class="container">
     <section class="section pb-3 wow fadeIn" data-wow-delay="0.3s">
@@ -366,10 +419,10 @@
 
         <!--Controls-->
         <div class="controls-top">
-          <a class="btn-floating unique-color" href="#multi-item-example" data-slide="prev">
+          <a class="btn-floating indigo" href="#multi-item-example" data-slide="prev">
             <i class="fas fa-chevron-left"></i>
           </a>
-          <a class="btn-floating unique-color" href="#multi-item-example" data-slide="next">
+          <a class="btn-floating indigo" href="#multi-item-example" data-slide="next">
             <i class="fas fa-chevron-right"></i>
           </a>
         </div>
@@ -418,7 +471,7 @@
                   <!--Card footer-->
 
 
-                  <%= link_to 'Enroll', course_path(course), class: 'btn btn-unique  btn-sm' %>
+                    <%= link_to 'Enroll', course_path(course), class: 'btn btn-indigo btn-rounded btn-sm' %>
                   <hr />
                   <div class="footer">
 
@@ -488,7 +541,7 @@
 
 
 
-                  <%= link_to 'Enroll', course_path(course), class: 'btn btn-unique btn-sm' %>
+                  <%= link_to 'Enroll', course_path(course), class: 'btn btn-indigo btn-rounded btn-sm' %>
                   <hr />
                   <div class="footer">
 
@@ -515,7 +568,275 @@
 
 
 
+<div class="container mt-5">
 
+
+  <!--Section: Content-->
+  <section class="team-section text-center dark-grey-text">
+
+    <!-- Section heading -->
+    <h3 class="font-weight-bold mb-4"> Student Testimonials</h3>
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!--Carousel Wrapper-->
+      <div id="multi-item-example" class="carousel testimonial-carousel slide carousel-multi-item mb-5" data-ride="carousel">
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+          <!--First slide-->
+          <div class="carousel-item active">
+
+            <!--Grid column-->
+            <div class="col-md-4">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(26).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Anna Deynah</h4>
+                <h6 class="blue-text font-weight-bold my-3">Web Designer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-half-alt"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">John Doe</h4>
+                <h6 class="blue-text font-weight-bold my-3">Web Developer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam,
+                  quis
+                  nostrum exercitationem ullam corporis laboriosam.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(31).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Abbey Clark</h4>
+                <h6 class="blue-text font-weight-bold my-3">Photographer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Quis autem vel eum iure
+                  reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--First slide-->
+
+          <!--Second slide-->
+          <div class="carousel-item">
+
+            <!--Grid column-->
+            <div class="col-md-4">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Blake Dabney</h4>
+                <h6 class="blue-text font-weight-bold my-3">Web Designer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam,
+                  quis
+                  nostrum exercitationem ullam corporis laboriosam.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-half-alt"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(6).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Andrea Clay</h4>
+                <h6 class="blue-text font-weight-bold my-3">Front-end developer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. Quod eos id officiis hic tenetur quae.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(7).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Cami Gosse</h4>
+                <h6 class="blue-text font-weight-bold my-3">Phtographer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et
+                  iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Second slide-->
+
+          <!--Third slide-->
+          <div class="carousel-item">
+
+            <!--Grid column-->
+            <div class="col-md-4">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Bobby Haley</h4>
+                <h6 class="blue-text font-weight-bold my-3">Web Developer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet,
+                  consectetur adipisicing elit. Quod eos id officiis hic tenetur quae.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Elisa Janson</h4>
+                <h6 class="blue-text font-weight-bold my-3">Marketer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et
+                  iusto odio dignissimos ducimus qui blanditiis praesentium.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star-half-alt"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-4 clearfix d-none d-md-block">
+              <div class="testimonial">
+                <!--Avatar-->
+                <div class="avatar mx-auto">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(9).jpg" class="rounded-circle img-fluid">
+                </div>
+                <!--Content-->
+                <h4 class="font-weight-bold mt-4">Rob Jacobs</h4>
+                <h6 class="blue-text font-weight-bold my-3">Front-end developer</h6>
+                <p class="font-weight-normal"><i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam,
+                  quis
+                  nostrum exercitationem ullam corporis laboriosam.</p>
+                <!--Review-->
+                <div class="star-review">
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                  <i class="fa fa-star"> </i>
+                </div>
+              </div>
+            </div>
+            <!--Grid column-->
+
+          </div>
+          <!--Third slide-->
+
+        </div>
+        <!--Slides-->
+
+      </div>
+      <!--Carousel Wrapper-->
+
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
 
 
 

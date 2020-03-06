@@ -34,7 +34,7 @@
                 <br />
                 <hr />
                 <div class="col-lg-12">
-                  <%= submit_tag "Search now", class: "btn btn-pink btn-md btn-block mt-lg-1 mt-md-2" %>
+                  <%= submit_tag "Search now", class: "btn btn-deep-orange btn-md btn-block mt-lg-1 mt-md-2" %>
                 </div>
               </div>
             </div>
@@ -47,30 +47,30 @@
 
 
         <!-- Panel -->
-        <div class="card link">
+        <!-- <div class="card link">
 
           <div class="card-header white-text primary-color">
            Featured jobs
-          </div>
-                 <% Job.all.each do |job| %>
-          <div class="card-body">
-            <div class="list-group list-group-flush">
-              <ul>
-              <a>
-               <%= link_to job.title, job_path(job) %>
+          </div> -->
+              <!--    <% Job.all.each do |job| %> -->
+      <!--     <div class="card-body">
+            <div class="list-group list-group-flush"> -->
+              <!-- <ul>
+              <a> -->
+         <!--       <%= link_to job.title, job_path(job) %> -->
          
-              </a>
+           <!--    </a>
              
             </div>
           </div>
         <% end %>
         </div>
-       <br />
+       <br /> -->
 
           <div class="testimonial-card">
            
 
-            <button class="btn btn-dark btn-lg btn-block" type="submit">Advertise Here</button>
+            <button class="btn btn-unique btn-lg btn-block" type="submit">Advertise Here</button>
 
             <!--Card-->
             <div class="card z-depth-0 border border-light rounded-0">
@@ -164,7 +164,7 @@
                   <div class="col-md-4 text-center pt-4">
                     <%= link_to job_path(job) do %> 
 
-                    <p class="h1 font-weight-normal"><button type="button" class="btn btn-purple btn-rounded btn-sm px-3">Apply for this job</button></p>
+                    <p class="h1 font-weight-normal"><button type="button" class="btn btn-unique btn-rounded btn-sm px-3">Apply for this job</button></p>
                     <% end %>
                   </div>
                 </div>
