@@ -7,10 +7,13 @@
   .view {
 height: 700px;
 
+
   }
+
 
 h1, h2, h3, h4, h5, h6, .navbar {
   margin: 0;
+   font-family: "Roboto Slab", serif;
 }
 
 
@@ -76,9 +79,10 @@ h1, h2, h3, h4, h5, h6, .navbar {
   }
 
  .rgba-gradient {
-  background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 50%);
-  background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 150%);
-  background: linear-gradient(to 45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 50%);
+
+  background: -moz-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(0, 0, 0, 0.2) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(63, 81, 181, 0.7) 150%);
+  background: linear-gradient(to 45deg, rgba(213, 15, 61, 0.6), rgba(0, 0, 0, 0.7) 100%);
 }
 .media .avatar {
     width: 64px;
@@ -160,8 +164,8 @@ display: block;
 
  
 .cyan-text {
-  color: #2b40a5  !important;
-
+  color: #1c2331  !important;
+ font-family: "Roboto Slab", serif;
 }
 
 .text-cyan {
@@ -215,16 +219,14 @@ a {
 }
 
 .text-warning {
-
-  font-weight: 500;
   color:  #ab4c2e !important;
- 
+  font-family: "Roboto Slab", serif;
 }
 
 
 .jumbotron  {
 
-  color: white;
+  color:  #f57c00;
 }
 
 .display-4 {
@@ -233,10 +235,7 @@ a {
     line-height: 1.2;
 }
 
-.btn-deep-orange {
-    color: #fff;
-    background-color: #2b40a5 !important;
-}
+
 
 .badge-info {
     color: #fff !important;
@@ -283,57 +282,3 @@ a {
   
 }
 
-html {
-  height: 100%;
-
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-#flex-content-container {
-  flex: 1;
-}
-
-
-
-
-.input-group.md-form.form-sm.form-1 input{
-  border: 1px solid #bdbdbd;
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-.input-group.md-form.form-sm.form-2 input {
-  border: 1px solid #bdbdbd;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-.input-group.md-form.form-sm.form-2 input.red-border {
-  border: 1px solid #ef9a9a;
-}
-.input-group.md-form.form-sm.form-2 input.lime-border {
-  border: 1px solid #cddc39;
-}
-.input-group.md-form.form-sm.form-2 input.amber-border {
-  border: 1px solid #ffca28;
-}
-
-
-
-.btn.btn-pink.btn-md.btn-block.mt-lg-1.mt-md-2 {
-  border-radius: 5px;
-}
-
-.job {
-  background-color: #2E2E2E;
-}
-
-.card-header.text-center.text-white {
-  background-color: #880e4f !important;
-  font-weight: bold;
-  color: #fff;
-}
-       

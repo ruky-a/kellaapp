@@ -1,0 +1,443 @@
+
+<div class="top jumbotron text-center">
+
+  <!-- Title -->
+  <h2 class="card-title h2">Welcome    <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h2>
+  <!-- Subtitle -->
+  <p class=" my-4 font-weight-bold">Member since: <%= current_user.created_at.strftime('%d %b %Y') %></p>
+
+  <!-- Grid row -->
+  <div class="row d-flex justify-content-center">
+
+    <!-- Grid column -->
+    <div class="col-xl-7 pb-2">
+
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga aliquid dolorem ea distinctio exercitationem delectus qui, quas eum architecto, amet quasi accusantium, fugit consequatur ducimus obcaecati numquam molestias hic itaque accusantium doloremque laudantium, totam rem aperiam.</p>
+
+    
+
+
+  
+            <span class="float-right">
+    <%= link_to  "Edit Profile", edit_user_registration_path, class: "btn btn-deep-orange"  %>
+        </span>
+      </div>
+
+
+         
+      </div>
+
+
+
+
+  </div>
+
+
+</div>
+
+
+  <!--Main Layout-->
+  <main>
+
+    <div class="container">
+
+      <!--Section: Team v.1-->
+      <section class="text-center team-section">
+
+        <!--Grid row-->
+        <div class="row text-center">
+
+          <!--Grid column-->
+          <div class="col-md-12 mb-4" style="margin-top: -100px;">
+
+            <div class="avatar mx-auto">
+                    <%= image_tag photo_url(current_user), class: "img-fluid rounded-circle z-depth-1" %>
+              
+            </div>
+     
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+      <div class="container my-5">
+
+  <!-- Section -->
+  <section>
+    
+    <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">Admin</h6>
+    <h3 class="font-weight-bold text-center dark-grey-text pb-2">All Task Lists</h3>
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit ex facere quas possimus.</p>
+
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-4">
+
+        <!-- Panel -->
+        <div class="card">
+
+          <div class="card-header white-text primary-color">
+            Things to improve
+          </div>
+
+          <div class="card-body text-center px-4">
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i>
+              </a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i>
+              </a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i>
+              </a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i>
+              </a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros 
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- Panel -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <!-- Panel -->
+        <div class="card">
+
+          <div class="card-header white-text primary-color">
+            Tasks to do
+          </div>
+
+          <div class="card-body text-center px-4">
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros 
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+            </div>
+          </div>
+
+        </div>
+        <!-- Panel -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <!-- Panel -->
+        <div class="card">
+
+          <div class="card-header white-text primary-color">
+            Statistics
+          </div>
+
+          <div class="card-body text-center px-4">
+            <div class="list-group list-group-flush">
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Cras justo odio
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Dapibus ac facilisi
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Morbi leo risus
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Porta ac consectet
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+              <a href="#" class="list-group-item d-flex justify-content-between dark-grey-text">Vestibulum at eros 
+                <i class="fas fa-wrench ml-auto" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to fix"></i></a>
+            </div>
+          </div>
+
+        </div>
+        <!-- Panel -->
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+
+  </section>
+  <!-- Section -->
+
+</div>
+
+      </section>
+ 
+
+      <h3><strong>My Courses</strong></h3>
+      <section>
+
+
+                <!--Projects section v.4-->
+                <section class="text-center mb-5">
+
+                  <!--Grid row-->
+                  <div class="row mb-4">
+
+                      <% current_user.enrolled_courses.each do |course| %>
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-blue-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong><%= link_to course.title, course_path(course) %></strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+         
+                               <a><%= link_to "More Info...", course_path(course), class: 'btn btn-outline-white btn-sm' %></a>
+                              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+
+                  
+
+                  </div>
+                
+           
+                  </div>
+                  <!--Grid row-->
+
+                </section>
+              
+
+                <div class="container">
+                <section class="text-center mb-5">
+
+                  <!--Grid row-->
+                  <div class="row mb-4">
+
+                 <h3 class="text-center"><strong>Teaching Courses</strong></h3>
+                   <% current_user.courses.each do |course| %>
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-blue-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong><%= link_to course.title, course_path(course) %></strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+         
+                               <a><%= link_to "More Info...", course_path(course), class: 'btn btn-outline-white btn-sm' %></a>
+                              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+
+                  
+
+                  </div>
+                
+           
+                  </div>
+                  <!--Grid row-->
+
+                </section>
+          </div>
+
+                <div class="container">
+                <section class="text-center mb-5">
+
+                  <!--Grid row-->
+                      <div class="row mb-4">
+                <h3 class="text-center"><strong>Posted jobs</strong></h3>
+                   <% current_user.jobs.each do |job| %>
+                    <div class="col-md-6 mb-4">
+                      <div class="card card-image" style="background-image: url('');">
+
+                        <!-- Content -->
+                        <div class="text-white text-center d-flex align-items-center rgba-blue-strong py-5 px-4">
+                          <div>
+                            <h3 class="mb-4 mt-4 font-weight-bold">
+                              <strong><%= link_to job.title, job_path(job) %></strong>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+                              voluptatem,
+                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+                              dignissimos.
+                              Odit sed qui, dolorum!.</p>
+         
+                               <a><%= link_to "More Info...", job_path(job), class: 'btn btn-outline-white btn-sm' %></a>
+                              
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+
+                  
+
+                  </div>
+                
+           
+                  </div>
+                  <!--Grid row-->
+
+                </section>
+          </div>
+
+
+          <div class="container my-5 py-5">
+        
+
+        <div class="row">
+            <h3 class="text-center"><strong>Applied for</strong></h3>
+      <div class="col-md-12">
+        <div class="card card-list">
+          <div class="card-header white d-flex justify-content-between align-items-center py-3">
+            <p class="h5-responsive font-weight-bold mb-0">Job Applications</p>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                      <th scope="col">Date</th>
+                  <th scope="col">Application ID</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Last Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Resume</th>
+                </tr>
+              </thead>
+              <tbody>
+                  
+                  <% current_user.jobapplications.each do |j| %>
+                 
+                <tr>
+                   <th scope="row"><a class="text-primary">  <%= j.created_at.strftime('%d %b %y') %></a></th>
+                  <th scope="row"><a class="text-primary">  <%= j.title %></a></th>
+                  <td>  <%= j.firstname %></td>
+                   <td>  <%= j.lastname %></td>
+                  <td><span class="badge badge-success"><%= j.status %></span></td>
+                  
+                  <% if j.attachment_file.attached? %>
+                 <td> <%= link_to url_for(j.attachment_file), class: "tag small warning m-t-20",
+               download: "Attachment_#{j.attachment_file.id}" do %>
+              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=j.attachment_file.filename %></td>
+              <% end %>
+                  </td>
+                </tr>
+
+                <% end %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer white py-3 d-flex justify-content-between">
+            <button class="btn btn-primary btn-md px-3 my-0 mr-0">Place New Order</button>
+            <button class="btn btn-light btn-md px-3 my-0 ml-0">View All Orders</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  </div>
+<div class="container my-5 py-5">
+
+
+    <!--Section: Content-->
+    <section class="text-center">
+
+
+     <h3 class="text-center"><strong>Job aplications</strong></h3>
+      <div class="row">
+           <% current_user.jobs.each do |job| %>
+
+     <% job.jobapplications.each do |jobapplication| %>
+
+
+        <div class="col-lg-4 col-md-12 mb-4">
+
+          
+          <div class="card">
+            <div class="card-body">
+          <%= jobapplication.created_at.strftime('%d %b %y') %></a>
+              <p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= jobapplication.job.title %></h3></a></p>
+
+              <h5 class="mb-1"><small class="mr-1">   <%= jobapplication.firstname %> <%= jobapplication.lastname %><br /></small><strong></strong></h5>
+
+              <div class="amber-text fa-xs mb-1">
+               
+              </div>
+
+              <hr />
+           <div class="row">
+              <p class="text-muted card-text mt-2 px-4 mb-2">
+        <% if jobapplication.attachment_file.attached? %>
+             <%= link_to url_for(jobapplication.attachment_file), class: "tag small warning m-t-20",
+               download: "Attachment_#{jobapplication.attachment_file.id}" do %>
+              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=jobapplication.attachment_file.filename %>
+              <% end %>
+              <% end %>
+              </p>
+            </div>
+              <hr />
+            <div class="row">
+              <p class="text-muted card-text mt-2 px-4 mb-2">
+              <%= jobapplication.message %>
+              </p>
+            </div>
+            
+            
+              <button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <!--Grid column-->
+   <% end %>
+      
+        <% end %>
+
+
+      </div>
+ 
+
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+
+
+
+
+    
+    

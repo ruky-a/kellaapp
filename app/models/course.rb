@@ -11,9 +11,12 @@ class Course < ApplicationRecord
   has_many :reviews
   has_many :comments
   belongs_to :category
-  has_one_attached :attachment_file
+
 
  
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :cost, presence: true, numericality: {greater_than_or_equal_to: 0}
 
   def free?
     cost.zero?

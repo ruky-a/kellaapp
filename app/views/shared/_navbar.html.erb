@@ -72,7 +72,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
 
-          aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %></i> Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
+          aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %>
+        </i> Hi,<%= current_user.first_name %>  <%= current_user.last_name %>
 
 
 
@@ -81,6 +82,8 @@
         aria-labelledby="navbarDropdownMenuLink-333">
         <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
+        <%= link_to  "Applications", applications_path, class: "dropdown-item"  %>
+           <%= link_to  "Job applications", job_applications_path, class: "dropdown-item"  %>
         <% if current_user.superadmin_role? || current_user.supervisor_role? %>
         <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
 
@@ -96,6 +99,8 @@
 </li>
 </ul>
 </div>
+
+
 
 <%= render 'devise/sessions/login' %>
 

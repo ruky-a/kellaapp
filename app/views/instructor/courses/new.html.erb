@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="top container">
    <div class="card col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
   <!-- Card body -->
   <div class="card-body">
@@ -8,7 +8,7 @@
      <%= form_for @course, url: instructor_courses_path do |f| %>
       <p class="h4 text-center py-4">Add a new Course</p>
 
-     <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
+     <%= f.text_field :title, autocomplete: "off", placeholder: 'Title', class: 'form-control' %>
    
 
       <br>
@@ -25,14 +25,7 @@
     <br />
 
 
-    <%= f.file_field :attachment_file, class: "file-input" %>
-    <span class="file-label">Attach Resume</span>
-    <span class="file-name" id="file-name">No file selected</span>
-    <br />
-
- 
-
-
+    
       <div class="text-center py-4 mt-3">
   <%= f.submit "Create", class: 'btn btn-primary' %>
       </div>

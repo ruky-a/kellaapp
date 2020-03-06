@@ -1,17 +1,18 @@
 
 <div class="top container">
-  <div class="card col-md-8 offset-md-2">
+  <div class="card col-md-10 offset-md-1">
     <!-- Card body -->
     <div class="card-body">
 
       <!-- Default form subscription -->
-      <%= form_for @job, url: new_job_path do |f| %>
-      <p class="h4 text-center py-4">Add a new Course</p>
 
-      <%= f.text_field :title, placeholder: 'Title', class: 'form-control' %>
+      <%= form_for @job do |f| %>
+      <p class="h4 text-center py-4">Add Job</p>
+
+     <%= f.text_field :title, placeholder: 'Job title', class: 'form-control' %>
 
 
-      <br>
+      <br />
 
       <%= f.text_field :location, placeholder: 'Address', class: 'form-control' %>
 

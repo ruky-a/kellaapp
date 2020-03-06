@@ -28,14 +28,6 @@
           <p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
 
 
-             <% if @course.attachment_file.attached? %>
-     <p>
-      <%= link_to url_for(@course.attachment_file), class: "tag small is-warning m-t-20",
-      download: "Attachment_#{@course.attachment_file.id}" do %>
-      <i class="fas fa-paperclip fa-lg p-r-5"></i> <%= @course.attachment_file.filename %>
-
-      <% end %> 
-      <% end %>
      </p>
 
           <% if current_user %>

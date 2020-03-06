@@ -4,12 +4,12 @@ class Instructor::CoursesController < ApplicationController
 
   def new
     @course = Course.new
-
+  @categories = Category.all
   end
 
   def create
     @course = current_user.courses.build(course_params)
-          if @course.save
+          if @course.valid?
       redirect_to instructor_course_path(@course), notice: "Saved..."
     else
       render :new, status: :unprocessable_entity
@@ -40,7 +40,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def course_params
-    params.require(:course).permit(:title, :description, :cost, :image, :category_id, :attachment_file)
+    params.require(:course).permit(:title, :description, :cost, :image, :category_id)
   end
 end
 

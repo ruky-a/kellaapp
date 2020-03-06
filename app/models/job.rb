@@ -1,4 +1,6 @@
 class Job < ApplicationRecord
+
+
   has_rich_text :description
   belongs_to :user
   belongs_to :category
@@ -9,6 +11,8 @@ class Job < ApplicationRecord
    geocoded_by :full_address
    after_validation :geocode
    
+  validates :title, presence: true
+  validates :description, presence: true
 
 
 def full_address

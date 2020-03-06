@@ -8,7 +8,7 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
  def new
-    @job = current_user.jobs.build
+    @job = Job.new
     @categories = Category.all
   end
 

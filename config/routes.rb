@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'dashboard', to: 'users#dashboard'
+
+  # get 'dashboard', to: 'users#dashboard'
   post 'users/edit', to: 'users#update'
   get 'users/:id', to: 'users#show'
   get 'members', to: 'users#members'
@@ -23,13 +24,14 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
  root 'homepage#index'
- resources :jobs, only: [:index, :new,:show, :create] do
+ resources :jobs do
   resources :jobapplications, only: [:create]
   collection do
   get 'search'
 end
 end
 
+resource :dashboard, only: [:show]
  resources :users
  resources :courses, only: [:index, :show] do
   resources :enrollments, only: :create
