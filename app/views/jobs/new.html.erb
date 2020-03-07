@@ -9,29 +9,36 @@
       <%= form_for @job do |f| %>
       <p class="h4 text-center py-4">Add Job</p>
 
-     <%= f.text_field :title, placeholder: 'Job title', class: 'form-control' %>
+     <%= f.text_field :title, placeholder: 'Job title', class: 'form-control', required: true %>
 
 
       <br />
 
-      <%= f.text_field :location, placeholder: 'Address', class: 'form-control' %>
+      <%= f.text_field :location, placeholder: 'Address', class: 'form-control', required: true %>
 
 
       <br />
 
-      <%= f.text_field :city, placeholder: 'City', class: 'form-control' %>
+      <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
 
 
       <br />
 
-      <%= f.text_field :state, placeholder: 'City', class: 'form-control' %>
+      <%= f.text_field :state, placeholder: 'City', class: 'form-control', required: true%>
+
+
+      <br />
+
+       <%= f.text_field :qualifications, placeholder: 'Qualifications', class: 'form-control', required: true%>
 
 
       <br />
 
 
 
-      <%= f.rich_text_area :description, rows: 50, cols: 50,  placeholder: 'Details of job', class: 'form-control'%>
+
+
+      <%= f.rich_text_area :description, rows: 50, cols: 50,  placeholder: 'Details of job', class: 'form-control', required: true %>
 
       <br>
 
@@ -45,7 +52,7 @@
 
 
       <div class="text-center py-4 mt-3">
-        <%= f.submit "Create", class: 'btn btn-primary' %>
+        <%= f.submit "Post Job", class: 'btn btn-primary' %>
       </div>
       <% end %>
 

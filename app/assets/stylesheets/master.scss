@@ -146,7 +146,14 @@ display: block;
 
 .nav-link {
     font-family: "Roboto Slab", serif;
+    padding-left:10px;
   }
+
+  .navbar.navbar-dark .breadcrumb .nav-item .nav-link, .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #fff;
+      padding-left:  20px;
+
+    }
 
 
 
@@ -226,7 +233,7 @@ a {
 
 .jumbotron  {
 
-  color:  #f57c00;
+  color:  #fff;
 }
 
 .display-4 {
@@ -286,3 +293,67 @@ a {
 font-weight: bold;
 
 }
+
+html {
+  height: 100%;
+
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-content-container {
+  flex: 1;
+}
+
+
+
+.input-group.md-form.form-sm.form-1 input{
+  border: 1px solid #bdbdbd;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input {
+  border: 1px solid #bdbdbd;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+.input-group.md-form.form-sm.form-2 input.red-border {
+  border: 1px solid #ef9a9a;
+}
+.input-group.md-form.form-sm.form-2 input.lime-border {
+  border: 1px solid #cddc39;
+}
+.input-group.md-form.form-sm.form-2 input.amber-border {
+  border: 1px solid #ffca28;
+}
+
+.list ul
+{
+list-style-type: none;
+padding: 0;
+margin: 0;
+text-align: left;
+width: 10em;
+
+}
+
+.list li
+{
+background-image: url(arrow.gif);
+background-repeat: no-repeat;
+background-position: 100% .4em;
+padding-right: .6em;
+margin: 0.2em 0;
+font-size: 15px;
+  
+  font-family: "Roboto Slab", serif;
+}
+
+.list a {
+  color: blue;
+}
+ 

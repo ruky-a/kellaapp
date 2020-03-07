@@ -13,12 +13,15 @@ class JobapplicationsController < ApplicationController
     @jobapplication.job = job
     @jobapplication.title = job.title
     if @jobapplication.save
-    flash[:notice] = 'Application submitted'
-  end
-  redirect_to job
-    
+  redirect_to job, notice: "Application Submitted..."
+    else
+         render :new, status: :unprocessable_entity
+
+   end
   end
 end
+
+
 
 def applications
 @jobapplications = current_user.jobapplications

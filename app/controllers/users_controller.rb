@@ -5,9 +5,7 @@ class UsersController < ApplicationController
     @user = User.all
   end
 
-  def dashboard
 
-  end
 
   def update
   @user = current_user

@@ -16,7 +16,7 @@ before_action :authenticate_user!, :except => [:index, :show]
     @job = current_user.jobs.build(job_params)
 
     if @job.save
-      redirect_to root_path, notice: "Saved..."
+      redirect_to root_path, notice: "Job Posted"
     else
          render :new, status: :unprocessable_entity
       end

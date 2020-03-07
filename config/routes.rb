@@ -2,16 +2,14 @@ Rails.application.routes.draw do
 
   # get 'dashboard', to: 'users#dashboard'
   post 'users/edit', to: 'users#update'
-  get 'users/:id', to: 'users#show'
-  get 'members', to: 'users#members'
+  # get 'users/:id', to: 'users#show'
+  # get 'members', to: 'users#members'
 
-  get 'comments/create'
- devise_for :users,
-  path: '',
-  path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register', edit: 'profile'},
-  controllers: {omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations'}
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
+ devise_for :users
+
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   post '/free' => 'charge#free'
     get '/search', to: 'homepage#search'
@@ -21,7 +19,6 @@ Rails.application.routes.draw do
   get '/settings/payment', to:'users#payment', as: 'settings_payment'
   
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
  root 'homepage#index'
  resources :jobs do
@@ -32,7 +29,7 @@ end
 end
 
 resource :dashboard, only: [:show]
- resources :users
+ resources :users, only: [:show, :update, :index]
  resources :courses, only: [:index, :show] do
   resources :enrollments, only: :create
    resources :comments, only: [:create]

@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-skip_before_action :authenticate_user!, :only => [:index, :show, :search]
+before_action :authenticate_user!, :except => [:index, :show, :search]
 
   def index
       @categories = Category.all

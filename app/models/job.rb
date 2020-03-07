@@ -13,6 +13,10 @@ class Job < ApplicationRecord
    
   validates :title, presence: true
   validates :description, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :location, presence: true
+  validates :qualifications, presence: true
 
 
 def full_address
