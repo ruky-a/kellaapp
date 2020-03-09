@@ -1,67 +1,77 @@
 
-
-<div class="top container mt-5">
-<section class="mb-5">
+<div class="top container">
   <div class="row">
-<div class="col-md-8">
+<div class="box col-md-8">
+  <section>
+ 
 
-<div class="card">
-
-<div class="card-body">
-<% if @job.logo.attached? %>
-<%= image_tag @job.logo, class: "rounded-circle", size: 60 %><br/>
+    <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4"><% if @job.logo.attached? %>
+<%= image_tag @job.logo, class: "rounded-circle", size: 40 %>
 <% end %>
-<span class="float-right">
-  <a class="text-white"><%= link_to 'Apply on company site', (@job.url), class: "btn btn-danger" %></a>
-</span>
+</h6>
+    <h3 class="font-weight-bold text-center dark-grey-text pb-2"><%= link_to @job.title %></h3>
+
+    <p class="text-center text-muted"><%= @job.company %> <%= @job.location %>,  <%= @job.city %> <%= @job.state %> </p>
+
+    <div class="row d-flex justify-content-center">
+
+       <div class="col-md-12 col-lg-10 col-xl-8">
+        <h5 class="font-weight-bold border-top border-secondary pt-4 mb-4"><a class="dark-grey-text" href="#">About Company</a></h5>
+        <p class="mb-3 pb-md-3">Written enquire painful to offices forming it. Then so does over sent
+          dull. Likewise offended humour mrs
+          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
+      </div>
 
 
 
-<p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= @job.title %></h3></a></p>
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <h5 class="font-weight-bold border-top border-light pt-4"><a class="dark-grey-text" href="#">Job Description</a></h5>
+        <p class="mb-3 pb-md-3">Written enquire painful to offices forming it. Then so does over sent
+          dull. Likewise offended humour mrs
+          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
+      </div>
 
-<h5 class="mb-1"><small class="mr-1"><%= @job.company %></small><strong></strong></h5>
 
-<div class="amber-text fa-xs mb-1">
-<%= @job.location %>
+
+
+  <div class="col-md-12 col-lg-10 col-xl-8">
+        <h5 class="font-weight-bold border-top border-light pt-4"><a class="dark-grey-text"
+            href="#">Required Qualification</a></h5>
+        <p class="mb-3 pb-md-3">Written enquire painful to offices forming it. Then so does over sent
+          dull. Likewise offended humour mrs
+          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
+      </div>
+
+      <div class="w-100"></div>
+
+      <div class="col-md-6 col-lg-5 col-xl-4">
+        <h5 class="font-weight-bold border-top border-light pt-4 mb-4"><a class="dark-grey-text" href="#">Benefits</a></h5>
+        <p class="mb-3">Written enquire painful to offices forming it. Then so does over sent dull.
+          Likewise offended humour mrs
+          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
+      </div>
+
+      <div class="col-md-6 col-lg-5 col-xl-4">
+        <h5 class="font-weight-bold border-top border-light pt-4 mb-4"><a class="dark-grey-text"
+            href="#">Salary Range</a></h5>
+        <p class="mb-3">Written enquire painful to offices forming it. Then so does over sent dull.
+          Likewise offended humour mrs
+          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
+      </div>
+
+
+   <span class="col-md-6 col-lg-5  align-center">
+     <a href="" class="btn blue-gradient btn-rounded" data-toggle="modal" data-target="#modalContactForm">Apply for this job</a></span>
+   </div>
+
+    
+  </section>
 </div>
 
-<hr />
-
-<div class="row h-100 d-flex align-items-center">
-<div class="col-lg-6">
-<h5>Job Responsibilities</h5>
-<div class="description">
-<p><%= @job.description %>
-</p>
 
 
-<h5>Qualification required</h5>
-<p><%=  @job.qualifications %></p>
-<br >
-
-<h5>Benefits</h5>
-<p><%=@job.benefits %></p>
-
-<div class="d-flex justify-content-between ml-3">
-
-  <a href="" class="btn btn-danger btn-rounded" data-toggle="modal" data-target="#modalContactForm">Apply for this job</a>
-
-
-
-<small class="grey-text"></small>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-<!--Grid column-->
-
-
-        <div class="col-md-4">
-                <div class="map">
+<div class="col-md-4">
+    <div class="map">
                   <%= @job.location%>, <%= @job.city %> <%= @job.state %>
                   <% if @job.latitude.present? && @job.longitude.present? %>
                   <script>
@@ -87,10 +97,20 @@
                 </script>
                 <div id="map"></div>
                 <% end %>
-              </div>
-            </div>
-          </div>
-        </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
 
 
 <%= render 'jobapplications/form' %>

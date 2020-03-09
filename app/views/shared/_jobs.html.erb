@@ -126,20 +126,20 @@
               <div class="card-body p-0">
                 <div class="row mx-0">
                   <div class="col-md-8 grey lighten-4 rounded-left pt-4">
-                     <h5 class="font-weight-bold"><%= link_to job.title, job_path(job) %><br />
-                    <%= job.company %></h5>
+                     <h4 class="font-weight-bold"><%= link_to job.title, job_path(job) %><br />
+                    <h5><%= job.company %></h5></h4>
                    
                   
-                    
+                   
           <a class="text-muted"><i class="fas fa-map-marker-alt"> </i> <%= job.location %></a>
-                    <p class="font-weight-light text-muted mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
-                    <p class="text-muted card-text mt-2 px-4 mb-2">
+                    <p class="font-weight-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
+                    <p class="text-muted">
                     Posted <%= timeago(job.created_at)%></p>
                   </div>
                   <div class="col-md-4 text-center pt-4">
-               
 
-                    <p class="h1 font-weight-normal"><button type="button" class="btn btn-unique btn-rounded btn-sm px-3">Apply for this job</button></p>
+           
+            <%= link_to 'Apply', job_path(job), class: "btn btn-unique btn-rounded btn btn-sm px" %></p>
               
 
                   </div>
@@ -156,6 +156,7 @@
           </div>
 
         </div>
+
      
       </div>
 

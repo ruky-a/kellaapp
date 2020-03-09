@@ -16,6 +16,19 @@ h1, h2, h3, h4, h5, h6, .navbar {
    font-family: "Roboto Slab", serif;
 }
 
+.box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 20px;
+
+}
+
 
   h1 {
     display: block;
@@ -78,12 +91,17 @@ h1, h2, h3, h4, h5, h6, .navbar {
     line-height: 1.7;
   }
 
- .rgba-gradient {
 
-  background: -moz-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
-  background: -webkit-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
-  background: linear-gradient(to 45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
-}
+
+.rgba-gradient {
+    background: -moz-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
+    background: -webkit-gradient(linear, 45deg, from(rgba(34, 49, 63, 1)), to(rgba(13, 17, 198, 0.69)));
+    background: -o-linear-gradient(45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
+    background: linear-gradient(to 45deg, rgba(34, 49, 63, 1), rgba(13, 17, 198, 0.69) 100%);
+  }
+
+
 .media .avatar {
     width: 64px;
 }
@@ -162,11 +180,12 @@ display: block;
   }
 
 .text-color {
-   font-size:25px;
+   font-size:28px;
    color:  #ff7043;
      font-weight: 200;
     font-family: "Roboto Slab", serif;
     text-transform: lowercase;
+    padding-bottom:5px;
   }
 
  
@@ -357,3 +376,21 @@ font-size: 15px;
   color: blue;
 }
  
+
+.map-container-2{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.map-container-2 iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+
+.form-header {
+  background-color: #ff7043;
+}

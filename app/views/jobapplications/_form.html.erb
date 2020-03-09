@@ -4,8 +4,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <% if @job.logo.attached? %>
-        <h4 class="modal-title w-100 font-weight-bold"><%= image_tag @job.logo, class: "rounded-circle", size: 40 %><% end %><%= @job.title %></h4> 
+
+        <h4 class="modal-title w-100 font-weight-bold mt-4 mx-4"><%= @job.title %></h4> 
          
         
        
@@ -59,7 +59,7 @@
 
       </div>
       <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-unique">Apply</button>
+        <button class="btn blue-gradient btn-rounded text-bold">Submit</button>
       </div>
     </div>
   </div>
