@@ -8,7 +8,7 @@
         <div class="card-body">
 
 
-          <div class="form-header bg-white">
+          <div class="form-header peach-gradient">
             <h3><i class="fa fa-user"></i> Change Your Password</h3>
           </div>
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -27,7 +27,7 @@
           </div>
 
           <div class="text-center">
-            <%= f.submit "Change my password", class: "btn btn-primary" %>
+            <%= f.submit "Change my password", class: "btn blue-gradient btn-rounded" %>
           </div>
           <% end %>
 
