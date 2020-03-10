@@ -3,7 +3,7 @@ before_action :authenticate_user!, :except => [:index, :show, :search]
 
 
   def index
-    @jobs = Job.all.order("created_at desc")
+  @jobs = Job.all.order("created_at desc")
   @categories = Category.all
   end
 

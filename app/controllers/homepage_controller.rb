@@ -4,6 +4,7 @@ before_action :authenticate_user!, :except => [:index, :show, :search]
   def index
   @courses = Course.all.limit(3)
    @categories = Category.all
+
   end
 
 
