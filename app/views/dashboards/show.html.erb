@@ -1,8 +1,8 @@
 
-<div class="top jumbotron text-center">
+<div class="top jumbotron text-center bg-primary">
 
   <!-- Title -->
-  <h2 class="card-title h2">Welcome    <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h2>
+  <h2 class="card-title h2">Welcome to your Dashboard,   <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h2>
   <!-- Subtitle -->
   <p class=" my-4 font-weight-bold">Member since: <%= current_user.created_at.strftime('%d %b %Y') %></p>
 

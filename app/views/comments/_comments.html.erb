@@ -1,37 +1,11 @@
-
-
-
-
-<div class="container">
-<div class="row">
-
-  <!-- Grid column -->
-  <div class="col-md-12">
-
-    <ul class="nav md-pills nav-justified pills-rounded pills-purple-gradient">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#panel100" role="tab">comments</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#panel101" role="tab">Student Reviews</a>
-      </li>
-    
-    </ul>
-
-
-    <div class="tab-content">
-
-      <!--Panel 1-->
-      <div class="tab-pane fade in show active" id="panel100" role="tabpanel">
-
-          <section>
+       <section>
 
     <div class="card card-list">
       <div class="card-header white d-flex justify-content-between align-items-center py-3">
         <div class="d-flex justify-content-start align-items-center">
         
           <div class="d-flex flex-column pl-3">
-            <a href="#!" class="font-weight-normal mb-0">Comments</a>
+            <a href="#!" class="font-weight-normal mb-0"><%= @course.title %></a>
           </div>
         </div>
 
@@ -39,20 +13,6 @@
 
       </div>
 
-
-      <div class="card-body">
-
-        <p class="my-4"><%= @course.title %></p>
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="d-flex flex-row">
-            <button type="button" class="btn btn-fb btn-sm py-1 px-2 m-0 mr-2"><i class="far fa-thumbs-up pr-1"></i> Like</button>
-            <button type="button" class="btn btn-light btn-sm py-1 px-2 m-0 mr-2"><i class="fas fa-share pr-1"></i> Share</button>
-          </div>
-          <div class="d-flex flex-column pl-3">
-            <p class="small text-muted mb-0">135 likes - 7 comments</p>
-          </div>
-        </div>
-      </div>
 
         <% @course.comments.each do |comment| %>
       <div class="py-4 grey lighten-4">
@@ -92,20 +52,3 @@
       <% end %>
   </div>
 </section>
-</div>
-
-
-
-
-      
-      <!--Panel 2-->
-      <div class="tab-pane fade" id="panel101" role="tabpanel">
-
-       
-   
-
-   
-</div>
-</div>
-</div>
-</div>

@@ -28,191 +28,283 @@
           <p class="text-muted"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quam sapiente molestiae numquam quas, voluptates omnis nulla ea odio quia similique corrupti magnam, doloremque laborum. <%= @course.description %></p>
 
 
-     </p>
+        </p>
 
-          <% if current_user %>
-          <% if current_user.enrolled_in?(@course) %>
-          <h3 class="badge badge-info">You Are Enrolled!</h3>
+        <% if current_user %>
+        <% if current_user.enrolled_in?(@course) %>
+        <h3 class="badge badge-info">You Are Enrolled!</h3>
 
-          <% else %>
-
-          <% if @course.free? %>
-          <%= link_to 'Start', course_enrollments_path(@course), class: 'btn btn-danger', method: :post %>
-          <% else %>
-
-
-
-
-          <%= form_tag course_enrollments_path(@course) do %>
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-email="<%= current_user.email %>"
-          data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
-          data-amount="<%= (@course.cost * 100).to_i %>"
-          data-locale="auto">
-        </script>
-
-
-
-
-
-
-        <script>
-
-          document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-        </script>
-
-        <span class="badge badge-default">
-          <h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
-        </span>
-
-        <button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button>
-        <% end %>
-        <% end %>
-        <% end %>
         <% else %>
-        <%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
-        <% end %>
-      </div>
+
+        <% if @course.free? %>
+        <%= link_to 'Start', course_enrollments_path(@course), class: 'btn btn-danger', method: :post %>
+        <% else %>
+
+
+
+
+        <%= form_tag course_enrollments_path(@course) do %>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-email="<%= current_user.email %>"
+        data-description="<%= @course.title %> (<%= number_to_currency @course.cost %>)"
+        data-amount="<%= (@course.cost * 100).to_i %>"
+        data-locale="auto">
+      </script>
 
 
 
 
 
-      <div class="col-lg-6 mb-4">
-        <div class="overlay z-depth-1-half">
-          <%= image_tag @course.image, class: 'img-fluid' %>
 
-          <a href="#">
-            <div class="rgba-white-light"></div>
-          </a>
-        </div>
+      <script>
 
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+      </script>
+
+      <span class="badge badge-default">
+        <h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
+      </span>
+
+      <button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% else %>
+      <%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
+      <% end %>
+    </div>
+
+
+
+
+
+    <div class="col-lg-6 mb-4">
+      <div class="overlay z-depth-1-half">
+        <%= image_tag @course.image, class: 'img-fluid' %>
+
+        <a href="#">
+          <div class="rgba-white-light"></div>
+        </a>
       </div>
 
     </div>
-  </section>
+
+  </div>
+</section>
 
 
-  <div class="container my-5">
-    <section class="dark-grey-text text-center">
+
+<div class="container my-5">
+  <section class="dark-grey-text text-center">
 
 
-      <% @course.sections.each do |section| %>
+    <% @course.sections.each do |section| %>
 
-      <h3>
-        <%= section.title %>
-      </h3>
-      <div class="row">
+    <h3>
+      <%= section.title %>
+    </h3>
+    <div class="row">
 
-        <% section.lessons.each do |lesson| %>
-        <div class="col-md-4 mb-4">
-          <%= link_to lesson_path(lesson), class: "card hoverable" do %>
-          <div class="card-body my-4">
+      <% section.lessons.each do |lesson| %>
+      <div class="col-md-4 mb-4">
+        <%= link_to lesson_path(lesson), class: "card hoverable" do %>
+        <div class="card-body my-4">
 
-            <p><i class="fas fa-play fa-2x"></i></p>
-            <h5 class="black-text mb-0"><%= lesson.title %></h5>
-          </div>
-
-          <% end %>
-
+          <p><i class="fas fa-play fa-2x"></i></p>
+          <h5 class="black-text mb-0"><%= lesson.title %></h5>
         </div>
+
         <% end %>
+
       </div>
+      <% end %>
     </div>
+
     <% end %>
-
-
   </section>
+</div>
 </div>
 
 
+<div class="container">
+  <div class="col-md-8">
+    <% @course.sections.each do |section| %>
+    <%= section.title %>
+    <% section.lessons.each do |lesson| %>
+    <ul class="list-group list-group-flush">
+      <ul class="list-group">
+        <%= link_to lesson_path(lesson), class: "card hoverable" do %>
+        <li class="list-group-item">
+          <a class="text-white btn-floating btn-yt btn-sm"><i class="fa fa-play"></i></a>  <%= link_to lesson.title, lesson_path(lesson) %>
+        </li>
+        <% end %>
+      </ul>
+    </ul>
+
+    <% end %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $("time.timeago").timeago();
+  });
+</script>
+
+
+
+
+
+
+<% if current_user %>
+<% if current_user.enrolled_in?(@course) %>
 
 
 
 <div class="container">
-<div class="col-12 ">
-  <%= form_for ([@course, @review]) do |f| %>
-    <div class="media mt-3 shadow-textarea">
-  
-      <div class="media-body">
-   
-        <div id="star"></div>
-        <div class="form-group basic-textarea rounded-corners">
+  <div class="row">
+    <div class="box col-md-12">
+      <h3>Student Discussions</h3>
+      <% @course.comments.each do |comment| %>
+      <div class="py-4 grey lighten-4">
+        <div class="px-3">
+          <%= image_tag photo_url(comment.user), class: "z-depth-1 rounded-circle float-left",  width: 40 %>
 
-           <%= f.text_area :review, placeholder: "Write your review...", class: "form-control" %>
-           <%= f.hidden_field :course_id, :value => @course.id %>
 
-           <div class="text-right">
-          <%= f.submit "Add review", class: "btn btn-danger btn-rounded z-depth-1a" %>
-    
+          <div class="d-flex flex-column pl-3">
+            <div class="">
+              <a href="#!" class="font-weight-normal mb-0"><%= comment.user.first_name %> <%= comment.user.last_name %></a>
+              <p class="small text-muted float-right mb-0"> <td>
+                Posted <%= timeago(comment.created_at)%></td></p>
+              </div>
+              <p class="font-weight-light dark-grey-text mb-0"> <%= comment.message %></p>
+            </div>
           </div>
         </div>
+
+        <% end %>
+
+
+
+
+
+
+        <div class="card-footer white py-3">
+          <%= form_for @comment, url: course_comments_path(@course) do |f| %>
+          <div class="form-group mb-0">
+            <%= f.text_area :message, placeholder: "Write your comment...",  rows: 2, class: "form-control rounded-0" %>
+
+
+            <div class="text-right pt-1">
+              <%= f.submit "Post Comment", class: "btn btn-danger btn-sm mb-0 mr-0" %>
+
+            </div>
+          </div>
+
+
+          <% end %>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <h3>Reviews</h3>
+    <div class="box col-md-12">
+
+      <% @reviews.order("id desc").each do |r| %>
+      <ul class="list-unstyled">
+        <li class="media">
+          <%= image_tag photo_url(r.user), class: "d-flex mr-3", size: 70 %> 
+
+          <div class="media-body">
+            <h5 class="mt-0 mb-2 font-weight-bold"><%= r.user.first_name %> <%= r.user.last_name %></h5>
+            <i><div id="stars_<%= r.id %>"></div></i>
+            <p><%= r.review %></p>
+            <p><%=r.created_at.strftime('%d %b %Y') %></p>
+
+          </div>
+        </li>
+
+
+      </ul>
+      <script>
+
+
+
+        $('#stars_<%= r.id %>').raty({
+          path: '/assets/raty-js/lib/images',
+          readOnly: true,
+          score: <%= r.stars %>
+        });
+      </script>
+
+
       <% end %>
     </div>
   </div>
 </div>
+</div>
 
+
+
+<% end %>
+<% end %>
+
+
+
+
+
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Write a review</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <%= form_for ([@course, @review]) do |f| %>
+    <div class="modal-body mx-3 text-center">
+      <div class="md-form mb-5">
+        <div id="star"></div>
+      </div>
+
+      <div class="md-form mb-4">
+        <%= f.text_area :review, placeholder: "...Comment...",  rows: 2, class: "form-control" %>
+        <%= f.hidden_field :course_id, :value => @course.id %>
+      </div>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-unique">Submit</button>
+    </div>
+  </div>
+</div>
+</div>
 <script>
 
   $('#star').raty({
-            path: '/assets/raty-js/lib/images',
-            scoreName: 'review[stars]',
-            score: 1
-        });
+    path: '/assets/raty-js/lib/images',
+    scoreName: 'review[stars]',
+    score: 1
+  });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="container">
-<div class="col-12 ">
-<% @reviews.order("id desc").each do |r| %>
-    <div class="media">
-  <%= image_tag photo_url(r.user), class: "d-flex rounded-circle avatar z-depth-1-half mr-3"  %> 
-  <div class="media-body">
-     <td>Posted <%= timeago(r.created_at)%></td>
-    <h5 class="mt-0 font-weight-bold blue-text"><%= r.user.first_name %> <%= r.user.last_name %> </h5><br />
- 
-      <div id="stars_<%= r.id %>"></div>
-     <p><%= r.review %></p>
-
-
-  </div>
-</div>
-<script>
-$('#stars_')
-
-
-  $('#stars_<%= r.id %>').raty({
-            path: '/assets/raty-js/lib/images',
-            readOnly: true,
-            score: <%= r.stars %>
-        });
-      </script>
 
 <% end %>
+
+
+
+
+
+<div class="text-center">
+  <a href="" class="btn blue-gradient btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Write a review</a>
 </div>
-</div>
-
-
-
-<script>
-  $(function() {
- $("time.timeago").timeago();
-});
-</script>
-
-
-
-
-

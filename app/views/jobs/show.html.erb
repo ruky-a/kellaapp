@@ -1,116 +1,127 @@
 
-<div class="top container">
-  <div class="row">
-<div class="box col-md-8">
-  <section>
- 
+<section class="section bg-grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="product-details">        
+          <div class="content mt-5 pt-5">
 
-    <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4"><% if @job.logo.attached? %>
-<%= image_tag @job.logo, class: "rounded-circle", size: 40 %>
-<% end %>
-</h6>
-    <h3 class="font-weight-bold text-center dark-grey-text pb-2"><%= link_to @job.title %></h3>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <h3 class="tab-title"><% if @job.logo.attached? %>
+                  <%= image_tag @job.logo, class: "rounded-circle", size: 40 %>
+                  <% end %><%= @job.title %></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia laudantium beatae quod perspiciatis, neque
+                    dolores eos rerum, ipsa iste cum culpa numquam amet provident eveniet pariatur, sunt repellendus quas
+                    voluptate dolor cumque autem molestias. Ab quod quaerat molestias culpa eius, perferendis facere vitae commodi
+                    maxime qui numquam ex voluptatem voluptate, fuga sequi, quasi! Accusantium eligendi vitae unde iure officia
+                    amet molestiae velit assumenda, quidem beatae explicabo dolore laboriosam mollitia quod eos, eaque voluptas
+                    enim fuga laborum, error provident labore nesciunt ad. Libero reiciendis necessitatibus voluptates ab
+                  excepturi rem non, nostrum aut aperiam? Itaque, aut. Quas nulla perferendis neque eveniet ullam?</p>
 
-    <p class="text-center text-muted"><%= @job.company %> <%= @job.location %>,  <%= @job.city %> <%= @job.state %> </p>
+                  <h4 class="tab-title">About Company</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sed, officia reiciendis necessitatibus
+                    obcaecati eum, quaerat unde illo suscipit placeat nihil voluptatibus ipsa omnis repudiandae, excepturi! Id
+                    aperiam eius perferendis cupiditate exercitationem, mollitia numquam fuga, inventore quam eaque cumque fugiat,
+                    neque repudiandae dolore qui itaque iste asperiores ullam ut eum illum aliquam dignissimos similique! Aperiam
+                    aut temporibus optio nulla numquam molestias eum officia maiores aliquid laborum et officiis pariatur,
+                    delectus sapiente molestiae sit accusantium a libero, eligendi vero eius laboriosam minus. Nemo quibusdam
+                  nesciunt doloribus repellendus expedita necessitatibus velit vero?</p>
 
-    <div class="row d-flex justify-content-center">
-
-       <div class="col-md-12 col-lg-10 col-xl-8">
-        <h5 class="font-weight-bold border-top border-secondary pt-4 mb-4"><a class="dark-grey-text" href="#">About Company</a></h5>
-        <p class="mb-3 pb-md-3">Written enquire painful to offices forming it. Then so does over sent
-          dull. Likewise offended humour mrs
-          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
-      </div>
-
-
-
-      <div class="col-md-12 col-lg-10 col-xl-8">
-        <h5 class="font-weight-bold border-top border-light pt-4"><a class="dark-grey-text" href="#">Job Description</a></h5>
-        <p class="mb-3 pb-md-3">Written enquire painful to offices forming it. Then so does over sent
-          dull. Likewise offended humour mrs
-          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
-      </div>
-
-
-
-
-  <div class="col-md-12 col-lg-10 col-xl-8">
-        <h5 class="font-weight-bold border-top border-light pt-4"><a class="dark-grey-text"
-            href="#">Required Qualification</a></h5>
-        <p class="mb-3 pb-md-3">Written enquire painful to offices forming it. Then so does over sent
-          dull. Likewise offended humour mrs
-          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
-      </div>
-
-      <div class="w-100"></div>
-
-      <div class="col-md-6 col-lg-5 col-xl-4">
-        <h5 class="font-weight-bold border-top border-light pt-4 mb-4"><a class="dark-grey-text" href="#">Benefits</a></h5>
-        <p class="mb-3">Written enquire painful to offices forming it. Then so does over sent dull.
-          Likewise offended humour mrs
-          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
-      </div>
-
-      <div class="col-md-6 col-lg-5 col-xl-4">
-        <h5 class="font-weight-bold border-top border-light pt-4 mb-4"><a class="dark-grey-text"
-            href="#">Salary Range</a></h5>
-        <p class="mb-3">Written enquire painful to offices forming it. Then so does over sent dull.
-          Likewise offended humour mrs
-          fat trifling answered. On ye position greatest so desirous enable performance based.</p>
-      </div>
+                  <h4 class="tab-title">Required Qualification</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sed, officia reiciendis necessitatibus
+                    obcaecati eum, quaerat unde illo suscipit placeat nihil voluptatibus ipsa omnis repudiandae, excepturi! Id
+                    aperiam eius perferendis cupiditate exercitationem, mollitia numquam fuga, inventore quam eaque cumque fugiat,
+                    neque repudiandae dolore qui itaque iste asperiores ullam ut eum illum aliquam dignissimos similique! Aperiam
+                    aut temporibus optio nulla numquam molestias eum officia maiores aliquid laborum et officiis pariatur,
+                    delectus sapiente molestiae sit accusantium a libero, eligendi vero eius laboriosam minus. Nemo quibusdam
+                  nesciunt doloribus repellendus expedita necessitatibus velit vero?</p>
 
 
-   <span class="col-md-6 col-lg-5  align-center">
-     <a href="" class="btn blue-gradient btn-rounded" data-toggle="modal" data-target="#modalContactForm">Apply for this job</a></span>
-   </div>
-
-    
-  </section>
-</div>
+                  <h4 class="tab-title">Benefits</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sed, officia reiciendis necessitatibus
+                    obcaecati eum, quaerat unde illo suscipit placeat nihil voluptatibus ipsa omnis repudiandae, excepturi! Id
+                    aperiam eius perferendis cupiditate exercitationem, mollitia numquam fuga, inventore quam eaque cumque fugiat,
+                    neque repudiandae dolore qui itaque iste asperiores ullam ut eum illum aliquam dignissimos similique! Aperiam
+                    aut temporibus optio nulla numquam molestias eum officia maiores aliquid laborum et officiis pariatur,
+                    delectus sapiente molestiae sit accusantium a libero, eligendi vero eius laboriosam minus. Nemo quibusdam
+                  nesciunt doloribus repellendus expedita necessitatibus velit vero?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
-<div class="col-md-4">
-    <div class="map">
-                  <%= @job.location%>, <%= @job.city %> <%= @job.state %>
-                  <% if @job.latitude.present? && @job.longitude.present? %>
-                  <script>
 
-                    function initMap() {
-                      var myLatLng = {lat: <%= @job.latitude %>, lng: <%= @job.longitude %>};
+        <div class="top col-md-4">
+          <div class="sidebar">
+            <div class="widget user text-center">
 
-                      var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 12,
-                        center: myLatLng
-                      });
+              <p class="member-time">Posted <%= timeago(@job.created_at)%></p>
+              <ul class="list-inline mt-20">
+                <li class="list-inline-item"> <a href="" class="btn peach-gradient btn-rounded" data-toggle="modal" data-target="#modalContactForm">Apply for this job</a></li>
 
-                      var marker = new google.maps.Marker({
-                        position: myLatLng,
-                        map: map,
-                        title: 'Hello World!'
-                      });
-                    }
-                  </script>
+              </ul>
+            </div>
+            <!-- Map Widget -->
+            <div class="widget map">
+              <div class="map">
+                <h5 class="text-bold"><%= @job.location%>, <%= @job.city %> <%= @job.state %></h5>
+                <% if @job.latitude.present? && @job.longitude.present? %>
+                <script>
 
-                  <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUVi5Uoez-7hb5hh3ZBEn2g4kXMbwdYRk&callback=initMap">
+                  function initMap() {
+                    var myLatLng = {lat: <%= @job.latitude %>, lng: <%= @job.longitude %>};
+
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 12,
+                      center: myLatLng
+                    });
+
+                    var marker = new google.maps.Marker({
+                      position: myLatLng,
+                      map: map,
+                      title: 'Hello World!'
+                    });
+                  }
                 </script>
-                <div id="map"></div>
-                <% end %>
+
+                <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUVi5Uoez-7hb5hh3ZBEn2g4kXMbwdYRk&callback=initMap">
+              </script>
+              <div id="map"></div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="widget rate">
+            <h5 class="widget-header text-center">  <li class="list-inline-item"><a href="" class="btn btn-offer d-inline-block btn-deep-orange ml-n1 my-1 px-lg-4 px-md-3">Apply on company site</a></li></h5>
+
+          </div>
+
+
+          <div class="widget coupon text-center">
+
+            <p>Advertisement</p>
+
+            <a href="" class="btn btn-transparent-white">Visit Site</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
 
 
 
-
-
-
-
-
-
+<script>
+  $(function() {
+    $("time.timeago").timeago();
+  });
+</script>
 
 
 <%= render 'jobapplications/form' %>

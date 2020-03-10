@@ -1,7 +1,7 @@
 <div id="flex-content-container">
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
 
-    
+    <div class="container">
 
       <div class="navbar-brand"> <%= link_to root_path do %> <h2 class="text-white text-capitalize"></i>Kella<span class="text-color">Hospitality</span></h2>
         <% end %>
@@ -14,8 +14,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
+          
+     <%= link_to "Home", root_path, class: "nav-link" %>
           </a>
         </li>
 
@@ -33,23 +33,28 @@
           <%= link_to "Jobs", jobs_path, class: "nav-link" %>
 
         </li>
+       
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
+        
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
           aria-expanded="false">Courses</a>
           <div class="dropdown-menu dropdown-danger">
+             <%= link_to "All courses", courses_path, class: "dropdown-item" %>
             <% Category.all.each do |item| %>
+
             <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
             <% end %>
 
           </div>
         </li> 
+
+          <li class="nav-item">
+          <%= link_to "Post a job", new_job_path, class: "nav-link btn btn-white btn-rounded btn-sm" %>
+
+        </li>
+
       </ul>
 
 
@@ -97,7 +102,7 @@
       <% end %>
     </ul>
 
-
+</div>
 </nav>
 </li>
 </ul>

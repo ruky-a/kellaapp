@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
 
   def show
     @section = Lesson.find(params[:id])
-    
+       @sections = Lesson.all.order("created_at desc")
   end
 
   private
