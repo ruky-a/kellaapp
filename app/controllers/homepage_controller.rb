@@ -10,6 +10,7 @@ before_action :authenticate_user!, :except => [:index, :show, :search]
   def show
   @course = Course.find(params[:id])
    @categories = Category.all
+   
   end
 
   def search 
