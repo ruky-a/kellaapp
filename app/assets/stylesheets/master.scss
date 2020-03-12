@@ -101,11 +101,11 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 
 .rgba-gradient {
-    background: -moz-linear-gradient(45deg, rgba(28, 35, 49, 1), rgba(13, 17, 198, 0.69) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(28, 35, 49, 1), rgba(13, 17, 198, 0.69) 150%);
-    background: -webkit-gradient(linear, 45deg, from(rgba(28, 35, 49, 1)), to(rgba(13, 17, 198, 0.69)));
-    background: -o-linear-gradient(45deg, rgba(28, 35, 49, 1), rgba(13, 17, 198, 0.69) 100%);
-    background: linear-gradient(to 45deg, rgba(28, 35, 49, 1), rgba(29, 210, 177, 0.7) 100%);
+    background: -moz-linear-gradient(45deg, rgba(10, 10, 136, 1), rgba(13, 17, 198, 0.69) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(10, 10, 136, 1), rgba(13, 17, 198, 0.69) 150%);
+    background: -webkit-gradient(linear, 45deg, from(rgba(10, 10, 136, 1)), to(rgba(13, 17, 198, 0.69)));
+    background: -o-linear-gradient(45deg, rgba(10, 10, 136, 1), rgba(13, 17, 198, 0.69) 100%);
+    background: linear-gradient(to 45deg, rgba(10, 10, 136, 1), rgba(29, 210, 177, 0.7) 100%);
   }
 
 
@@ -187,7 +187,7 @@ display: block;
   }
 
 .text-color {
-   font-size:28px;
+   font-size:25px;
    color:  #ff7043;
      font-weight: 200;
     font-family: "Roboto Slab", serif;
@@ -199,6 +199,7 @@ display: block;
 .cyan-text {
   color: #1c2331  !important;
  font-family: "Roboto Slab", serif;
+    font-size:25px;
 }
 
 .text-cyan {
@@ -258,10 +259,14 @@ a {
 
 
 .jumbotron  {
-
-  color:  #fff;
+  background-color: #0a0a88;
 }
 
+
+.jumbotron{
+  color: #fff
+
+}
 .display-4 {
     font-size: 2.5rem;
     font-weight: 300;
@@ -1216,3 +1221,17 @@ form textarea {
     margin-right: 0px;
 }
 
+.btn-primary {
+  background-color: #0a0a88 !important;
+}
+
+
+.text-muted {
+  font-size: 12px;
+
+}
+
+.mb-4 h3 a{
+color: #fff;
+
+}

@@ -3,7 +3,7 @@
 
     <div class="container">
 
-      <div class="navbar-brand"> <%= link_to root_path do %> <h2 class="text-white text-capitalize"></i>Kella<span class="text-color">Hospitality</span></h2>
+      <div class="navbar-brand"> <%= link_to root_path do %> <h2 class="text-white text-capitalize"></i>Kella<span class="text-color">HOSPITALITY</span></h2>
         <% end %>
       </div>
 
@@ -34,12 +34,15 @@
           <%= link_to "Jobs", jobs_path, class: "nav-link" %>
 
         </li>
-      
+
 
        <li class="nav-item">
-          <%= link_to "Videos", '#', class: "nav-link" %>
+          <%= link_to "Post a Job", new_job_path, class: "nav-link" %>
 
         </li>
+      
+
+    
 
         
 
@@ -56,11 +59,11 @@
           </div>
         </li> 
 
-          <li class="nav-item">
+        <!--   <li class="nav-item">
            <%= link_to 'Post job', '#', data: {toggle: 'modal', target: '#modalRegisterForm'}, class: "btn btn-white btn-rounded btn-sm text-center" %>
         &nbsp;&nbsp;
 
-        </li>
+        </li> -->
 
 
       </ul>
@@ -72,16 +75,18 @@
        
 
         <% if (!user_signed_in?)  %>
-        <li class="nav-item">
-          <a href="" class="nav-link btn btn-unique btn-sm btn-rounded" data-toggle="modal" data-target="#modal2"><i class="fas fa-user left">
-          Register</i></a>
-        </li>
-        <li class="nav-item">
 
-          <a href="" class=" nav-link" data-toggle="modal" data-target="#modal1">
+         <li class="nav-item">
+
+          <a href="" class="nav-link" data-toggle="modal" data-target="#modal1">
           Login</i></a>
         </li>
 
+        <li class="nav-item">
+          <a href="" class="btn btn-deep-orange btn-sm btn-rounded" data-toggle="modal" data-target="#modal2">
+          Register</i></a>
+        </li>
+       
 
         <% else %>
 

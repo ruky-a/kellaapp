@@ -11,11 +11,11 @@
         <!-- Nav tabs -->
         <ul class="nav md-pills nav-justified pills-deep-orange mt-4 mx-4" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fas fa-user mr-1"></i>
+            <a class="nav-link active" data-toggle="tab" href="#panel1" role="tab"><i class="fa fa-user mr-1"></i>
               Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fas fa-user-plus mr-1"></i>
+            <a class="nav-link" data-toggle="tab" href="#panel2" role="tab"><i class="fa fa-user-plus mr-1"></i>
               Register</a>
           </li>
         </ul>
@@ -28,19 +28,19 @@
             <!--Body-->
             <div class="modal-body mb-1">
               <div class="md-form form-sm">
-                <i class="fas fa-envelope prefix"></i>
+                <i class="fa fa-envelope prefix"></i>
                      <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control form-control-sm" %>
               
               </div>
 
               <div class="md-form form-sm">
-                <i class="fas fa-lock prefix"></i>
+                <i class="fa fa-lock prefix"></i>
                  <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control form-control-sm" %>
               
               </div>
         
               <div class="text-center mt-2">
-                <button class="btn btn-deep-orange">Log in <i class="fas fa-sign-in-alt ml-1"></i></button>
+                <button class="btn btn-deep-orange">Log in <i class="fa fa-sign-in-alt ml-1"></i></button>
               </div>
             </div>
             <!--Footer-->
@@ -65,7 +65,7 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <div class="modal-body">
               <div class="md-form form-sm">
-                <i class="fas fa-envelope prefix"></i>
+                <i class="fa fa-envelope prefix"></i>
                   <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control form-control-sm" %>
             
               </div>
@@ -77,7 +77,7 @@
               </div>
 
                 <div class="md-form form-sm">
-                <i class="fas fa-user prefix"></i>
+                <i class="fa fa-user prefix"></i>
                 <%= f.text_field :last_name, autofocus: true, placeholder: "Last name", class: "form-control form-control-sm" %>
               </div>
 
@@ -88,12 +88,12 @@
               </div>
 
               <div class="md-form form-sm">
-                <i class="fas fa-lock prefix"></i>
+                <i class="fa fa-lock prefix"></i>
                 <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Repeat password", class: "form-control form-control-sm" %>
               </div>
 
               <div class="text-center form-sm mt-2">
-                <button class="btn btn-deep-orange">Sign up <i class="fas fa-user-plus ml-1"></i></button>
+                <button class="btn btn-deep-orange">Sign up <i class="fa fa-user-plus ml-1"></i></button>
               </div>
            
             </div>

@@ -52,7 +52,7 @@
                    
                   
                     
-          <a class="text-muted"><i class="fas fa-map-marker-alt"> </i> <%= job.location %>&nbsp; <%= job.city %>,&nbsp;<%= job.state %></a>
+          <a class="text-muted"><i class="fa fa-map-marker-alt"> </i> <%= job.location %>&nbsp; <%= job.city %>,&nbsp;<%= job.state %></a>
                     <p class="font-weight-light mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam vitae, fuga similique quos aperiam tenetur quo ut rerum debitis.</p>
                     <p class="text-muted">
                     Posted <%= timeago(job.created_at)%></p>
@@ -60,7 +60,7 @@
                   <div class="col-md-4 text-center pt-4">
                
 
-            <%= link_to 'Apply', job_path(job), class: "btn btn-unique btn-rounded btn-sm px" %></p>
+            <%= link_to 'Apply', job_path(job), class: "btn btn-primary btn-rounded btn-sm px" %></p>
               
 
                   </div>
@@ -99,7 +99,7 @@
         
 
   <div class="card my-3">
-              <h5 class="card-header text-center bg-info">Advertise here</h5>
+              <h5 class="card-header text-center text-white bg-danger">Advertise here</h5>
               <div class="card-body">
                 <div class="row">
                   <div class="col-lg-6">

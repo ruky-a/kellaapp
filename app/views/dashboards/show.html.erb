@@ -1,8 +1,8 @@
-
-<div class="top jumbotron text-center bg-primary">
+<br />
+<div class="top jumbotron text-center">
 
   <!-- Title -->
-  <h2 class="card-title h2">Welcome to your Dashboard,   <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h2>
+  <h3 class="card-title h2">Welcome to your Dashboard,   <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h3>
   <!-- Subtitle -->
   <p class=" my-4 font-weight-bold">Member since: <%= current_user.created_at.strftime('%d %b %Y') %></p>
 
@@ -68,7 +68,7 @@
                       <div class="card card-image" style="background-image: url('');">
 
                         <!-- Content -->
-                        <div class="text-white text-center d-flex align-items-center rgba-blue-strong py-5 px-4">
+                        <div class="text-center d-flex align-items-center btn-primary py-5 px-4">
                           <div>
                             <h3 class="mb-4 mt-4 font-weight-bold">
                               <strong><%= link_to course.title, course_path(course) %></strong>
@@ -127,7 +127,7 @@
                   <th scope="row"><a class="text-primary">  <%= j.title %></a></th>
                   <td>  <%= j.firstname %></td>
                    <td>  <%= j.lastname %></td>
-                  <td><span class="badge badge-success"><%= j.status %></span></td>
+                  <td><span class="badge badge-info"><%= j.status %></span></td>
                   
                   <% if j.attachment_file.attached? %>
                  <td> <%= link_to url_for(j.attachment_file), class: "tag small warning m-t-20",
