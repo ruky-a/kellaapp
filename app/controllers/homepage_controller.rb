@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
-before_action :authenticate_user!, :except => [:index, :show, :search]
+before_action :authenticate_user!, :except => [:index, :show, :search, :videos]
 
   def index
   @courses = Course.all.limit(3)
@@ -21,6 +21,11 @@ before_action :authenticate_user!, :except => [:index, :show, :search]
   @courses = Course.where(category_id: params[:category].to_i)
 
  
+end
+
+
+def videos
+
 end
 
 def plans

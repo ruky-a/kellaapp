@@ -32,7 +32,7 @@
             <h4 class="card-title"><%= current_user.first_name %> <%=current_user.last_name %></h4>
             <hr>
             <!-- Quotation -->
-            <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci
+            <p><%= current_user.about %>
             </p>
           </div>
 
@@ -79,14 +79,14 @@
 
         </div>
 
-    <!--     <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-status'} do |f| %>
+   <%= form_for :user, url: users_edit_url(@user), action: :update, method: :post, html: {id: 'user-status'} do |f| %>
         <div class="field">
           <%= f.select(:status, options_for_select([["Online"], ["Offline"]]), {}, {class: "form-control"}) %>
         </div>
         <%= f.submit "Save", class: "btn btn-danger btn-sm" %>
 
         <% end %>
- -->
+
       </div>
 
 

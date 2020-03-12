@@ -29,12 +29,18 @@
 
         </li>
 
-        <li class="nav-item">
+
+       <li class="nav-item">
           <%= link_to "Jobs", jobs_path, class: "nav-link" %>
 
         </li>
+      
 
-     
+       <li class="nav-item">
+          <%= link_to "Videos", '#', class: "nav-link" %>
+
+        </li>
+
         
 
         <li class="nav-item dropdown">
@@ -51,9 +57,11 @@
         </li> 
 
           <li class="nav-item">
-          <%= link_to "Post a job", new_job_path, class: "btn btn-white btn-rounded btn-sm text-center" %>
+           <%= link_to 'Post job', '#', data: {toggle: 'modal', target: '#modalRegisterForm'}, class: "btn btn-white btn-rounded btn-sm text-center" %>
+        &nbsp;&nbsp;
 
         </li>
+
 
       </ul>
 
@@ -111,6 +119,74 @@
 
 
 
+
+
+
+
 <%= render 'devise/sessions/login' %>
 
 <%= render 'devise/registrations/signup' %>
+
+
+
+
+
+
+             
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+<%= form_for Job.new do |f| %>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Post A Job</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <%= f.text_field :title, placeholder: 'Job title', class: 'form-control', required: true %>
+        </div>
+        <div class="md-form mb-5">
+         <%= f.text_field :location, placeholder: 'Address', class: 'form-control', required: true %>
+        </div>
+
+        <div class="md-form mb-4">
+          <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
+        </div>
+
+         <div class="md-form mb-4">
+          <%= f.text_field :state, placeholder: 'State', class: 'form-control', required: true %>
+        </div>
+
+          <div class="md-form mb-4">
+          <%= f.text_field :qualifications, placeholder: 'Qualifications', class: 'form-control', required: true %>
+        </div>
+        
+
+
+           <div class="md-form mb-8">
+          <%= f.text_area :description, placeholder: 'Details of job', class: 'form-control', required: true %>
+        </div>
+
+
+            <div class="md-form">
+
+          <%= f.file_field :logo %>
+        </div>
+
+          <div class="md-form">
+
+      <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-deep-orange">Submit job post</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div><% end %>
+

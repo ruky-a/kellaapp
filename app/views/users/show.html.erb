@@ -28,7 +28,7 @@
             <h4 class="card-title"><%= @user.first_name %> <%=@user.last_name %></h4>
             <hr>
             <p>Joined <strong><%= @user.created_at.strftime('%d %b %Y') %></strong></p>
-            <p><i class="fas fa-quote-left"></i> <%= current_user.about %>
+            <p><i class="fas fa-quote-left"></i> <%= @user.about %>
             </p>
             <p><strong><% if @user.status %> Online <% else %> Offline <% end %>
                                             </strong></p>

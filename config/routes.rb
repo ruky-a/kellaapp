@@ -17,10 +17,12 @@ Rails.application.routes.draw do
    get '/job_applications', to: 'jobapplications#job_applications'
    get '/plans', to: 'homepage#plans'
   get '/settings/payment', to:'users#payment', as: 'settings_payment'
+     get '/videos', to: 'homepage#videos'
   
 
 
  root 'homepage#index'
+
  resources :jobs do
   resources :jobapplications, only: [:create]
   collection do
