@@ -57,16 +57,16 @@
 
 
 
-      <script>
+   <!--    <script>
 
         document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-      </script>
+      </script> -->
 
       <span class="badge badge-default">
         <h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
       </span>
 
-      <button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button>
+    <!--   <button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button> -->
       <% end %>
       <% end %>
       <% end %>

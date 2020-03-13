@@ -29,10 +29,10 @@
      <% job.jobapplications.each do |jobapplication| %>
 
                 <tr>
-                  <%= link_to job_path(jobapplication.job) do %>
+      <!--             <%= link_to job_path(jobapplication.job) do %>
                   <% if jobapplication.job.logo.attached? %>
 <%= image_tag jobapplication.job.logo, size: 40 %>
-<% end %>
+<% end %> -->
 <% end %>
                    <th scope="row"><a class="text-primary">  <%= jobapplication.created_at.strftime('%d %b %y') %></a></th>
                   <th scope="row"><a class="text-primary"> <%= jobapplication.job.title %></a></th>
