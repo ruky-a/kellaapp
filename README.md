@@ -1,24 +1,7 @@
-# README
+# Video Streaming Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A video-streaming marketplace platform that features credit card payment capabilities, user role management, complex user interfaces, and advanced database relationships.
 
-Things you may want to cover:
+* Built with ruby version 2.6 an rails 6
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database: Postgresql
