@@ -1,5 +1,5 @@
 class HomepageController < ApplicationController
-before_action :authenticate_user!, :except => [:index, :show, :search, :videos]
+before_action :authenticate_user!, :except => [:index, :show, :search, :videos, :solutions]
 
   def index
   @courses = Course.all.limit(3)

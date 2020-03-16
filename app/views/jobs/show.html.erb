@@ -65,64 +65,190 @@
 
               </ul>
             </div>
-            <%= render 'jobapplications/form' %>
-            <!-- Map Widget -->
-            <div class="widget map">
-              <div class="map">
-                <h5 class="text-bold"><%= @job.location%>, <%= @job.city %> <%= @job.state %></h5>
-                <% if @job.latitude.present? && @job.longitude.present? %>
-                <script>
+            <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
 
-                  function initMap() {
-                    var myLatLng = {lat: <%= @job.latitude %>, lng: <%= @job.longitude %>};
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
 
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                      zoom: 12,
-                      center: myLatLng
-                    });
+                  <h4 class="modal-title w-100 font-weight-bold mt-4 mx-4"><%= @job.title %></h4> 
 
-                    var marker = new google.maps.Marker({
-                      position: myLatLng,
-                      map: map,
-                      title: 'Hello World!'
-                    });
-                  }
-                </script>
 
-                <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUVi5Uoez-7hb5hh3ZBEn2g4kXMbwdYRk&callback=initMap">
-              </script>
-              <div id="map"></div>
-              <% end %>
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body mx-3">
+                  <%= form_for([@job, @job.jobapplications.new]) do |f| %>
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+
+
+                    <%= f.text_field :firstname, autofocus: true, placeholder: "First name", class: "form-control validate", required: true %>
+
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+
+
+                    <%= f.text_field :lastname, autofocus: true, placeholder: "Last name", class: "form-control validate", required: true %>
+
+                  </div>
+
+
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control validate", required: true %>
+
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fas fa-phone prefix grey-text"></i>
+                    <%= f.text_field :title, placeholder: "Phone number", class: "form-control validate", required: true %>
+
+                  </div>
+
+
+                  <div class="md-form">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <%= f.text_area :message,  placeholder: "Cover letter", class: "form-control validate" %>
+                  </div>
+
+                  <div class="md-form">
+                    <i></i>
+                    <span class="file-label">Attach Resume</span>
+
+                    <%= f.file_field :attachment_file, required: true %><br />
+
+
+                  </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button class="btn blue-gradient btn-rounded text-bold">Submit</button>
+                </div>
+              </div>
             </div>
           </div>
+          <% end %>
 
-          <div class="widget rate">
-            <h5 class="widget-header text-center">  <li class="list-inline-item"><a href="" class="btn btn-offer d-inline-block btn-deep-orange ml-n1 my-1 px-lg-4 px-md-3">Apply on company site</a></li></h5>
+          <!-- Map Widget -->
+          <div class="widget map">
+            <div class="map">
+              <h5 class="text-bold"><%= @job.location%>, <%= @job.city %> <%= @job.state %></h5>
+              <% if @job.latitude.present? && @job.longitude.present? %>
+              <script>
 
+                function initMap() {
+                  var myLatLng = {lat: <%= @job.latitude %>, lng: <%= @job.longitude %>};
+
+                  var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 12,
+                    center: myLatLng
+                  });
+
+                  var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Hello World!'
+                  });
+                }
+              </script>
+
+              <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUVi5Uoez-7hb5hh3ZBEn2g4kXMbwdYRk&callback=initMap">
+            </script>
+            <div id="map"></div>
+            <% end %>
           </div>
+        </div>
 
+        <div class="widget rate">
+          <h5 class="widget-header text-center">  <li class="list-inline-item"><a href="" class="btn btn-offer d-inline-block btn-deep-orange ml-n1 my-1 px-lg-4 px-md-3">Apply on company site</a></li></h5>
 
-          <div class="widget coupon text-center">
-
-            <p>Advertisement</p>
-
-            <a href="" class="btn btn-transparent-white">Visit Site</a>
-          </div>
         </div>
       </div>
     </div>
   </div>
+
+
+
+
+  <script>
+    $( document ).ready( function() {
+      $("time.timeago").timeago();
+    });
+  </script>
+
+
+  <div class="box container">
+    <h3 class="orange-text text-center">Fill in the application form</h3>
+    <br />
+    <div class="col-md-10 offset-md-1">
+      <%= form_for([@job, @job.jobapplications.new]) do |f| %>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault01">First name</label>
+
+          <%= f.text_field :firstname, id: "validationDefault01", class: "form-control", required: true %>
+
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault02">Last name</label>
+          <%= f.text_field :lastname, id: "validationDefault02", class: "form-control", required: true %>
+        </div>
+
+      </div>
+      <div class="form-row">
+
+        <div class="col-md-4 mb-3">
+          <label for="validationDefaultUsername">Email</label>
+
+          <div class="input-group">
+            <div class="input-group-prepend">
+
+              <span class="input-group-text" id="inputGroupPrepend21">@</span>
+            </div>
+            <%= f.email_field :email, id: "validationDefaultUsername", class: "form-control", required: true %>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault03">Phone No</label>
+          <%= f.text_field :title, class: "form-control", required: true %>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="form-row">
+        <div class="col-md-8 ">
+          <label for="validationDefault03">Cover letter</label>
+          <%= f.text_area :message, class: "form-control", required: true %>
+
+        </div>
+      </div>
+      <br />
+
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">Attach Resume</label>
+        <%= f.file_field :attachment_file, required: true %>
+      </div>
+
+
+
+      <button class="btn btn-danger btn-sm" type="submit">Submit application</button>
+      <% end %>
+    </div>
+
+  </div>
+</div>
 </section>
-
-
-
-
-<script>
-  $(function() {
-    $("time.timeago").timeago();
-  });
-</script>
-
 
 
