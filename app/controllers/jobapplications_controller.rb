@@ -5,7 +5,7 @@ class JobapplicationsController < ApplicationController
   def create
     job = Job.find(params[:job_id])
    if current_user == job.user
-   redirect_to job, flash[:alert] = 'you cannot apply for your own posting'
+    flash[:alert] = 'you cannot apply for your own posting'
     
   end
     @jobapplication = current_user.jobapplications.create(jobapplication_params)
