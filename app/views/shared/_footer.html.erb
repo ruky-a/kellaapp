@@ -56,7 +56,7 @@
       <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
         <!-- Content -->
-        <p class="text-uppercase font-weight-bold">Kella Hospitality Solutions</p>
+        <p class="text-uppercase font-weight-bold"> <a><%= link_to "Kella Hospitality Solutions", solutions_path %></a></p>
     
         <p>Khs is a full-service hospitality agency with the goal to give opportunity to those interested in pursuing career in the travel and hospitality industry.</p>
 
@@ -73,13 +73,13 @@
           <a><%= link_to "Hospitality training ", courses_path %></a>
         </p>
         <p>
-          <a>  <%= link_to "Jobs", jobs_path %></a>
+          <a>  <%= link_to "Post new job", new_job_path %></a>
         </p>
         <p>
-          <a href="#!">Media</a>
+          <a>  <%= link_to " Find a job", jobs_path %></a>
         </p>
         <p>
-          <a href="#!">Solutions</a>
+            <a>  <%= link_to "Company services", solutions_path %></a>
         </p>
 
       </div>
@@ -92,7 +92,7 @@
         <p class="text-uppercase font-weight-bold">Useful links</p>
         
         <p>
-          <a href="#!">Your Account</a>
+    <a>  <%= link_to "Your Account", dashboard_path %></a>
         </p>
         <p>
           <a href="#!">Become an Affiliate</a>

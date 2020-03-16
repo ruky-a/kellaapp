@@ -28,6 +28,10 @@ def videos
 
 end
 
+def solutions
+
+end
+
 def plans
 @plans = Stripe::Plan.list(product: 'prod_Gqg6Nz7fn84zrh')
 end

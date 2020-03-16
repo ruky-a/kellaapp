@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
  root 'homepage#index'
 
+  get 'solutions', to: 'homepage#solutions'
+
  resources :jobs do
   resources :jobapplications, only: [:create]
   collection do
