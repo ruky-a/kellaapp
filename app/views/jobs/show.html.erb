@@ -176,24 +176,25 @@
 
 
 
-  <div class="box container">
-    <h3 class="orange-text text-center">Fill in the application form</h3>
+  <div class="container">
+    <h3 class="orange-text">Fill in the application form</h3>
     <br />
-    <div class="col-md-10 offset-md-1">
+    <div class="col-md-12">
       <%= form_for([@job, @job.jobapplications.new]) do |f| %>
       <div class="form-row">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4">
           <label for="validationDefault01">First name</label>
 
           <%= f.text_field :firstname, id: "validationDefault01", class: "form-control", required: true %>
 
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4">
           <label for="validationDefault02">Last name</label>
           <%= f.text_field :lastname, id: "validationDefault02", class: "form-control", required: true %>
         </div>
 
       </div>
+      <br />
       <div class="form-row">
 
         <div class="col-md-4 mb-3">
@@ -217,7 +218,7 @@
 
 
       </div>
-
+     
 
       <div class="form-row">
         <div class="col-md-8 ">
@@ -235,7 +236,7 @@
 
 
 
-      <button class="btn btn-danger btn-sm" type="submit">Submit application</button>
+      <button class="btn btn-danger btn-rounded btn-sm" type="submit">Submit application</button>
       <% end %>
     </div>
 
