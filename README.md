@@ -7,3 +7,8 @@ A video-streaming marketplace platform that features credit card payment capabil
 * Database: Postgresql
 
 
+N.B Application is still under development, hence some demo content but feel free to checkout app features. 
+
+Login: guest@kellaapp.com
+
+password: password
