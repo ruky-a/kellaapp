@@ -5,3 +5,5 @@ A video-streaming marketplace platform that features credit card payment capabil
 * Built with ruby version 2.6 and rails 6
 
 * Database: Postgresql
+
+
