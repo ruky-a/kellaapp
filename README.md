@@ -1,24 +1,11 @@
-# README
+# Video Streaming Application Learning Platform
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A video-streaming marketplace platform that features credit card payment capabilities, user role management, complex user interfaces, and advanced database relationships.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+* Application is still under development, hence some demo content but feel free to checkout app features. 
 
-* Configuration
+* Login: guest@kellaapp.com
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* password: password
