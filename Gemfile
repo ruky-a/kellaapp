@@ -43,7 +43,7 @@ gem 'coderay', '~> 1.1', '>= 1.1.2'
 gem 'friendly_id', '~> 5.3'
 gem "geocoder"
 
-
+gem 'kaminari'
 
 
 gem "aws-sdk-s3", require: false

@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!, only: [:create]
+
+    
   def create
     @course = Course.find(params[:course_id])
     @course.comments.create(comment_params.merge(user: current_user))
