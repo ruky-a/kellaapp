@@ -1,226 +1,182 @@
 <br />
 <div class="top jumbotron text-center">
+<h3 class="card-title h2">Welcome to your Dashboard,   <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h3>
 
-  <!-- Title -->
-  <h3 class="card-title h2">Welcome to your Dashboard,   <strong><%= current_user.first_name %> <%=current_user.last_name %></strong> </h3>
-  <!-- Subtitle -->
-  <p class=" my-4 font-weight-bold">Member since: <%= current_user.created_at.strftime('%d %b %Y') %></p>
+<p class=" my-4 font-weight-bold">Member since: <%= current_user.created_at.strftime('%d %b %Y') %></p>
 
-  <!-- Grid row -->
-  <div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-center">
+<div class="col-xl-7 pb-2">
 
-    <!-- Grid column -->
-    <div class="col-xl-7 pb-2">
+<p class="card-text"><%= current_user.about %></p>
+<span class="float-right">
+<%= link_to  "Edit Profile", edit_user_registration_path, class: "btn btn-deep-orange"  %>
+</span>
+</div>
+</div>
+</div>
+<main>
 
-      <p class="card-text"><%= current_user.about %></p>
+<div class="container">
+<section class="text-center team-section">
+<div class="row text-center">
+<div class="col-md-12 mb-4" style="margin-top: -100px;">
 
-    
-
-
-  
-            <span class="float-right">
-    <%= link_to  "Edit Profile", edit_user_registration_path, class: "btn btn-deep-orange"  %>
-        </span>
-      </div>
-    </div>
-  </div>
-
-  
-  <main>
-
-    <div class="container">
-
-      <!--Section: Team v.1-->
-      <section class="text-center team-section">
-
-        <!--Grid row-->
-        <div class="row text-center">
-
-          <!--Grid column-->
-          <div class="col-md-12 mb-4" style="margin-top: -100px;">
-
-            <div class="avatar mx-auto">
-                    <%= image_tag photo_url(current_user), class: "img-fluid rounded-circle z-depth-1" %>
-           </div>
-         </div>
-       </div>
-     </section>
+<div class="avatar mx-auto">
+<%= image_tag photo_url(current_user), class: "img-fluid rounded-circle z-depth-1" %>
+</div>
+</div>
+</div>
+</section>
 
 
 
 
 
- 
-
-      <h3><strong>My Courses</strong></h3>
-      <br />
-      <section>
 
 
-                <!--Projects section v.4-->
-                <section class="text-center mb-5">
-
-                  <!--Grid row-->
-                  <div class="row mb-4">
-
-                      <% current_user.enrolled_courses.each do |course| %>
-                    <div class="col-md-6 mb-4">
-                      <div class="card card-image" style="background-image: url('');">
-
-                        <!-- Content -->
-                        <div class="text-center d-flex align-items-center btn-primary py-5 px-4">
-                          <div>
-                            <h3 class="mb-4 mt-4 font-weight-bold">
-                              <strong><%= link_to course.title, course_path(course) %></strong>
-                            </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
-                              voluptatem,
-                              optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
-                              dignissimos.
-                              Odit sed qui, dolorum!.</p>
-         
-                               <a><%= link_to "More Info...", course_path(course), class: 'btn btn-outline-white btn-sm' %></a>
-                              
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <% end %>
-
-                  
-
-                  </div>
-                
-           
-                  </div>
-
-
-          <div class="container my-5 py-5">
-        
-<h3><strong>Jobs I applied for</strong></h3>
+<h3><strong>My Courses</strong></h3>
 <br />
-        <div class="row">
-            
-      <div class="col-md-12">
-        <div class="card card-list">
-          <div class="card-header white d-flex justify-content-between align-items-center py-3">
-            <p class="h5-responsive font-weight-bold mb-0">Job Applications</p>
-          </div>
-          <div class="card-body">
-            <table class="table">
-              <thead>
-                <tr>
-                      <th scope="col">Date</th>
-                  <th scope="col">Application ID</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Last Name</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Resume</th>
-                </tr>
-              </thead>
-              <tbody>
-                  
-                  <% current_user.jobapplications.each do |j| %>
-                 
-                <tr>
-                   <th scope="row"><a class="text-primary">  <%= j.created_at.strftime('%d %b %y') %></a></th>
-                  <th scope="row"><a class="text-primary">  <%= j.title %></a></th>
-                  <td>  <%= j.firstname %></td>
-                   <td>  <%= j.lastname %></td>
-                  <td><span class="badge badge-info"><%= j.status %></span></td>
-                  
-                  <% if j.attachment_file.attached? %>
-                 <td> <%= link_to url_for(j.attachment_file), class: "tag small warning m-t-20",
-               download: "Attachment_#{j.attachment_file.id}" do %>
-              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=j.attachment_file.filename %></td>
-              <% end %>
-                  </td>
-                </tr>
+<section>
+<section class="text-center mb-5">
+<div class="row mb-4">
 
-                <% end %>
-                <% end %>
-              </tbody>
-            </table>
-             </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </section>
+<% current_user.enrolled_courses.each do |course| %>
+<div class="col-md-6 mb-4">
+<div class="card card-image" style="background-image: url('');">
+<div class="text-center d-flex align-items-center btn-primary py-5 px-4">
+<div>
+  <h3 class="mb-4 mt-4 font-weight-bold">
+    <strong><%= link_to course.title, course_path(course) %></strong>
+  </h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam,
+    voluptatem,
+    optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum
+    dignissimos.
+    Odit sed qui, dolorum!.</p>
+
+     <a><%= link_to "More Info...", course_path(course), class: 'btn btn-outline-white btn-sm' %></a>
+    
+</div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+
+
+<div class="container my-5 py-5">
+
+<h3><strong>Jobs applied for</strong></h3>
+<br />
+<div class="row">
+
+<div class="col-md-12">
+<div class="card card-list">
+<div class="card-header white d-flex justify-content-between align-items-center py-3">
+<p class="h5-responsive font-weight-bold mb-0">Job Applications</p>
+</div>
+<div class="card-body">
+<table class="table">
+<thead>
+<tr>
+<th scope="col">Date</th>
+<th scope="col">Job title</th>
+<th scope="col">First Name</th>
+<th scope="col">Last Name</th>
+<th scope="col">Status</th>
+<th scope="col">Resume</th>
+</tr>
+</thead>
+<tbody>
+
+<% current_user.jobapplications.each do |j| %>
+
+<tr>
+<th scope="row"><a class="text-primary">  <%= j.created_at.strftime('%d %b') %></a></th>
+<th scope="row"><a class="text-primary">  <%= j.title %></a></th>
+<td>  <%= j.firstname %></td>
+<td>  <%= j.lastname %></td>
+<td><span class="badge badge-info"><%= j.status %></span></td>
+
+<% if j.attachment_file.attached? %>
+<td> <%= link_to url_for(j.attachment_file), class: "tag small warning m-t-20",
+download: "Attachment_#{j.attachment_file.id}" do %>
+<i class="fas fa-paperclip fa-lg p-r-5"></i> <%=j.attachment_file.filename %></td>
+<% end %>
+</td>
+</tr>
+
+<% end %>
+<% end %>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <div class="container my-5 py-5">
 
 
-    <!--Section: Content-->
-    <section class="text-center">
+<h3><strong>Job aplications received</strong></h3><br />
+<div class="row">
+<% current_user.jobs.each do |job| %>
+
+<% job.jobapplications.each do |jobapplication| %>
 
 
-     <h3><strong>Job aplications received</strong></h3><br />
-      <div class="row">
-           <% current_user.jobs.each do |job| %>
-
-     <% job.jobapplications.each do |jobapplication| %>
+<div class="col-lg-4 col-md-12 mb-4">
 
 
-        <div class="col-lg-4 col-md-12 mb-4">
+<div class="card">
+<div class="card-body">
+<%= jobapplication.created_at.strftime('%d %b %y') %></a>
+<p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= jobapplication.job.title %></h3></a></p>
 
-          
-          <div class="card">
-            <div class="card-body">
-          <%= jobapplication.created_at.strftime('%d %b %y') %></a>
-              <p class="mb-1"><a href="" class="font-weight-bold black-text"><h3><%= jobapplication.job.title %></h3></a></p>
+<h5 class="mb-1"><small class="mr-1">   <%= jobapplication.firstname %> <%= jobapplication.lastname %><br /></small><strong></strong></h5>
 
-              <h5 class="mb-1"><small class="mr-1">   <%= jobapplication.firstname %> <%= jobapplication.lastname %><br /></small><strong></strong></h5>
+<div class="amber-text fa-xs mb-1">
 
-              <div class="amber-text fa-xs mb-1">
-               
-              </div>
+</div>
 
-              <hr />
-           <div class="row">
-              <p class="text-muted card-text mt-2 px-4 mb-2">
-        <% if jobapplication.attachment_file.attached? %>
-             <%= link_to url_for(jobapplication.attachment_file), class: "tag small warning m-t-20",
-               download: "Attachment_#{jobapplication.attachment_file.id}" do %>
-              <i class="fas fa-paperclip fa-lg p-r-5"></i> <%=jobapplication.attachment_file.filename %>
-              <% end %>
-              <% end %>
-              </p>
-            </div>
-              <hr />
-            <div class="row">
-              <p class="text-muted card-text mt-2 px-4 mb-2">
-              <%= jobapplication.message %>
-              </p>
-            </div>
-            
-            
-              <button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
-
-            </div>
-          </div>
+<hr />
+<div class="row">
+<p class="text-muted card-text mt-2 px-4 mb-2">
+<% if jobapplication.attachment_file.attached? %>
+<%= link_to url_for(jobapplication.attachment_file), class: "tag small warning m-t-20",
+download: "Attachment_#{jobapplication.attachment_file.id}" do %>
+<i class="fas fa-paperclip fa-lg p-r-5"></i> <%=jobapplication.attachment_file.filename %>
+<% end %>
+<% end %>
+</p>
+</div>
+<hr />
+<div class="row">
+<p class="text-muted card-text mt-2 px-4 mb-2">
+<%= jobapplication.message %>
+</p>
+</div>
 
 
+<button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
 
-        </div>
-        <!--Grid column-->
-   <% end %>
-      
-        <% end %>
+</div>
+</div>
+</div>
+<% end %>
 
-
-      </div>
- 
-
-
-    </section>
-    <!--Section: Content-->
-
-
-  </div>
+<% end %>
+</div>
+</div>
+</section>
+</div>
+</main>
 
 
 
 
-    
-    
+
+

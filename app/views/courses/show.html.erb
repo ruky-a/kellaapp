@@ -57,40 +57,40 @@
 
 
 
-   <!--    <script>
+<!--    <script>
 
-        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
-      </script> -->
+document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+</script> -->
 
-      <span class="badge badge-default">
-        <h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
-      </span>
+<span class="badge badge-default">
+  <h3><%= @course.cost == 0? "Free" : "#{ number_to_currency @course.cost }" %></h3>
+</span>
 
-    <!--   <button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button> -->
-      <% end %>
-      <% end %>
-      <% end %>
-      <% else %>
-      <%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
-      <% end %>
-    </div>
-
-
+<!--   <button type="submit" class="yourCustomClass btn btn-deep-orange btn-rounded btn-xl">Enroll</button> -->
+<% end %>
+<% end %>
+<% end %>
+<% else %>
+<%= link_to 'Sign in to enroll', new_user_session_path, class: 'btn btn-deep-orange btn-rounded btn-md' %>
+<% end %>
+</div>
 
 
 
-    <div class="col-lg-6 mb-4">
-      <div class="overlay z-depth-1-half">
-        <%= image_tag @course.image, class: 'img-fluid' %>
 
-        <a href="#">
-          <div class="rgba-white-light"></div>
-        </a>
-      </div>
 
-    </div>
+<div class="col-lg-6 mb-4">
+  <div class="overlay z-depth-1-half">
+    <%= image_tag @course.image, class: 'img-fluid' %>
 
+    <a href="#">
+      <div class="rgba-white-light"></div>
+    </a>
   </div>
+
+</div>
+
+</div>
 </section>
 
 
@@ -101,11 +101,9 @@
 
     <% @course.sections.each do |section| %>
 
-    <h3>
-      <%= section.title %>
-    </h3>
-    <div class="row">
+    <!--     <h3><%= section.title %></h3> -->
 
+    <div class="row">
       <% section.lessons.each do |lesson| %>
       <div class="col-md-4 mb-4">
         <%= link_to lesson_path(lesson), class: "card hoverable" do %>
@@ -127,25 +125,7 @@
 </div>
 
 
-<div class="container">
-  <div class="col-md-8">
-    <% @course.sections.each do |section| %>
-    <%= section.title %>
-    <% section.lessons.each do |lesson| %>
-    <ul class="list-group list-group-flush">
-      <ul class="list-group">
-        <%= link_to lesson_path(lesson), class: "card hoverable" do %>
-        <li class="list-group-item">
-          <a class="text-white btn-floating btn-yt btn-sm"><i class="fa fa-play"></i></a>  <%= link_to lesson.title, lesson_path(lesson) %>
-        </li>
-        <% end %>
-      </ul>
-    </ul>
 
-    <% end %>
-    <% end %>
-  </div>
-</div>
 
 <script>
   $(function() {
@@ -187,14 +167,10 @@
         <% end %>
 
 
-
-
-
-
         <div class="card-footer white py-3">
           <%= form_for @comment, url: course_comments_path(@course) do |f| %>
           <div class="form-group mb-0">
-            <%= f.text_area :message, placeholder: "Write your comment...",  rows: 2, class: "form-control rounded-0" %>
+            <%= f.text_area :message, placeholder: "Write your comment...",  rows: 5, class: "form-control rounded-0" %>
 
 
             <div class="text-right pt-1">
@@ -202,8 +178,6 @@
 
             </div>
           </div>
-
-
           <% end %>
         </div>
       </div>
@@ -211,10 +185,6 @@
   </div>
 </div>
 </div>
-
-
-
-
 <% end %>
 <% end %>
 

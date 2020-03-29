@@ -3,118 +3,99 @@
 
 
 
-      <div class="navbar-brand"> <%= link_to root_path do %> <h2 class=""></i>Kella<span class="text-color">HOSPITALITY</span></h2>
-        <% end %>
-      </div>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          
-     <%= link_to "Home", root_path, class: "nav-link" %>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Members", users_path, class: "nav-link" %>
-
-        </li>
-
-        <!-- <li class="nav-item">
-          <%= link_to "Pricing", plans_path, class: "nav-link" %>
-
-        </li> -->
-
-
-       <li class="nav-item">
-          <%= link_to "Jobs", jobs_path, class: "nav-link" %>
-
-        </li>
-
-
-       <li class="nav-item">
-          <%= link_to "Post a Job", new_job_path, class: "nav-link" %>
-
-        </li>
-      
-
-    
-
-        
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-          aria-expanded="false">Courses</a>
-          <div class="dropdown-menu dropdown-danger">
-             <%= link_to "All courses", courses_path, class: "dropdown-item" %>
-            <% Category.all.each do |item| %>
-
-            <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
-            <% end %>
-
-          </div>
-        </li> 
-
-        <!--   <li class="nav-item">
-           <%= link_to 'Post job', '#', data: {toggle: 'modal', target: '#modalRegisterForm'}, class: "btn btn-white btn-rounded btn-sm text-center" %>
-        &nbsp;&nbsp;
-
-        </li> -->
-
-
-      </ul>
-
-
-
-
-      <ul class="navbar-nav ml-auto nav-flex-icons">
-       
-
-        <% if (!user_signed_in?)  %>
-
-         <li class="nav-item">
-
-          <a href="" class="nav-link" data-toggle="modal" data-target="#modal1">
-          Login</i></a>
-        </li>
-
-        <li class="nav-item">
-          <a href="" class="btn btn-deep-orange btn-sm btn-rounded" data-toggle="modal" data-target="#modal2">
-          Register</i></a>
-        </li>
-       
-
-        <% else %>
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-
-          aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %>
-        </i> Hi, <%= current_user.first_name %>  <%= current_user.last_name %>
-
-
-
-        </a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-default"
-        aria-labelledby="navbarDropdownMenuLink-333">
-        <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        <%= link_to  "View Profile", edit_user_registration_path, class: "dropdown-item"  %>
-        <%= link_to  "Applied jobs", applications_path, class: "dropdown-item"  %>
-           <%= link_to  "Job applications", job_applications_path, class: "dropdown-item"  %>
-        <% if current_user.superadmin_role? || current_user.supervisor_role? %>
-        <%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
-
-        <% else %>
-        <%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
-        <% end %>
-      </li>
+    <div class="navbar-brand"> <%= link_to root_path do %> <h2 class=""></i>Kella<span class="text-color">HOSPITALITY</span></h2>
       <% end %>
-    </ul>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+
+        <%= link_to "Home", root_path, class: "nav-link" %>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to "Members", users_path, class: "nav-link" %>
+
+    </li>
+
+<!-- <li class="nav-item">
+<%= link_to "Pricing", plans_path, class: "nav-link" %>
+
+</li> -->
+<li class="nav-item">
+  <%= link_to "Jobs", jobs_path, class: "nav-link" %>
+
+</li>
+
+
+<li class="nav-item">
+  <%= link_to "Post a Job", new_job_path, class: "nav-link" %>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+  aria-expanded="false">Courses</a>
+  <div class="dropdown-menu dropdown-danger">
+    <%= link_to "All courses", courses_path, class: "dropdown-item" %>
+    <% Category.all.each do |item| %>
+
+    <%= link_to "#{item.name}", search_path(category: item.id), class: "dropdown-item" %>
+    <% end %>
+
+  </div>
+</li> 
+
+<!--   <li class="nav-item">
+<%= link_to 'Post job', '#', data: {toggle: 'modal', target: '#modalRegisterForm'}, class: "btn btn-white btn-rounded btn-sm text-center" %>
+&nbsp;&nbsp;
+
+</li> -->
+
+
+</ul>
+
+
+
+
+<ul class="navbar-nav ml-auto nav-flex-icons">
+  <% if (!user_signed_in?)  %>
+  <li class="nav-item">
+    <a href="" class="nav-link" data-toggle="modal" data-target="#modal1">
+    Login</i></a>
+  </li>
+  <li class="nav-item">
+    <a href="" class="btn btn-deep-orange btn-sm btn-rounded" data-toggle="modal" data-target="#modal2">
+    Register</i></a>
+  </li>
+  <% else %>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false"> <%= image_tag photo_url(current_user), class: "rounded-circle", size: 40 %>
+  </i> Hi, <%= current_user.first_name %>  <%= current_user.last_name %>
+
+
+
+</a>
+<div class="dropdown-menu dropdown-menu-right dropdown-default"
+aria-labelledby="navbarDropdownMenuLink-333">
+<%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+<%= link_to  "Edit Profile", edit_user_registration_path, class: "dropdown-item"  %>
+<%= link_to  "Applied jobs", applications_path, class: "dropdown-item"  %>
+<%= link_to  "Job applications", job_applications_path, class: "dropdown-item"  %>
+<% if current_user.superadmin_role? || current_user.supervisor_role? %>
+<%= link_to  "Admin dashboard",   rails_admin_path, class: "dropdown-item"  %>
+
+<% else %>
+<%= link_to  "My Dashboard", dashboard_path, class: "dropdown-item" %>
+<% end %>
+</li>
+<% end %>
+</ul>
 
 
 </nav>
@@ -125,73 +106,66 @@
 
 
 
-
-
-
 <%= render 'devise/sessions/login' %>
 
 <%= render 'devise/registrations/signup' %>
 
 
 
-
-
-
-             
 <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
+aria-hidden="true">
 <%= form_for Job.new do |f| %>
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Post A Job</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Post A Job</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+        <%= f.text_field :title, placeholder: 'Job title', class: 'form-control', required: true %>
       </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <%= f.text_field :title, placeholder: 'Job title', class: 'form-control', required: true %>
-        </div>
-        <div class="md-form mb-5">
-         <%= f.text_field :location, placeholder: 'Address', class: 'form-control', required: true %>
-        </div>
-
-        <div class="md-form mb-4">
-          <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
-        </div>
-
-         <div class="md-form mb-4">
-          <%= f.text_field :state, placeholder: 'State', class: 'form-control', required: true %>
-        </div>
-
-          <div class="md-form mb-4">
-          <%= f.text_field :qualifications, placeholder: 'Qualifications', class: 'form-control', required: true %>
-        </div>
-        
-
-
-           <div class="md-form mb-8">
-          <%= f.text_area :description, placeholder: 'Details of job', class: 'form-control', required: true %>
-        </div>
-
-
-            <div class="md-form">
-
-          <%= f.file_field :logo %>
-        </div>
-
-          <div class="md-form">
-
-      <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
-        </div>
-
+      <div class="md-form mb-5">
+        <%= f.text_field :location, placeholder: 'Address', class: 'form-control', required: true %>
       </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-deep-orange">Submit job post</button>
+
+      <div class="md-form mb-4">
+        <%= f.text_field :city, placeholder: 'City', class: 'form-control', required: true %>
       </div>
+
+      <div class="md-form mb-4">
+        <%= f.text_field :state, placeholder: 'State', class: 'form-control', required: true %>
+      </div>
+
+      <div class="md-form mb-4">
+        <%= f.text_field :qualifications, placeholder: 'Qualifications', class: 'form-control', required: true %>
+      </div>
+
+
+
+      <div class="md-form mb-8">
+        <%= f.text_area :description, placeholder: 'Details of job', class: 'form-control', required: true %>
+      </div>
+
+
+      <div class="md-form">
+
+        <%= f.file_field :logo %>
+      </div>
+
+      <div class="md-form">
+
+        <%= f.select :category_id, Category.all.map{ |c| [c.name, c.id] } %>
+      </div>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-deep-orange">Submit job post</button>
     </div>
   </div>
+</div>
 </div>
 </div><% end %>
 
