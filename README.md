@@ -11,7 +11,13 @@
   ![New User Signup](./app/assets/images/register.png)
 
   
-  ![User Dashboard](./app/assets/images/stripe.png)
+  ![Enrollment with stripe payment](./app/assets/images/stripe.png)
+
+
+  ![Video lessons](./app/assets/images/video.png)
+
+
+   ![Admin dashboard](./app/assets/images/admin.png)
 
 
 
