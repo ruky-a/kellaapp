@@ -7,11 +7,9 @@
   
 Tools & Resources
 
-* Built with ruby on rails and bootstrap
+* [Ruby on Rails](https://rubyonrails.org/)  
 
-* Ruby version 2.6 with Rails 6.0
-
-* Database: Postgresql
+* Database: [PostgreSQL](https://www.postgresql.org/)
 
 * Admin backend with railsadmin
 
