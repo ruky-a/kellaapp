@@ -21,6 +21,8 @@ Tools & Resources
 
 * Aws Storage
 
+* Devise for user authentication
+
   
 
   Homepage:
