@@ -24,7 +24,7 @@
  
   ![Video lessons](./app/assets/images/video.png)
 
-  Adminn dasboard:
+  Admin dasboard:
   
   ![Admin dashboard](./app/assets/images/admin.png)
 
