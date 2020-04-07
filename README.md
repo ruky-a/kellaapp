@@ -41,7 +41,7 @@ Tools & Resources
  
   ![Video lessons](./app/assets/images/video.png)
 
-  Admin dasboard:
+  Admin back-end dashboard:
   
   ![Admin dashboard](./app/assets/images/admin.png)
 
