@@ -9,7 +9,7 @@ Tools & Resources
 
 * Built with ruby on rails and bootstrap
 
-* Ruby version 2.6 with Rails 6
+* Ruby version 2.6 with Rails 6.0
 
 * Database: Postgresql
 
@@ -22,6 +22,7 @@ Tools & Resources
 * Aws Storage
 
   
+
   Homepage:
 
   ![Home Screenshot](./app/assets/images/khs-home.png)
@@ -36,7 +37,7 @@ Tools & Resources
   ![Enrollment with stripe payment](./app/assets/images/stripe.png)
 
 
- Video lessons: 
+  Video lessons: 
  
   ![Video lessons](./app/assets/images/video.png)
 
