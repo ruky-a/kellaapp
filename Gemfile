@@ -29,7 +29,7 @@ gem 'font_awesome5_rails'
 gem 'font-awesome-rails' 
 gem 'devise'
 gem "figaro"
-gem 'omniauth', '~> 1.9'
+gem 'omniauth', '~> 2.0'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'stripe'
 gem 'rails_admin_nestable', '~> 0.3.2'
